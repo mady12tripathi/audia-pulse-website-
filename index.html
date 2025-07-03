@@ -1,107 +1,85 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Audia+ Pulse 1.0 – AI Adaptive Earbuds</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audia+ Pulse 1.0 – AI Powered Wireless Earbuds</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
+      background-color: #ffffff;
     }
-
-    .banner-container {
+    .banner {
       position: relative;
       width: 100%;
       max-width: 100%;
     }
-
-    .banner-container img {
+    .banner img {
       width: 100%;
-      height: auto;
       display: block;
     }
-
-    .buy-now-btn {
+    .cta-button {
       position: absolute;
-      bottom: 20px;
-      right: 20px;
-      background-color: #FFC107;
-      color: black;
-      padding: 10px 20px;
+      bottom: 10%;
+      left: 5%;
+      background-color: #ffb700;
+      color: #000;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
       font-weight: bold;
-      font-size: 16px;
-      border-radius: 8px;
+      font-size: 1rem;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.2);
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-
-    .features-box {
-      padding: 30px 20px;
-      background-color: #f8f8f8;
+    .features {
+      padding: 30px;
+      background: #f8f8f8;
+    }
+    .features h2 {
       text-align: center;
     }
-
-    .features-box h2 {
-      margin-bottom: 20px;
-    }
-
-    .features-box ul {
+    .features ul {
       list-style: none;
       padding: 0;
-      font-size: 16px;
-      line-height: 1.8;
-      text-align: left;
-      display: inline-block;
+      max-width: 500px;
+      margin: auto;
     }
-
-    .features-box ul li::before {
-      content: '✅ ';
+    .features li {
+      margin: 10px 0;
+      font-size: 1rem;
+    }
+    .features li::before {
+      content: '✅';
+      margin-right: 10px;
       color: green;
     }
-
-    /* Floating Icons */
     .floating-btn {
       position: fixed;
-      z-index: 9999;
+      bottom: 20px;
       right: 20px;
-      border-radius: 50%;
-      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 1000;
     }
-
-    .whatsapp {
-      bottom: 100px;
+    .floating-btn a {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
     }
-
-    .amazon {
-      bottom: 30px;
+    .floating-btn img {
+      width: 100%;
+      height: 100%;
     }
   </style>
 </head>
-
-<body>
-
-  <!-- Banner 1 -->
-  <div class="banner-container">
-    <img src="/images/banner1.jpg" alt="Hero Banner" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-now-btn">Buy Now</a>
-  </div>
-
-  <!-- Banner 2 -->
-  <div class="banner-container">
-    <img src="/images/banner2.jpg" alt="Banner 2" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-now-btn">Buy Now</a>
-  </div>
-
-  <!-- Banner 3 -->
-  <div class="banner-container">
-    <img src="/images/banner3.jpg" alt="Banner 3" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-now-btn">Buy Now</a>
-  </div>
-
-  <!-- Features Section -->
-  <div class="features-box">
+<body>  <!-- Hero Banner -->  <div class="banner">
+    <img src="images/hero-image.jpg" alt="Audia+ Hero Banner" />
+    <a class="cta-button" href="https://amzn.in/d/iANYkoH" target="_blank">Buy Now ₹1499</a>
+  </div>  <!-- Features Section -->  <section class="features">
     <h2>Why Choose Audia+ Pulse 1.0?</h2>
     <ul>
       <li>Personalized AI Sound Calibration</li>
@@ -109,17 +87,12 @@
       <li>Adaptive Noise Cancellation (SilentSync™)</li>
       <li>Ultra-Light Titanium Build (IPX5)</li>
     </ul>
-  </div>
-
-  <!-- Floating WhatsApp Icon -->
-  <a href="https://wa.me/918090667890" target="_blank" class="floating-btn whatsapp">
-    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="52" height="52" />
-  </a>
-
-  <!-- Floating Amazon Icon -->
-  <a href="https://amzn.in/d/iANYkoH" target="_blank" class="floating-btn amazon">
-    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124993.png" alt="Amazon" width="52" height="52" />
-  </a>
-
-</body>
+  </section>  <!-- Floating Buttons -->  <div class="floating-btn">
+    <a href="https://amzn.in/d/iANYkoH" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg" alt="Amazon Button" />
+    </a>
+    <a href="https://wa.me/918090667890" target="_blank">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp Button" />
+    </a>
+  </div></body>
 </html>
