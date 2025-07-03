@@ -2,152 +2,124 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ Pulse 1.0 – AI-Powered Wireless Earbuds</title>
-  <link rel="icon" href="logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audia+ Pulse 1.0 – AI Adaptive Earbuds</title>
   <style>
     body {
       font-family: Arial, sans-serif;
       margin: 0;
       padding: 0;
-      background: #fff;
-      color: #000;
     }
-    h2 {
-      text-align: center;
-      margin-top: 30px;
-    }
-    .banner-block {
+
+    .banner-container {
       position: relative;
-      text-align: center;
-      margin-bottom: 30px;
+      width: 100%;
+      max-width: 100%;
     }
-    .banner-block img {
+
+    .banner-container img {
       width: 100%;
       height: auto;
-      border-radius: 10px;
+      display: block;
     }
-    .banner-block a {
+
+    .buy-now-btn {
       position: absolute;
       bottom: 20px;
-      padding: 10px 16px;
-      border-radius: 6px;
+      right: 20px;
+      background-color: #FFC107;
+      color: black;
+      padding: 10px 20px;
       font-weight: bold;
+      font-size: 16px;
+      border-radius: 8px;
       text-decoration: none;
-      font-size: 16px;
-      color: #fff;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     }
-    .amazon-btn { background-color: #FF9900; left: 20px; }
-    .whatsapp-btn { background-color: #25D366; left: 160px; }
-    .buy-btn { background-color: #000; right: 20px; }
 
-    .features {
-      max-width: 600px;
-      margin: 30px auto;
-      background: #f9f9f9;
-      padding: 20px;
-      border-radius: 12px;
-    }
-    .features h3 {
+    .features-box {
+      padding: 30px 20px;
+      background-color: #f8f8f8;
       text-align: center;
     }
-    .features ul {
-      list-style-type: none;
+
+    .features-box h2 {
+      margin-bottom: 20px;
+    }
+
+    .features-box ul {
+      list-style: none;
       padding: 0;
-    }
-    .features li {
       font-size: 16px;
-      margin: 10px 0;
+      line-height: 1.8;
+      text-align: left;
+      display: inline-block;
     }
 
-    .price-section {
-      text-align: center;
-      margin-bottom: 30px;
-    }
-    .price-section p {
-      font-size: 20px;
-    }
-    .price-section strong {
-      font-size: 24px;
-      color: #000;
+    .features-box ul li::before {
+      content: '✅ ';
+      color: green;
     }
 
-    footer {
-      text-align: center;
-      padding: 30px;
-      background: #f1f1f1;
-      font-size: 14px;
+    /* Floating Icons */
+    .floating-btn {
+      position: fixed;
+      z-index: 9999;
+      right: 20px;
+      border-radius: 50%;
+      box-shadow: 0 0 10px rgba(0,0,0,0.3);
+    }
+
+    .whatsapp {
+      bottom: 100px;
+    }
+
+    .amazon {
+      bottom: 30px;
     }
   </style>
 </head>
-  <!-- Floating WhatsApp Button -->
-<a href="https://wa.me/918090667890" target="_blank" style="position:fixed; bottom:100px; right:20px; z-index:1000;">
-  <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="60" height="60" style="border-radius:50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);" />
-</a>
 
-<!-- Floating Amazon Button -->
-<a href="https://amzn.in/d/iANYkoH" target="_blank" style="position:fixed; bottom:30px; right:20px; z-index:1000;">
-  <img src="https://cdn-icons-png.flaticon.com/512/732/732229.png" alt="Amazon" width="60" height="60" style="border-radius:50%; box-shadow: 0 0 10px rgba(0,0,0,0.3);" />
-</a>
 <body>
 
-  <!-- HERO BANNER -->
-  <div class="banner-block">
-    <img src="hero-image.jpg" alt="Hero Banner" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="amazon-btn">Buy on Amazon</a>
-    <a href="https://wa.me/918090667890" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-btn">Buy Now</a>
+  <!-- Banner 1 -->
+  <div class="banner-container">
+    <img src="/images/banner1.jpg" alt="Hero Banner" />
+    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-now-btn">Buy Now</a>
   </div>
 
-  <!-- KEY FEATURES -->
-  <section class="features">
-    <h3>Why Choose Audia+ Pulse 1.0?</h3>
+  <!-- Banner 2 -->
+  <div class="banner-container">
+    <img src="/images/banner2.jpg" alt="Banner 2" />
+    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-now-btn">Buy Now</a>
+  </div>
+
+  <!-- Banner 3 -->
+  <div class="banner-container">
+    <img src="/images/banner3.jpg" alt="Banner 3" />
+    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-now-btn">Buy Now</a>
+  </div>
+
+  <!-- Features Section -->
+  <div class="features-box">
+    <h2>Why Choose Audia+ Pulse 1.0?</h2>
     <ul>
-      <li>✅ Personalized AI Sound Calibration</li>
-      <li>✅ 30-Hour Battery with Wireless Case</li>
-      <li>✅ Adaptive Noise Cancellation (SilentSync™)</li>
-      <li>✅ Ultra-Light Titanium Build (IPX5)</li>
+      <li>Personalized AI Sound Calibration</li>
+      <li>30-Hour Battery with Wireless Case</li>
+      <li>Adaptive Noise Cancellation (SilentSync™)</li>
+      <li>Ultra-Light Titanium Build (IPX5)</li>
     </ul>
-  </section>
-
-  <!-- GALLERY BANNERS -->
-  <div class="banner-block">
-    <img src="banner1.jpg" alt="Banner 1" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="amazon-btn">Buy on Amazon</a>
-    <a href="https://wa.me/918090667890" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-btn">Buy Now</a>
   </div>
 
-  <div class="banner-block">
-    <img src="banner2.jpg" alt="Banner 2" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="amazon-btn">Buy on Amazon</a>
-    <a href="https://wa.me/918090667890" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-btn">Buy Now</a>
-  </div>
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/918090667890" target="_blank" class="floating-btn whatsapp">
+    <img src="https://cdn-icons-png.flaticon.com/512/733/733585.png" alt="WhatsApp" width="52" height="52" />
+  </a>
 
-  <div class="banner-block">
-    <img src="banner3.jpg" alt="Banner 3" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="amazon-btn">Buy on Amazon</a>
-    <a href="https://wa.me/918090667890" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-btn">Buy Now</a>
-  </div>
-
-  <div class="banner-block">
-    <img src="banner4.jpg" alt="Banner 4" />
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="amazon-btn">Buy on Amazon</a>
-    <a href="https://wa.me/918090667890" target="_blank" class="whatsapp-btn">Chat on WhatsApp</a>
-    <a href="https://amzn.in/d/iANYkoH" target="_blank" class="buy-btn">Buy Now</a>
-  </div>
-
-  <!-- LAUNCH OFFER SECTION -->
-  <section class="price-section">
-    <h2>🎉 Special Launch Offer</h2>
-    <p><strong>Only ₹1,499</strong> for a limited time!</p>
-  </section>
-
-  <footer>
-    © 2025 Audia+. All rights reserved.
-  </footer>
+  <!-- Floating Amazon Icon -->
+  <a href="https://amzn.in/d/iANYkoH" target="_blank" class="floating-btn amazon">
+    <img src="https://cdn-icons-png.flaticon.com/512/6124/6124993.png" alt="Amazon" width="52" height="52" />
+  </a>
 
 </body>
 </html>
