@@ -1,98 +1,185 @@
+/* Base styles */
 body {
   margin: 0;
-  font-family: Arial, sans-serif;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #000;
+  color: #fff;
   overflow-x: hidden;
 }
-.logo {
-  max-width: 160px;
-  padding: 10px;
+
+/* Hero Section */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url('images/hero-image.png') center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
 }
+
+.hero h1 {
+  font-size: 3rem;
+  color: #FFD700;
+  text-shadow: 0 0 10px #000;
+}
+
+/* Carousel Section */
 .carousel {
   position: relative;
+  width: 100%;
+  max-width: 100vw;
+  margin: 0 auto;
   overflow: hidden;
+  background: #111;
 }
-.slides {
-  display: flex;
-  width: 400%;
-  animation: slide 16s infinite;
-}
-.slide {
-  width: 100vw;
+
+.carousel-slide {
+  display: none;
+  width: 100%;
   height: auto;
 }
-.indicators {
+
+.carousel-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Carousel indicators */
+.carousel-indicators {
   position: absolute;
   bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-}
-.dot {
-  height: 12px;
-  width: 12px;
-  margin: 0 3px;
-  background-color: #bbb;
-  border-radius: 50%;
-  display: inline-block;
-}
-@keyframes slide {
-  0% {transform: translateX(0);}
-  25% {transform: translateX(-100vw);}
-  50% {transform: translateX(-200vw);}
-  75% {transform: translateX(-300vw);}
-  100% {transform: translateX(0);}
-}
-.info-strip {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  background: #f4f4f4;
+  gap: 10px;
 }
-.info-strip img {
-  height: 30px;
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #888;
+  cursor: pointer;
+  transition: background 0.3s;
 }
-.sale, .why-choose, .tech-section {
-  padding: 20px;
+
+.indicator.active {
+  background-color: #FFD700;
+}
+
+/* Sale Banner Section */
+.sale-banner {
+  width: 100%;
+  max-width: 100vw;
+  margin: 0;
+}
+
+.sale-banner img {
+  width: 100%;
+  display: block;
+}
+
+/* Technology Banners */
+.tech-section {
+  padding: 40px 20px;
+  background-color: #111;
   text-align: center;
 }
-.full-width-banner {
-  width: 100%;
-  max-width: 100%;
+
+.tech-section h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #FFD700;
 }
-.why-choose ul {
+
+.tech-banners img {
+  width: 90%;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+}
+
+/* Why Choose Audia Section */
+.why-audia {
+  background: #000;
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.why-audia h2 {
+  color: #FFD700;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+
+.why-audia ul {
   list-style: none;
   padding: 0;
+  color: #ccc;
 }
-.why-choose li {
+
+.why-audia li {
   margin: 10px 0;
-  font-size: 18px;
+  font-size: 1.1rem;
 }
-.tech-banner {
-  width: 100%;
-  margin: 15px 0;
-}
-.floating-buttons {
+
+/* Floating Icons */
+.floating-icons {
   position: fixed;
-  bottom: 15px;
-  right: 15px;
+  bottom: 20px;
+  right: 20px;
+  z-index: 99;
   display: flex;
   flex-direction: column;
   gap: 10px;
-  z-index: 1000;
 }
-.floating-buttons img {
-  width: 48px;
-  height: 48px;
+
+.floating-icons a img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #fff;
+  transition: transform 0.3s ease;
 }
+
+.floating-icons a img:hover {
+  transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+  background: #111;
+  padding: 20px;
+  text-align: center;
+  color: #888;
+  font-size: 0.9rem;
+}
+
+/* Responsive Design */
 @media (max-width: 768px) {
-  .logo {
-    max-width: 120px;
+  .hero h1 {
+    font-size: 2rem;
+    padding: 0 10px;
   }
-  .dot {
+
+  .tech-section h2,
+  .why-audia h2 {
+    font-size: 1.5rem;
+  }
+
+  .why-audia li {
+    font-size: 1rem;
+  }
+
+  .carousel-indicators {
+    gap: 8px;
+  }
+
+  .indicator {
     width: 10px;
     height: 10px;
-  }
-  .why-choose li {
-    font-size: 16px;
   }
 }
