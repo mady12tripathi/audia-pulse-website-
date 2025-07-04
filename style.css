@@ -1,142 +1,98 @@
 body {
   margin: 0;
-  font-family: 'Segoe UI', sans-serif;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
 }
-
-.header {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.logo {
+  max-width: 160px;
   padding: 10px;
-  background-color: #ffffff;
 }
-
-.brand-logo {
-  height: 45px;
-}
-
-.banner-slider {
+.carousel {
   position: relative;
   overflow: hidden;
-  max-height: 85vh;
 }
-
+.slides {
+  display: flex;
+  width: 400%;
+  animation: slide 16s infinite;
+}
 .slide {
-  display: none;
+  width: 100vw;
+  height: auto;
 }
-
-.slide.active {
-  display: block;
-  animation: fadeIn 1s ease-in-out;
-}
-
-@keyframes fadeIn {
-  from {opacity: 0;}
-  to {opacity: 1;}
-}
-
 .indicators {
   position: absolute;
-  bottom: 12px;
+  bottom: 10px;
   left: 50%;
   transform: translateX(-50%);
-  display: flex;
-  gap: 8px;
 }
-
-.indicators span {
-  width: 10px;
-  height: 10px;
-  background: white;
+.dot {
+  height: 12px;
+  width: 12px;
+  margin: 0 3px;
+  background-color: #bbb;
   border-radius: 50%;
-  opacity: 0.5;
+  display: inline-block;
 }
-
-.indicators span.active {
-  background: #FFD700;
-  opacity: 1;
+@keyframes slide {
+  0% {transform: translateX(0);}
+  25% {transform: translateX(-100vw);}
+  50% {transform: translateX(-200vw);}
+  75% {transform: translateX(-300vw);}
+  100% {transform: translateX(0);}
 }
-
 .info-strip {
   display: flex;
   justify-content: center;
   gap: 20px;
   padding: 10px;
-  background-color: #111;
-  color: white;
-  flex-wrap: wrap;
+  background: #f4f4f4;
 }
-
-.icon-link {
-  color: white;
-  text-decoration: none;
-  font-size: 14px;
+.info-strip img {
+  height: 30px;
 }
-
-.sale-section {
+.sale, .why-choose, .tech-section {
   padding: 20px;
   text-align: center;
 }
-
-.sale-section h2 {
-  font-size: 22px;
-}
-
-.sale-banner {
+.full-width-banner {
   width: 100%;
-  max-width: 800px;
-  margin-top: 10px;
-  border-radius: 10px;
+  max-width: 100%;
 }
-
-.why-audia {
-  background: #f5f5f5;
-  padding: 20px;
-  text-align: center;
-}
-
-.why-audia h2 {
-  font-size: 24px;
-}
-
-.why-audia ul {
+.why-choose ul {
   list-style: none;
   padding: 0;
-  margin: 10px auto;
-  max-width: 500px;
 }
-
-.why-audia li {
-  margin-bottom: 10px;
-  font-size: 16px;
-}
-
-.tech-section {
-  padding: 20px;
-  background: #ffffff;
-  text-align: center;
-}
-
-.tech-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.tech-banner img {
-  width: 100%;
-  max-width: 800px;
+.why-choose li {
   margin: 10px 0;
-  border-radius: 10px;
+  font-size: 18px;
 }
-
-.whatsapp-float {
+.tech-banner {
+  width: 100%;
+  margin: 15px 0;
+}
+.floating-buttons {
   position: fixed;
   bottom: 15px;
   right: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
   z-index: 1000;
 }
-
-.whatsapp-float img {
-  height: 45px;
-  width: 45px;
+.floating-buttons img {
+  width: 48px;
+  height: 48px;
+}
+@media (max-width: 768px) {
+  .logo {
+    max-width: 120px;
+  }
+  .dot {
+    width: 10px;
+    height: 10px;
+  }
+  .why-choose li {
+    font-size: 16px;
+  }
 }
