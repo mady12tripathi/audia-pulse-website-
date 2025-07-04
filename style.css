@@ -1,0 +1,73 @@
+
+body {
+  margin: 0;
+  font-family: sans-serif;
+}
+
+.logo-strip {
+  background: #000;
+  text-align: center;
+  padding: 10px;
+}
+.logo {
+  height: 45px;
+}
+
+.carousel {
+  position: relative;
+  overflow: hidden;
+  max-height: 80vh;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.slide {
+  min-width: 100%;
+  height: auto;
+}
+.indicators {
+  position: absolute;
+  bottom: 10px;
+  width: 100%;
+  text-align: center;
+}
+.dot {
+  height: 10px;
+  width: 10px;
+  margin: 0 3px;
+  background-color: #bbb;
+  border-radius: 50%;
+  display: inline-block;
+  cursor: pointer;
+}
+.dot.active {
+  background-color: #717171;
+}
+
+.sale-banner, .tech-section {
+  text-align: center;
+}
+.sale-banner img,
+.tech-banner {
+  width: 100%;
+  max-width: 600px;
+  margin: 10px auto;
+}
+
+.whatsapp-float, .amazon-float {
+  position: fixed;
+  width: 50px;
+  bottom: 100px;
+  z-index: 100;
+}
+.whatsapp-float {
+  left: 10px;
+}
+.amazon-float {
+  right: 10px;
+}
+.whatsapp-float img,
+.amazon-float img {
+  width: 50px;
+}
