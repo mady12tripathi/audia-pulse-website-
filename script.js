@@ -1,26 +1,43 @@
-const slides = document.querySelector('.slides');
-const dots = document.querySelectorAll('.dot');
-let current = 0;
-const total = dots.length;
+let currentIndex = 0;
+const slides = document.querySelectorAll('.slide');
+const indicators = document.querySelectorAll('.indicator');
 
-function goToSlide(i) {
-  slides.style.transform = `translateX(-${i * 100}%)`;
-  dots.forEach(dot => dot.classList.remove('active'));
-  dots[i].classList.add('active');
-  current = i;
+function showSlide(index) {
+  if (index >= slides.length) currentIndex = 0;
+  else if (index < 0) currentIndex = slides.length - 1;
+  else currentIndex = index;
+
+  const offset = -currentIndex * 100;
+  document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+
+  indicators.forEach((dot, i) => {
+    dot.classList.toggle('active', i === currentIndex);
+  });
 }
 
 function nextSlide() {
-  goToSlide((current + 1) % total);
+  showSlide(currentIndex + 1);
 }
 
-let interval = setInterval(nextSlide, 4000);
+setInterval(nextSlide, 5000); // Auto-scroll every 5 sec
 
-// Swipe support
+// Manual swipe (mobile touch)
 let startX = 0;
-slides.addEventListener('touchstart', e => startX = e.touches[0].clientX);
-slides.addEventListener('touchend', e => {
+const slider = document.querySelector('.slider');
+
+slider.addEventListener('touchstart', (e) => {
+  startX = e.touches[0].clientX;
+});
+
+slider.addEventListener('touchend', (e) => {
   const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) nextSlide();
-  else if (endX - startX > 50) goToSlide((current - 1 + total) % total);
+  const diff = startX - endX;
+
+  if (diff > 50) nextSlide();
+  else if (diff < -50) showSlide(currentIndex - 1);
+});
+
+// Clickable indicators
+indicators.forEach((dot, i) => {
+  dot.addEventListener('click', () => showSlide(i));
 });
