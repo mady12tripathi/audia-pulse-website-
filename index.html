@@ -1,41 +1,71 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ Pulse 1.0</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audia+ | Sound That Adapts to You</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" type="image/png" href="assets/favicon.png">
-</head><body>
-  <!-- Hero Slider -->
-  <header class="header">
-    <img src="assets/audiaplus-logo-black.png" alt="Audia+ Logo" class="brand-logo" />
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo"/>
   </header>
-  <div class="banner-slider">
-    <div class="slide active"><img src="assets/banner1.jpg" alt="Banner 1"></div>
-    <div class="slide"><img src="assets/banner2.jpg" alt="Banner 2"></div>
-    <div class="slide"><img src="assets/banner3.jpg" alt="Banner 3"></div>
-    <div class="indicators"></div>
-  </div>  <!-- Info Strip -->  <section class="info-strip">
-    <a href="#" class="icon-link">📦 Free Shipping</a>
-    <a href="#" class="icon-link">🛡️ 2-Year Warranty</a>
-    <a href="#" class="icon-link">📞 24/7 Support</a>
-  </section>  <!-- Sale Section -->  <section class="sale-section">
-    <h2>🔥 Sale Is Live</h2>
-    <img src="assets/sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
-  </section>  <!-- Why Choose Audia+ -->  <section class="why-audia">
+
+  <!-- Carousel Section -->
+  <section class="carousel">
+    <div class="slides">
+      <img src="images/hero-image.png" class="slide" />
+      <img src="images/banner2.jpg" class="slide" />
+      <img src="images/banner3.jpg" class="slide" />
+      <img src="images/banner4.jpg" class="slide" />
+    </div>
+    <div class="indicators">
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
+  </section>
+
+  <!-- Info Strip -->
+  <section class="info-strip">
+    <a href="#"><img src="images/amazon-icon.png" alt="Amazon"/></a>
+    <a href="#"><img src="images/whatsapp-icon.png" alt="WhatsApp"/></a>
+  </section>
+
+  <!-- Sale is Live -->
+  <section class="sale">
+    <h2>Sale is Live</h2>
+    <img src="images/sale-banner.jpg" alt="Sale Banner" class="full-width-banner"/>
+  </section>
+
+  <!-- Why Choose Audia+ -->
+  <section class="why-choose">
     <h2>Why Choose Audia+</h2>
     <ul>
-      <li>🎧 Personalized Sound with AI</li>
-      <li>🌎 Adaptive Noise Cancellation</li>
-      <li>🔋 30-Hour Playtime</li>
-      <li>💧 Sweat & Water Resistant (IPX5)</li>
-      <li>🏆 Featured in TechRadar’s Top 10 Innovations</li>
+      <li>✅ Personalized AI-driven sound</li>
+      <li>✅ 30-hour battery life with fast charge</li>
+      <li>✅ IPX5 waterproof – Ready for workouts</li>
+      <li>✅ 360° spatial audio + Adaptive Noise Cancellation</li>
     </ul>
-  </section>  <!-- Audia+ Technology Section -->  <section class="tech-section">
+  </section>
+
+  <!-- Audia+ Technology Section -->
+  <section class="tech-section">
     <h2>Audia+ Technology</h2>
-    <div class="tech-banner"><img src="assets/tech-omniwave.jpg" alt="OmniWave™ AdaptIQ"></div>
-    <div class="tech-banner"><img src="assets/tech-sonicsphere.jpg" alt="SonicSphere™"></div>
-    <div class="tech-banner"><img src="assets/tech-acousticdna.jpg" alt="AcousticDNA™"></div>
-    <div class="tech-banner"><img src="assets/tech-silentsync.jpg" alt="SilentSync™"></div>
-  </section>  <!-- WhatsApp Floating Icon -->  <a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
-    <img src="assets/whatsapp-icon.png" alt="WhatsApp">
-  </a>  <script src="script.js"></script></body></html>
+    <img src="images/tech-omniwave.jpg" class="tech-banner" alt="OmniWave™ AdaptIQ"/>
+    <img src="images/tech-sonicsphere.jpg" class="tech-banner" alt="SonicSphere™ 360° Sound"/>
+    <img src="images/tech-acousticdna.jpg" class="tech-banner" alt="AcousticDNA™ Mapping"/>
+    <img src="images/tech-silentsync.jpg" class="tech-banner" alt="SilentSync™ Noise Control"/>
+  </section>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="#"><img src="images/amazon-icon.png" alt="Amazon"/></a>
+    <a href="#"><img src="images/whatsapp-icon.png" alt="WhatsApp"/></a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
