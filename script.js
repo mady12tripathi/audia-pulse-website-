@@ -1,22 +1,54 @@
-const slides = document.querySelector('.slides'); const dots = document.querySelectorAll('.dot'); let index = 0; let intervalId; let startX = 0; let endX = 0;
+let currentSlide = 0;
+const slides = document.querySelectorAll(".carousel-slide");
+const indicators = document.querySelectorAll(".indicator");
 
-function showSlide(i) { index = i; slides.style.transform = translateX(-${i * 100}vw); updateDots(); }
+function showSlide(index) {
+  slides.forEach((slide, i) => {
+    slide.style.display = i === index ? "block" : "none";
+    indicators[i].classList.toggle("active", i === index);
+  });
+}
 
-function updateDots() { dots.forEach((dot, i) => { dot.style.backgroundColor = i === index ? '#333' : '#bbb'; }); }
+function nextSlide() {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+}
 
-function startAutoSlide() { intervalId = setInterval(() => { index = (index + 1) % dots.length; showSlide(index); }, 4000); }
+function prevSlide() {
+  currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+  showSlide(currentSlide);
+}
 
-function stopAutoSlide() { clearInterval(intervalId); }
+// Swipe support for mobile
+let startX = 0;
+document.querySelector(".carousel").addEventListener("touchstart", e => {
+  startX = e.touches[0].clientX;
+});
 
-// Auto Slide startAutoSlide();
+document.querySelector(".carousel").addEventListener("touchend", e => {
+  const endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) nextSlide();       // swipe left
+  else if (endX - startX > 50) prevSlide();  // swipe right
+});
 
-// Pause on hover const carousel = document.querySelector('.carousel'); carousel.addEventListener('mouseenter', stopAutoSlide); carousel.addEventListener('mouseleave', startAutoSlide);
+// Auto scroll
+let interval = setInterval(nextSlide, 4000);
 
-// Dots clickable dots.forEach((dot, i) => { dot.addEventListener('click', () => showSlide(i)); });
+// Pause on hover
+document.querySelector(".carousel").addEventListener("mouseenter", () => {
+  clearInterval(interval);
+});
+document.querySelector(".carousel").addEventListener("mouseleave", () => {
+  interval = setInterval(nextSlide, 4000);
+});
 
-// Swipe support slides.addEventListener('touchstart', (e) => { startX = e.touches[0].clientX; });
+// Indicator click
+indicators.forEach((dot, index) => {
+  dot.addEventListener("click", () => {
+    currentSlide = index;
+    showSlide(currentSlide);
+  });
+});
 
-slides.addEventListener('touchend', (e) => { endX = e.changedTouches[0].clientX; handleSwipe(); });
-
-function handleSwipe() { const threshold = 50; // Minimum swipe distance if (endX - startX > threshold) { // Swipe right index = index > 0 ? index - 1 : dots.length - 1; showSlide(index); } else if (startX - endX > threshold) { // Swipe left index = (index + 1) % dots.length; showSlide(index); } }
-
+// Show initial
+showSlide(currentSlide);
