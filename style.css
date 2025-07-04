@@ -1,70 +1,14 @@
-body {
-  background-color: #ffffff;
-  color: #111111;
-  font-family: 'Segoe UI', sans-serif;
-  margin: 0;
-  padding: 0;
-  text-align: center;
-}
-
 header {
-  padding: 20px;
-}
-
-.logo {
-  height: 80px;
-  margin-bottom: 10px;
-}
-
-h1 {
-  font-size: 2em;
-  margin: 10px 0;
-}
-
-p {
-  font-size: 1.1em;
-  margin-bottom: 15px;
-}
-
-a.btn {
-  display: inline-block;
-  background-color: #007bff;
-  color: white;
+  background-color: white; /* Fix for visibility */
   padding: 10px 20px;
-  text-decoration: none;
-  border-radius: 5px;
-  font-weight: bold;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-.features {
-  background-color: #f9f9f9;
-  padding: 30px 20px;
-}
-
-.features ul {
-  list-style: none;
-  padding: 0;
-}
-
-.features li {
-  margin: 10px 0;
-  font-size: 1em;
-}
-
-.product {
-  padding: 30px 20px;
-}
-
-.product-img {
-  height: 250px;
-  margin-top: 10px;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-}
-
-footer {
-  background-color: #f0f0f0;
-  padding: 20px;
-  font-size: 0.9em;
-  color: #555;
+header img {
+  height: 50px; /* Make logo bigger */
 }
