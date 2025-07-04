@@ -1,34 +1,26 @@
 const slides = document.querySelector('.slides');
 const dots = document.querySelectorAll('.dot');
-let index = 0;
+let current = 0;
+const total = dots.length;
 
-function showSlide(i) {
+function goToSlide(i) {
   slides.style.transform = `translateX(-${i * 100}%)`;
   dots.forEach(dot => dot.classList.remove('active'));
   dots[i].classList.add('active');
+  current = i;
 }
 
 function nextSlide() {
-  index = (index + 1) % dots.length;
-  showSlide(index);
+  goToSlide((current + 1) % total);
 }
 
-// Auto-slide every 5 seconds
-let autoSlide = setInterval(nextSlide, 5000);
+let interval = setInterval(nextSlide, 4000);
 
-// Manual swipe support
+// Swipe support
 let startX = 0;
-slides.addEventListener('touchstart', (e) => {
-  startX = e.touches[0].clientX;
-});
-slides.addEventListener('touchend', (e) => {
+slides.addEventListener('touchstart', e => startX = e.touches[0].clientX);
+slides.addEventListener('touchend', e => {
   const endX = e.changedTouches[0].clientX;
-  if (startX - endX > 50) {
-    // Swipe left
-    index = (index + 1) % dots.length;
-  } else if (endX - startX > 50) {
-    // Swipe right
-    index = (index - 1 + dots.length) % dots.length;
-  }
-  showSlide(index);
+  if (startX - endX > 50) nextSlide();
+  else if (endX - startX > 50) goToSlide((current - 1 + total) % total);
 });
