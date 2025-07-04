@@ -1,43 +1,41 @@
-let currentIndex = 0;
-const slides = document.querySelectorAll('.slide');
-const indicators = document.querySelectorAll('.indicator');
+let slides = document.querySelectorAll(".slide");
+let indicatorsContainer = document.querySelector(".indicators");
 
-function showSlide(index) {
-  if (index >= slides.length) currentIndex = 0;
-  else if (index < 0) currentIndex = slides.length - 1;
-  else currentIndex = index;
+// Create indicators dynamically
+slides.forEach((_, index) => {
+  const dot = document.createElement("span");
+  if (index === 0) dot.classList.add("active");
+  indicatorsContainer.appendChild(dot);
+});
 
-  const offset = -currentIndex * 100;
-  document.querySelector('.slider').style.transform = `translateX(${offset}%)`;
+let indicators = document.querySelectorAll(".indicators span");
 
-  indicators.forEach((dot, i) => {
-    dot.classList.toggle('active', i === currentIndex);
-  });
-}
+let currentSlide = 0;
+const showSlide = (index) => {
+  slides.forEach(slide => slide.classList.remove("active"));
+  indicators.forEach(dot => dot.classList.remove("active"));
+  slides[index].classList.add("active");
+  indicators[index].classList.add("active");
+};
 
-function nextSlide() {
-  showSlide(currentIndex + 1);
-}
+const nextSlide = () => {
+  currentSlide = (currentSlide + 1) % slides.length;
+  showSlide(currentSlide);
+};
 
-setInterval(nextSlide, 5000); // Auto-scroll every 5 sec
+setInterval(nextSlide, 5000); // Auto scroll every 5 seconds
 
-// Manual swipe (mobile touch)
+// Swipe functionality
 let startX = 0;
-const slider = document.querySelector('.slider');
-
-slider.addEventListener('touchstart', (e) => {
+document.querySelector(".banner-slider").addEventListener("touchstart", (e) => {
   startX = e.touches[0].clientX;
 });
 
-slider.addEventListener('touchend', (e) => {
-  const endX = e.changedTouches[0].clientX;
-  const diff = startX - endX;
-
-  if (diff > 50) nextSlide();
-  else if (diff < -50) showSlide(currentIndex - 1);
-});
-
-// Clickable indicators
-indicators.forEach((dot, i) => {
-  dot.addEventListener('click', () => showSlide(i));
+document.querySelector(".banner-slider").addEventListener("touchend", (e) => {
+  let endX = e.changedTouches[0].clientX;
+  if (startX - endX > 50) nextSlide();
+  if (endX - startX > 50) {
+    currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+    showSlide(currentSlide);
+  }
 });
