@@ -1,43 +1,56 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- Header Logo -->
-  <header>
-    <div class="header-container">
-      <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
+<!-- ✅ UPDATED index.html --><!DOCTYPE html><html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Audia+ Pulse 1.0</title>
+    <link rel="stylesheet" href="style.css" />
+    <link rel="icon" href="images/logo.png" type="image/png" />
+  </head>
+  <body>
+    <header class="header">
+      <div class="logo-strip">
+        <img src="images/audia-logo.png" alt="Audia+ Logo" class="brand-logo" />
+      </div>
+    </header><section class="carousel">
+  <div class="slides">
+    <div class="slide"><img src="images/banner2.jpg" alt="Banner 1" />
+      <div class="floating-buttons">
+        <button class="order-btn">Order Now – ₹1499</button>
+        <div class="save-tag">Save ₹3500 Today!</div>
+      </div>
     </div>
-  </header>
-
-  <!-- Scrolling Banner Section -->
-  <section class="banner-slider">
-    <div class="slides">
-      <img src="images/banner2.jpg" alt="Banner 1" class="slide" />
-      <img src="images/banner3.jpg" alt="Banner 2" class="slide" />
-      <img src="images/banner4.jpg" alt="Banner 3" class="slide" />
+    <div class="slide"><img src="images/banner3.jpg" alt="Banner 2" />
+      <div class="floating-buttons">
+        <button class="order-btn">Order Now – ₹1499</button>
+        <div class="save-tag">Save ₹3500 Today!</div>
+      </div>
     </div>
-  </section>
-
-  <!-- Hero Section -->
-  <section class="hero">
-    <img src="images/hero-image.jpg" alt="Hero" class="hero-img" />
-  </section>
-
-  <!-- Floating Order Button -->
-  <div class="floating-buttons">
-    <div class="price-cut">₹<span class="cut">4999</span></div>
-    <button class="order-btn" onclick="window.open('https://amzn.in/d/iANYkoH','_blank')">
-      Order Now – ₹1499
-    </button>
-    <div class="save-tag">Save ₹3500 Today!</div>
+    <div class="slide"><img src="images/banner4.jpg" alt="Banner 3" />
+      <div class="floating-buttons">
+        <button class="order-btn">Order Now – ₹1499</button>
+        <div class="save-tag">Save ₹3500 Today!</div>
+      </div>
+    </div>
+    <div class="slide"><img src="images/hero-image.png" alt="Banner 4" />
+      <div class="floating-buttons">
+        <button class="order-btn">Order Now – ₹1499</button>
+        <div class="save-tag">Save ₹3500 Today!</div>
+      </div>
+    </div>
   </div>
+  <div class="indicators">
+    <span class="dot active"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+    <span class="dot"></span>
+  </div>
+</section>
 
-  <script src="script.js"></script>
-</body>
+<a href="https://wa.me/919999999999" class="whatsapp-float" target="_blank">
+  <img src="images/whatapp-icon.png" alt="WhatsApp Icon" />
+</a>
+
+<script src="script.js"></script>
+
+  </body>
 </html>
