@@ -1,5 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,52 +6,46 @@
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
-  <!-- Header with visible logo -->
-  <header>
+  <!-- Logo Header -->
+  <header class="header">
     <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
-  </header>
-
-  <!-- Banner slider with indicators -->
-  <section class="carousel">
-    <div class="slides">
-      <div class="slide">
-        <img src="images/banner2.jpg" alt="Banner 1">
-        <div class="floating-cta">
-          <p class="price-old">₹4999</p>
-          <a href="https://amzn.in/d/iANYkoH" class="btn-primary">Order Now – ₹1499</a>
-          <p class="btn-secondary">Save ₹3500 Today!</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/banner3.jpg" alt="Banner 2">
-        <div class="floating-cta">
-          <p class="price-old">₹4999</p>
-          <a href="https://amzn.in/d/iANYkoH" class="btn-primary">Order Now – ₹1499</a>
-          <p class="btn-secondary">Save ₹3500 Today!</p>
-        </div>
-      </div>
-      <div class="slide">
-        <img src="images/banner4.jpg" alt="Banner 3">
-        <div class="floating-cta">
-          <p class="price-old">₹4999</p>
-          <a href="https://amzn.in/d/iANYkoH" class="btn-primary">Order Now – ₹1499</a>
-          <p class="btn-secondary">Save ₹3500 Today!</p>
-        </div>
-      </div>
+  </header>  <!-- Hero Slider -->  <section class="carousel-container">
+    <div class="carousel">
+      <img src="images/hero-image.png" class="slide" alt="Hero Banner" />
+      <img src="images/banner2.jpg" class="slide" alt="Banner 2" />
+      <img src="images/banner3.jpg" class="slide" alt="Banner 3" />
+      <img src="images/banner4.jpg" class="slide" alt="Banner 4" />
     </div>
     <div class="indicators">
       <span class="dot active"></span>
       <span class="dot"></span>
       <span class="dot"></span>
+      <span class="dot"></span>
     </div>
-  </section>
-
-  <!-- Sticky WhatsApp Icon -->
-  <a href="https://wa.me/918090667890" class="whatsapp-float" target="_blank">
-    <img src="images/whatapp-icon.png" alt="WhatsApp">
-  </a>
-
-  <script src="script.js"></script>
-</body>
+  </section>  <!-- Why Choose Audia+ -->  <section class="why-choose">
+    <h2>Why Choose Audia+</h2>
+    <ul>
+      <li>AI-Powered OmniWave™ AdaptIQ</li>
+      <li>Personalized Sound Calibration</li>
+      <li>SilentSync™ Noise Cancellation</li>
+      <li>IPX5 Water Resistance</li>
+      <li>30+ Hour Battery Life</li>
+    </ul>
+  </section>  <!-- Audia+ Technology Section -->  <section class="tech-section">
+    <h2>Audia+ Technology</h2>
+    <div class="tech-banners">
+      <img src="images/tech-omniwave.jpg" alt="OmniWave AdaptIQ" />
+      <img src="images/tech-sonicsphere.jpg" alt="SonicSphere 360°" />
+      <img src="images/tech-acousticdna.jpg" alt="AcousticDNA Mapping" />
+      <img src="images/tech-silentsync.jpg" alt="SilentSync ANC" />
+    </div>
+  </section>  <!-- Sale Is Live Section -->  <section class="sale-live">
+    <h2>Sale Is Live</h2>
+    <img src="images/product.jpg" alt="Audia+ Pulse 1.0" class="sale-banner" />
+    <a href="https://amzn.in/d/iANYkoH" class="buy-button">Buy Now</a>
+  </section>  <!-- Floating WhatsApp -->  <a href="https://wa.me/918090667890" class="whatsapp-float" target="_blank">
+    <img src="images/whatapp-icon.png" alt="WhatsApp" />
+  </a>  <!-- Floating Amazon -->  <a href="https://amzn.in/d/iANYkoH" class="amazon-float" target="_blank">
+    <img src="images/amazon-icon.png" alt="Amazon" />
+  </a>  <script src="script.js"></script></body>
 </html>
