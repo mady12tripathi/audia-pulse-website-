@@ -1,115 +1,97 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html><html lang="en">
+<head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="styles.css" />
   <style>
-    * {
+    body {
       margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+    }
+    header {
+      background: #000;
+      text-align: center;
+      padding: 10px;
+    }
+    header img {
+      height: 40px;
+    }
+    .slider {
+      position: relative;
+      overflow: hidden;
+      max-height: 450px;
+    }
+    .slides {
+      display: flex;
+      width: 400%;
+      animation: slide 20s infinite;
+    }
+    .slides img {
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+    }
+    @keyframes slide {
+      0% {margin-left: 0;}
+      20% {margin-left: 0;}
+      25% {margin-left: -100%;}
+      45% {margin-left: -100%;}
+      50% {margin-left: -200%;}
+      70% {margin-left: -200%;}
+      75% {margin-left: -300%;}
+      95% {margin-left: -300%;}
+      100% {margin-left: 0;}
+    }
+    .features {
+      padding: 20px;
+      text-align: center;
+    }
+    .features h2 {
+      margin-bottom: 10px;
+    }
+    .features ul {
+      list-style: none;
       padding: 0;
-      box-sizing: border-box;
-    }body {
-  font-family: Arial, sans-serif;
-}
-
-.header {
-  background-color: #000;
-  padding: 15px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.header img {
-  height: 60px;
-}
-
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.carousel-track {
-  display: flex;
-  width: 400%;
-  animation: scroll 20s linear infinite;
-}
-
-.carousel-track img {
-  width: 100%;
-  flex-shrink: 0;
-}
-
-@keyframes scroll {
-  0% {
-    transform: translateX(0);
-  }
-  25% {
-    transform: translateX(-100%);
-  }
-  50% {
-    transform: translateX(-200%);
-  }
-  75% {
-    transform: translateX(-300%);
-  }
-  100% {
-    transform: translateX(0);
-  }
-}
-
-.carousel-controls {
-  position: absolute;
-  top: 50%;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  transform: translateY(-50%);
-}
-
-.carousel-button {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: white;
-  border: none;
-  font-size: 2rem;
-  cursor: pointer;
-  padding: 0 15px;
-}
-
+    }
+    .features li {
+      margin: 10px 0;
+      font-size: 16px;
+    }
+    .floating-buttons {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      z-index: 100;
+    }
+    .floating-buttons a {
+      display: block;
+      margin: 10px 0;
+    }
+    .floating-buttons img {
+      width: 45px;
+      height: 45px;
+    }
   </style>
-</head><body>
-  <div class="header">
+</head>
+<body>
+  <!-- Header with logo -->
+  <header>
     <img src="images/audia-logo.png" alt="Audia+ Logo" />
-  </div>  <div class="carousel" id="carousel">
-    <div class="carousel-track" id="carouselTrack">
+  </header>  <!-- Image slider -->  <div class="slider">
+    <div class="slides">
       <img src="images/banner2.jpg" alt="Banner 1" />
       <img src="images/banner3.jpg" alt="Banner 2" />
       <img src="images/banner4.jpg" alt="Banner 3" />
-      <img src="images/hero-image.png" alt="Banner 4" />
+      <img src="images/hero-image.png" alt="Hero Image" />
     </div>
-    <div class="carousel-controls">
-      <button class="carousel-button" onclick="prevSlide()">‹</button>
-      <button class="carousel-button" onclick="nextSlide()">›</button>
-    </div>
-  </div>  <script>
-    let track = document.getElementById('carouselTrack');
-    let index = 0;
-
-    function updateSlide() {
-      track.style.transition = 'transform 0.5s ease-in-out';
-      track.style.transform = `translateX(-${index * 100}%)`;
-    }
-
-    function nextSlide() {
-      index = (index + 1) % 4;
-      updateSlide();
-    }
-
-    function prevSlide() {
-      index = (index - 1 + 4) % 4;
-      updateSlide();
-    }
-
-    setInterval(nextSlide, 6000);
-  </script></body></html>
+  </div>  <!-- Features Section -->  <div class="features">
+    <h2>Why Choose Audia+ Pulse 1.0?</h2>
+    <ul>
+      <li>✅ Personalized AI Sound Calibration</li>
+      <li>✅ 30-Hour Battery with Wireless Case</li>
+      <li>✅ Adaptive Noise Cancellation (SilentSync™)</li>
+      <li>✅ Ultra-Light Titanium Build (IPX5)</li>
+    </ul>
+  </div>  <!-- Floating WhatsApp & Amazon Buttons -->  <div class="floating-buttons">
+    <
