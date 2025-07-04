@@ -1,159 +1,142 @@
-/* Reset & Base Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
 body {
-  font-family: 'Poppins', sans-serif;
-  background: #fff;
-  color: #111;
-  overflow-x: hidden;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
 }
 
-/* HEADER */
-header {
+.header {
   display: flex;
+  justify-content: center;
   align-items: center;
-  justify-content: space-between;
-  padding: 12px 24px;
+  padding: 10px;
   background-color: #ffffff;
-  border-bottom: 1px solid #eee;
-}
-header img {
-  height: 28px;
 }
 
-/* HERO SLIDER */
-.slider-container {
+.brand-logo {
+  height: 45px;
+}
+
+.banner-slider {
   position: relative;
-  width: 100%;
   overflow: hidden;
+  max-height: 85vh;
 }
-.slider {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
+
 .slide {
-  min-width: 100%;
-  height: auto;
-  position: relative;
-}
-.slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
-}
-.indicators {
-  text-align: center;
-  margin: 10px 0;
-}
-.indicators span {
-  display: inline-block;
-  height: 10px;
-  width: 10px;
-  background-color: #bbb;
-  border-radius: 50%;
-  margin: 0 5px;
-  cursor: pointer;
-}
-.indicators span.active {
-  background-color: #333;
+  display: none;
 }
 
-/* FLOATING ICONS */
-.floating-icon {
-  position: fixed;
-  bottom: 20px;
-  z-index: 1000;
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
-}
-.floating-icon img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
-.floating-icon.whatsapp {
-  right: 20px;
-}
-.floating-icon.amazon {
-  right: 80px;
-}
-
-/* SALE IS LIVE SECTION */
-.sale-section {
-  text-align: center;
-  padding: 32px 16px;
-}
-.sale-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-.sale-banner {
-  width: 90%;
-  max-width: 400px;
-  border-radius: 12px;
-  overflow: hidden;
-  margin: 0 auto;
-}
-.sale-banner img {
-  width: 100%;
-  height: auto;
+.slide.active {
   display: block;
+  animation: fadeIn 1s ease-in-out;
 }
 
-/* WHY CHOOSE SECTION */
-.why-choose {
-  padding: 32px 16px;
+@keyframes fadeIn {
+  from {opacity: 0;}
+  to {opacity: 1;}
+}
+
+.indicators {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 8px;
+}
+
+.indicators span {
+  width: 10px;
+  height: 10px;
+  background: white;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+.indicators span.active {
+  background: #FFD700;
+  opacity: 1;
+}
+
+.info-strip {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+  background-color: #111;
+  color: white;
+  flex-wrap: wrap;
+}
+
+.icon-link {
+  color: white;
+  text-decoration: none;
+  font-size: 14px;
+}
+
+.sale-section {
+  padding: 20px;
   text-align: center;
-  background-color: #f9f9f9;
 }
-.why-choose h2 {
+
+.sale-section h2 {
+  font-size: 22px;
+}
+
+.sale-banner {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.why-audia {
+  background: #f5f5f5;
+  padding: 20px;
+  text-align: center;
+}
+
+.why-audia h2 {
   font-size: 24px;
-  margin-bottom: 20px;
 }
-.why-choose ul {
+
+.why-audia ul {
   list-style: none;
   padding: 0;
+  margin: 10px auto;
+  max-width: 500px;
 }
-.why-choose li {
-  margin: 12px 0;
+
+.why-audia li {
+  margin-bottom: 10px;
   font-size: 16px;
 }
 
-/* TECH BANNERS */
-.tech-banners {
-  padding: 32px 16px;
-  background-color: #fff;
-}
-.tech-banners h2 {
+.tech-section {
+  padding: 20px;
+  background: #ffffff;
   text-align: center;
-  font-size: 24px;
-  margin-bottom: 24px;
-}
-.tech-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-}
-.tech-grid img {
-  width: 100%;
-  border-radius: 12px;
-  object-fit: cover;
 }
 
-/* Responsive */
-@media (min-width: 768px) {
-  .tech-grid {
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-  }
-  .tech-grid img {
-    width: 45%;
-  }
+.tech-section h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.tech-banner img {
+  width: 100%;
+  max-width: 800px;
+  margin: 10px 0;
+  border-radius: 10px;
+}
+
+.whatsapp-float {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1000;
+}
+
+.whatsapp-float img {
+  height: 45px;
+  width: 45px;
 }
