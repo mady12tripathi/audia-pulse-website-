@@ -3,115 +3,101 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
-      background: #f8f8f8;
-    }.logo-strip {
-  background: #fff;
-  padding: 10px 0;
-  text-align: center;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-
-.logo-strip img {
-  height: 40px;
-}
-
-.carousel {
-  position: relative;
-  overflow: hidden;
-  max-height: 100vh;
-}
-
-.carousel img {
-  width: 100%;
-  display: none;
-}
-
-.carousel img.active {
-  display: block;
-}
-
-.buy-btn {
-  position: absolute;
-  top: 80%;
-  left: 5%;
-  transform: translateY(-50%);
-  background-color: #ff9900;
-  color: white;
-  padding: 10px 20px;
-  font-size: 16px;
-  font-weight: bold;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  z-index: 10;
-}
-
-.why-section {
-  padding: 40px 20px;
-  text-align: center;
-  background: #fff;
-}
-
-.why-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.why-section ul {
-  list-style: none;
-  padding: 0;
-  max-width: 500px;
-  margin: 0 auto;
-}
-
-.why-section li {
-  margin: 15px 0;
-  text-align: left;
-  font-size: 18px;
-}
-
-.why-section li::before {
-  content: "✅ ";
-}
-
-.floating-icons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  z-index: 1000;
-}
-
-.floating-icons a img {
-  width: 40px;
-  height: 40px;
-}
-
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .logo-strip {
+      width: 100%;
+      background-color: white;
+      padding: 10px 0;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      position: sticky;
+      top: 0;
+      z-index: 10;
+    }
+    .logo-strip img {
+      height: 60px;
+    }
+    .banner {
+      position: relative;
+      width: 100%;
+    }
+    .banner img {
+      width: 100%;
+      height: auto;
+    }
+    .floating-buy {
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      background-color: orange;
+      color: white;
+      padding: 10px 20px;
+      font-size: 16px;
+      border: none;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .features {
+      padding: 30px 15px;
+      text-align: center;
+      background-color: #f9f9f9;
+    }
+    .features h2 {
+      margin-bottom: 20px;
+    }
+    .features ul {
+      list-style: none;
+      padding: 0;
+    }
+    .features li {
+      font-size: 18px;
+      margin: 10px 0;
+    }
+    .features li::before {
+      content: '✅';
+      margin-right: 10px;
+      color: green;
+    }
+    .floating-icons {
+      position: fixed;
+      right: 10px;
+      bottom: 30px;
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      z-index: 99;
+    }
+    .floating-icons img {
+      width: 42px;
+      height: 42px;
+    }
   </style>
 </head>
 <body>
   <!-- Logo Strip -->
   <div class="logo-strip">
-    <img src="images/logo.png" alt="Audia+ Logo" />
-  </div>  <!-- Image Carousel with CTAs -->  <div class="carousel">
-    <img src="images/banner2.jpg" class="active" alt="Banner 1">
-    <img src="images/banner3.jpg" alt="Banner 2">
-    <img src="images/banner4.jpg" alt="Banner 3">
-    <img src="images/hero-image.png" alt="Hero Banner">
-    <a href="https://amzn.in/d/iANYkoH" target="_blank">
-      <button class="buy-btn">Buy Now</button>
-    </a>
-  </div>  <!-- Why Choose Section -->  <div class="why-section">
+    <img src="images/audia-logo.png" alt="Audia+ Logo" />
+  </div>  <!-- Image Slider with Buy Now Button -->  <div class="banner">
+    <img src="images/banner2.jpg" alt="Audia+ Banner 1" />
+    <a class="floating-buy" href="https://amzn.in/d/iANYkoH" target="_blank">Buy Now</a>
+  </div>
+  <div class="banner">
+    <img src="images/banner3.jpg" alt="Audia+ Banner 2" />
+    <a class="floating-buy" href="https://amzn.in/d/iANYkoH" target="_blank">Buy Now</a>
+  </div>
+  <div class="banner">
+    <img src="images/banner4.jpg" alt="Audia+ Banner 3" />
+    <a class="floating-buy" href="https://amzn.in/d/iANYkoH" target="_blank">Buy Now</a>
+  </div>
+  <div class="banner">
+    <img src="images/hero-image.png" alt="Audia+ Hero Banner" />
+    <a class="floating-buy" href="https://amzn.in/d/iANYkoH" target="_blank">Buy Now</a>
+  </div>  <!-- Feature Section -->  <div class="features">
     <h2>Why Choose Audia+ Pulse 1.0?</h2>
     <ul>
       <li>Personalized AI Sound Calibration</li>
@@ -119,23 +105,13 @@
       <li>Adaptive Noise Cancellation (SilentSync™)</li>
       <li>Ultra-Light Titanium Build (IPX5)</li>
     </ul>
-  </div>  <!-- Floating Buttons -->  <div class="floating-icons">
+  </div>  <!-- Floating WhatsApp & Amazon Icons -->  <div class="floating-icons">
     <a href="https://amzn.in/d/iANYkoH" target="_blank">
       <img src="images/amazon-icon.png" alt="Amazon" />
     </a>
     <a href="https://wa.me/918090667890" target="_blank">
       <img src="images/whatapp-icon.png" alt="WhatsApp" />
     </a>
-  </div>  <script>
-    let current = 0;
-    const images = document.querySelectorAll(".carousel img");
-
-    function showNextImage() {
-      images[current].classList.remove("active");
-      current = (current + 1) % images.length;
-      images[current].classList.add("active");
-    }
-
-    setInterval(showNextImage, 4000);
-  </script></body>
+  </div>
+</body>
 </html>
