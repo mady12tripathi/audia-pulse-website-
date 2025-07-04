@@ -1,105 +1,203 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ Pulse 1.0</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: #fff;
-    }
-    header {
-      background: #000;
-      text-align: center;
-      padding: 10px;
-    }
-    header img {
-      height: 40px;
-    }
-    .slider {
-      position: relative;
-      overflow: hidden;
-      max-height: 450px;
-    }
-    .slides {
-      display: flex;
-      width: 400%;
-      animation: slide 20s infinite;
-    }
-    .slides img {
-      width: 100%;
-      height: auto;
-      object-fit: contain;
-    }
-    @keyframes slide {
-      0% {margin-left: 0;}
-      20% {margin-left: 0;}
-      25% {margin-left: -100%;}
-      45% {margin-left: -100%;}
-      50% {margin-left: -200%;}
-      70% {margin-left: -200%;}
-      75% {margin-left: -300%;}
-      95% {margin-left: -300%;}
-      100% {margin-left: 0;}
-    }
-    .features {
-      padding: 20px;
-      text-align: center;
-    }
-    .features h2 {
-      margin-bottom: 10px;
-    }
-    .features ul {
-      list-style: none;
-      padding: 0;
-    }
-    .features li {
-      margin: 10px 0;
-      font-size: 16px;
-    }
-    .floating-buttons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      z-index: 100;
-    }
-    .floating-buttons a {
-      display: block;
-      margin: 10px 0;
-    }
-    .floating-buttons img {
-      width: 45px;
-      height: 45px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Audia+ Pulse 1.0</title>
+    <style>
+        /* Basic reset */
+        body, h1, h2, h3, p, ul, li, a {
+            margin: 0;
+            padding: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f4f4f4;
+            padding: 0;
+            margin: 0;
+            overflow-x: hidden;
+        }
+
+        header {
+            background-color: #000;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 150px;
+        }
+
+        /* Banner styling */
+        .banner {
+            width: 100%;
+            height: 400px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .scrolling-banner {
+            display: flex;
+            animation: scroll 20s infinite linear;
+        }
+
+        @keyframes scroll {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+
+        .banner-controls {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+        }
+
+        .banner-controls button {
+            background-color: rgba(255, 255, 255, 0.5);
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .cta-button {
+            position: absolute;
+            bottom: 10%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff7a00;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-transform: uppercase;
+            border: none;
+            cursor: pointer;
+        }
+
+        .content {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .content h2 {
+            margin-bottom: 20px;
+            font-size: 2em;
+        }
+
+        .content ul {
+            list-style-type: none;
+            margin-bottom: 50px;
+        }
+
+        .content li {
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+
+        footer {
+            background-color: #222;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        footer a {
+            color: #ff7a00;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .floating-buttons {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .floating-buttons a {
+            margin-bottom: 10px;
+            background-color: #25D366;
+            color: white;
+            padding: 10px;
+            border-radius: 50%;
+            font-size: 25px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .floating-buttons a.amazon {
+            background-color: #ff9900;
+        }
+
+        .buy-now-float {
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #ff7a00;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            border: none;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
-  <!-- Header with logo -->
-  <header>
-    <img src="images/audia-logo.png" alt="Audia+ Logo" />
-  </header>  <!-- Image slider -->  <div class="slider">
-    <div class="slides">
-      <img src="images/banner2.jpg" alt="Banner 1" />
-      <img src="images/banner3.jpg" alt="Banner 2" />
-      <img src="images/banner4.jpg" alt="Banner 3" />
-      <img src="images/hero-image.png" alt="Hero Image" />
+    <header>
+        <img src="images/audia-logo.png" alt="Audia+" />
+    </header>
+
+    <div class="banner">
+        <div class="scrolling-banner">
+            <img src="images/banner2.jpg" alt="Banner 2" />
+            <img src="images/banner3.jpg" alt="Banner 3" />
+            <img src="images/banner4.jpg" alt="Banner 4" />
+            <img src="images/hero-image.png" alt="Hero Image" />
+        </div>
+        <button class="cta-button">Buy Now</button>
     </div>
-  </div>  <!-- Features Section -->  <div class="features">
-    <h2>Why Choose Audia+ Pulse 1.0?</h2>
-    <ul>
-      <li>✅ Personalized AI Sound Calibration</li>
-      <li>✅ 30-Hour Battery with Wireless Case</li>
-      <li>✅ Adaptive Noise Cancellation (SilentSync™)</li>
-      <li>✅ Ultra-Light Titanium Build (IPX5)</li>
-    </ul>
-  </div>  <!-- Floating WhatsApp & Amazon Buttons -->  <div class="floating-buttons">
-    <a href="https://amzn.in/d/iANYkoH" target="_blank">
-      <img src="images/amazon-icon.png" alt="Buy on Amazon">
-    </a>
-    <a href="https://wa.me/918090667890" target="_blank">
-      <img src="images/whatapp-icon.png" alt="Chat on WhatsApp">
-    </a>
-  </div>
+
+    <div class="content">
+        <h2>Why Choose Audia+ Pulse 1.0?</h2>
+        <ul>
+            <li>✅ Personalized AI Sound Calibration</li>
+            <li>✅ 30-Hour Battery with Wireless Case</li>
+            <li>✅ Adaptive Noise Cancellation (SilentSync™)</li>
+            <li>✅ Ultra-Light Titanium Build (IPX5)</li>
+        </ul>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Audia+. All rights reserved.</p>
+        <p>Visit us on <a href="https://www.amazon.in" target="_blank">Amazon</a> or contact us on <a href="https://wa.me/+91XXXXXXXXXX" target="_blank">WhatsApp</a>.</p>
+    </footer>
+
+    <div class="floating-buttons">
+        <a href="https://www.amazon.in/dp/B09DDH25MQ" class="amazon" target="_blank">A</a>
+        <a href="https://wa.me/+91XXXXXXXXXX" target="_blank">W</a>
+    </div>
 </body>
 </html>
