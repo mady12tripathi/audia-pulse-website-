@@ -1,136 +1,43 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audia+ Pulse 1.0</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-      background: #000;
-      color: #fff;
-    }
-    header {
-      background: #000;
-      padding: 10px 0;
-      text-align: center;
-    }
-    header img {
-      height: 50px;
-    }
-    .hero {
-      overflow: hidden;
-      position: relative;
-    }
-    .hero img {
-      width: 100%;
-      display: none;
-    }
-    .hero img.active {
-      display: block;
-    }
-    .floating-cta {
-      position: fixed;
-      bottom: 0;
-      width: 100%;
-      background: #000;
-      text-align: center;
-      padding: 10px 0;
-      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
-      z-index: 1000;
-    }
-    .price-wrap {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-    }
-    .mrp {
-      color: #aaa;
-      font-size: 14px;
-      text-decoration: line-through;
-    }
-    .offer-price {
-      background: #ffd600;
-      color: #000;
-      padding: 10px 30px;
-      font-weight: bold;
-      border-radius: 50px;
-      font-size: 18px;
-      box-shadow: 0 0 10px #ffd600;
-    }
-    .save-badge {
-      background: red;
-      color: #fff;
-      padding: 5px 15px;
-      border-radius: 20px;
-      font-size: 14px;
-    }
-    .floating-buttons {
-      position: fixed;
-      bottom: 80px;
-      right: 10px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-    .floating-buttons a {
-      display: inline-block;
-      padding: 12px;
-      background-color: #25D366;
-      border-radius: 50%;
-      color: #fff;
-      text-decoration: none;
-      font-size: 20px;
-    }
-    .floating-buttons a.amazon {
-      background-color: #ff9900;
-    }
-  </style>
 </head>
 <body>
-  <header>
-    <img src="images/logo.jpg" alt="Audia+ Logo">
-  </header>  <div class="hero">
-    <img src="images/banner1.jpg" class="active" />
-    <img src="images/banner2.jpg" />
-    <img src="images/banner3.jpg" />
-    <img src="images/banner4.jpg" />
-  </div>  <div class="floating-cta">
-    <div class="price-wrap">
-      <span class="mrp">₹4999</span>
-      <a href="https://amzn.in/d/iANYkoH" class="offer-price">Order Now – ₹1499</a>
-      <span class="save-badge">Save ₹3500 Today!</span>
-    </div>
-  </div>  <div class="floating-buttons">
-    <a href="https://wa.me/918090667890" title="Chat on WhatsApp">💬</a>
-    <a href="https://amzn.in/d/iANYkoH" class="amazon" title="Buy on Amazon">🛒</a>
-  </div>  <script>
-    const banners = document.querySelectorAll('.hero img');
-    let current = 0;
-    function cycleBanners() {
-      banners[current].classList.remove('active');
-      current = (current + 1) % banners.length;
-      banners[current].classList.add('active');
-    }
-    setInterval(cycleBanners, 4000); // change every 4 seconds
 
-    // Swipe/manual scroll logic (mobile only)
-    let startX = 0;
-    document.querySelector('.hero').addEventListener('touchstart', e => {
-      startX = e.touches[0].clientX;
-    });
-    document.querySelector('.hero').addEventListener('touchend', e => {
-      let endX = e.changedTouches[0].clientX;
-      if (endX < startX) {
-        cycleBanners();
-      } else if (endX > startX) {
-        banners[current].classList.remove('active');
-        current = (current - 1 + banners.length) % banners.length;
-        banners[current].classList.add('active');
-      }
-    });
-  </script></body>
+  <!-- Header Logo -->
+  <header>
+    <div class="header-container">
+      <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
+    </div>
+  </header>
+
+  <!-- Scrolling Banner Section -->
+  <section class="banner-slider">
+    <div class="slides">
+      <img src="images/banner2.jpg" alt="Banner 1" class="slide" />
+      <img src="images/banner3.jpg" alt="Banner 2" class="slide" />
+      <img src="images/banner4.jpg" alt="Banner 3" class="slide" />
+    </div>
+  </section>
+
+  <!-- Hero Section -->
+  <section class="hero">
+    <img src="images/hero-image.jpg" alt="Hero" class="hero-img" />
+  </section>
+
+  <!-- Floating Order Button -->
+  <div class="floating-buttons">
+    <div class="price-cut">₹<span class="cut">4999</span></div>
+    <button class="order-btn" onclick="window.open('https://amzn.in/d/iANYkoH','_blank')">
+      Order Now – ₹1499
+    </button>
+    <div class="save-tag">Save ₹3500 Today!</div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
