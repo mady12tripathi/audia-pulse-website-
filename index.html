@@ -1,124 +1,115 @@
-<!DOCTYPE html><html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="styles.css" />
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', sans-serif;
-    }
-    .top-logo-strip {
-      background-color: #000;
-      text-align: center;
-      padding: 10px 0;
-    }
-    .top-logo-strip img {
-      height: 40px;
-    }
-    .carousel {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-    }
-    .carousel-inner {
-      display: flex;
-      width: 400%;
-      animation: slide 16s infinite;
-    }
-    .carousel-inner img {
-      width: 100vw;
-      height: auto;
-    }
-    @keyframes slide {
-      0% { transform: translateX(0%); }
-      25% { transform: translateX(0%); }
-      30% { transform: translateX(-100%); }
-      50% { transform: translateX(-100%); }
-      55% { transform: translateX(-200%); }
-      75% { transform: translateX(-200%); }
-      80% { transform: translateX(-300%); }
-      100% { transform: translateX(-300%); }
-    }
-    .buy-btn {
-      position: absolute;
-      bottom: 20px;
-      left: 20px;
-      background-color: orange;
-      color: #fff;
-      padding: 10px 20px;
-      font-weight: bold;
-      text-decoration: none;
-      border-radius: 5px;
-    }
-    .floating-icons {
-      position: fixed;
-      bottom: 20px;
-      right: 20px;
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-      z-index: 999;
-    }
-    .floating-icons a img {
-      width: 40px;
-      height: 40px;
-    }
-    .features {
-      text-align: center;
-      padding: 30px 20px;
-    }
-    .features h2 {
-      margin-bottom: 20px;
-    }
-    .features ul {
-      list-style: none;
       padding: 0;
-    }
-    .features li {
-      font-size: 1.1em;
-      margin: 10px 0;
-    }
+      box-sizing: border-box;
+    }body {
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  background-color: #000;
+  padding: 15px 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header img {
+  height: 60px;
+}
+
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.carousel-track {
+  display: flex;
+  width: 400%;
+  animation: scroll 20s linear infinite;
+}
+
+.carousel-track img {
+  width: 100%;
+  flex-shrink: 0;
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  25% {
+    transform: translateX(-100%);
+  }
+  50% {
+    transform: translateX(-200%);
+  }
+  75% {
+    transform: translateX(-300%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.carousel-controls {
+  position: absolute;
+  top: 50%;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  transform: translateY(-50%);
+}
+
+.carousel-button {
+  background-color: rgba(0, 0, 0, 0.5);
+  color: white;
+  border: none;
+  font-size: 2rem;
+  cursor: pointer;
+  padding: 0 15px;
+}
+
   </style>
-</head>
-<body>
-  <div class="top-logo-strip">
-    <img src="images/audia-logo.png" alt="Audia+ Logo">
-  </div>  <div class="carousel">
-    <div class="carousel-inner">
-      <div>
-        <img src="images/banner2.jpg" alt="Banner 2">
-        <a href="https://amzn.in/d/iANYkoH" class="buy-btn">Buy Now</a>
-      </div>
-      <div>
-        <img src="images/banner3.jpg" alt="Banner 3">
-        <a href="https://amzn.in/d/iANYkoH" class="buy-btn">Buy Now</a>
-      </div>
-      <div>
-        <img src="images/banner4.jpg" alt="Banner 4">
-        <a href="https://amzn.in/d/iANYkoH" class="buy-btn">Buy Now</a>
-      </div>
-      <div>
-        <img src="images/hero-image.png" alt="Hero Image">
-        <a href="https://amzn.in/d/iANYkoH" class="buy-btn">Buy Now</a>
-      </div>
+</head><body>
+  <div class="header">
+    <img src="images/audia-logo.png" alt="Audia+ Logo" />
+  </div>  <div class="carousel" id="carousel">
+    <div class="carousel-track" id="carouselTrack">
+      <img src="images/banner2.jpg" alt="Banner 1" />
+      <img src="images/banner3.jpg" alt="Banner 2" />
+      <img src="images/banner4.jpg" alt="Banner 3" />
+      <img src="images/hero-image.png" alt="Banner 4" />
     </div>
-  </div>  <div class="features">
-    <h2>Why Choose Audia+ Pulse 1.0?</h2>
-    <ul>
-      <li>✅ Personalized AI Sound Calibration</li>
-      <li>✅ 30-Hour Battery with Wireless Case</li>
-      <li>✅ Adaptive Noise Cancellation (SilentSync™)</li>
-      <li>✅ Ultra-Light Titanium Build (IPX5)</li>
-    </ul>
-  </div>  <div class="floating-icons">
-    <a href="https://amzn.in/d/iANYkoH" target="_blank">
-      <img src="images/amazon-icon.png" alt="Amazon">
-    </a>
-    <a href="https://wa.me/918090667890" target="_blank">
-      <img src="images/whatapp-icon.png" alt="WhatsApp">
-    </a>
-  </div>
-</body>
-</html>
+    <div class="carousel-controls">
+      <button class="carousel-button" onclick="prevSlide()">‹</button>
+      <button class="carousel-button" onclick="nextSlide()">›</button>
+    </div>
+  </div>  <script>
+    let track = document.getElementById('carouselTrack');
+    let index = 0;
+
+    function updateSlide() {
+      track.style.transition = 'transform 0.5s ease-in-out';
+      track.style.transform = `translateX(-${index * 100}%)`;
+    }
+
+    function nextSlide() {
+      index = (index + 1) % 4;
+      updateSlide();
+    }
+
+    function prevSlide() {
+      index = (index - 1 + 4) % 4;
+      updateSlide();
+    }
+
+    setInterval(nextSlide, 6000);
+  </script></body></html>
