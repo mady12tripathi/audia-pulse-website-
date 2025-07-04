@@ -1,203 +1,136 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Audia+ Pulse 1.0</title>
-    <style>
-        /* Basic reset */
-        body, h1, h2, h3, p, ul, li, a {
-            margin: 0;
-            padding: 0;
-            font-family: 'Arial', sans-serif;
-        }
-
-        body {
-            background-color: #f4f4f4;
-            padding: 0;
-            margin: 0;
-            overflow-x: hidden;
-        }
-
-        header {
-            background-color: #000;
-            color: white;
-            padding: 15px;
-            text-align: center;
-        }
-
-        header img {
-            max-width: 150px;
-        }
-
-        /* Banner styling */
-        .banner {
-            width: 100%;
-            height: 400px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .scrolling-banner {
-            display: flex;
-            animation: scroll 20s infinite linear;
-        }
-
-        @keyframes scroll {
-            0% {
-                transform: translateX(0);
-            }
-            100% {
-                transform: translateX(-100%);
-            }
-        }
-
-        .banner-controls {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            display: flex;
-            justify-content: space-between;
-            width: 80%;
-        }
-
-        .banner-controls button {
-            background-color: rgba(255, 255, 255, 0.5);
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-            font-size: 20px;
-        }
-
-        .cta-button {
-            position: absolute;
-            bottom: 10%;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ff7a00;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            text-transform: uppercase;
-            border: none;
-            cursor: pointer;
-        }
-
-        .content {
-            text-align: center;
-            margin-top: 50px;
-        }
-
-        .content h2 {
-            margin-bottom: 20px;
-            font-size: 2em;
-        }
-
-        .content ul {
-            list-style-type: none;
-            margin-bottom: 50px;
-        }
-
-        .content li {
-            font-size: 1.2em;
-            margin-bottom: 10px;
-        }
-
-        footer {
-            background-color: #222;
-            color: white;
-            padding: 20px 0;
-            text-align: center;
-        }
-
-        footer a {
-            color: #ff7a00;
-            text-decoration: none;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        .floating-buttons {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .floating-buttons a {
-            margin-bottom: 10px;
-            background-color: #25D366;
-            color: white;
-            padding: 10px;
-            border-radius: 50%;
-            font-size: 25px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-
-        .floating-buttons a.amazon {
-            background-color: #ff9900;
-        }
-
-        .buy-now-float {
-            position: absolute;
-            bottom: 10px;
-            left: 50%;
-            transform: translateX(-50%);
-            background-color: #ff7a00;
-            color: white;
-            padding: 15px 30px;
-            font-size: 20px;
-            border: none;
-            cursor: pointer;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audia+ Pulse 1.0</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: #000;
+      color: #fff;
+    }
+    header {
+      background: #000;
+      padding: 10px 0;
+      text-align: center;
+    }
+    header img {
+      height: 50px;
+    }
+    .hero {
+      overflow: hidden;
+      position: relative;
+    }
+    .hero img {
+      width: 100%;
+      display: none;
+    }
+    .hero img.active {
+      display: block;
+    }
+    .floating-cta {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background: #000;
+      text-align: center;
+      padding: 10px 0;
+      box-shadow: 0 -2px 10px rgba(0,0,0,0.5);
+      z-index: 1000;
+    }
+    .price-wrap {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 6px;
+    }
+    .mrp {
+      color: #aaa;
+      font-size: 14px;
+      text-decoration: line-through;
+    }
+    .offer-price {
+      background: #ffd600;
+      color: #000;
+      padding: 10px 30px;
+      font-weight: bold;
+      border-radius: 50px;
+      font-size: 18px;
+      box-shadow: 0 0 10px #ffd600;
+    }
+    .save-badge {
+      background: red;
+      color: #fff;
+      padding: 5px 15px;
+      border-radius: 20px;
+      font-size: 14px;
+    }
+    .floating-buttons {
+      position: fixed;
+      bottom: 80px;
+      right: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      z-index: 999;
+    }
+    .floating-buttons a {
+      display: inline-block;
+      padding: 12px;
+      background-color: #25D366;
+      border-radius: 50%;
+      color: #fff;
+      text-decoration: none;
+      font-size: 20px;
+    }
+    .floating-buttons a.amazon {
+      background-color: #ff9900;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <img src="images/audia-logo.png" alt="Audia+" />
-    </header>
-
-    <div class="banner">
-        <div class="scrolling-banner">
-            <img src="images/banner2.jpg" alt="Banner 2" />
-            <img src="images/banner3.jpg" alt="Banner 3" />
-            <img src="images/banner4.jpg" alt="Banner 4" />
-            <img src="images/hero-image.png" alt="Hero Image" />
-        </div>
-        <button class="cta-button">Buy Now</button>
+  <header>
+    <img src="images/logo.jpg" alt="Audia+ Logo">
+  </header>  <div class="hero">
+    <img src="images/banner1.jpg" class="active" />
+    <img src="images/banner2.jpg" />
+    <img src="images/banner3.jpg" />
+    <img src="images/banner4.jpg" />
+  </div>  <div class="floating-cta">
+    <div class="price-wrap">
+      <span class="mrp">₹4999</span>
+      <a href="https://amzn.in/d/iANYkoH" class="offer-price">Order Now – ₹1499</a>
+      <span class="save-badge">Save ₹3500 Today!</span>
     </div>
+  </div>  <div class="floating-buttons">
+    <a href="https://wa.me/918090667890" title="Chat on WhatsApp">💬</a>
+    <a href="https://amzn.in/d/iANYkoH" class="amazon" title="Buy on Amazon">🛒</a>
+  </div>  <script>
+    const banners = document.querySelectorAll('.hero img');
+    let current = 0;
+    function cycleBanners() {
+      banners[current].classList.remove('active');
+      current = (current + 1) % banners.length;
+      banners[current].classList.add('active');
+    }
+    setInterval(cycleBanners, 4000); // change every 4 seconds
 
-    <div class="content">
-        <h2>Why Choose Audia+ Pulse 1.0?</h2>
-        <ul>
-            <li>✅ Personalized AI Sound Calibration</li>
-            <li>✅ 30-Hour Battery with Wireless Case</li>
-            <li>✅ Adaptive Noise Cancellation (SilentSync™)</li>
-            <li>✅ Ultra-Light Titanium Build (IPX5)</li>
-        </ul>
-    </div>
-
-    <footer>
-        <p>&copy; 2025 Audia+. All rights reserved.</p>
-        <p>Visit us on <a href="https://www.amazon.in" target="_blank">Amazon</a> or contact us on <a href="https://wa.me/+91XXXXXXXXXX" target="_blank">WhatsApp</a>.</p>
-    </footer>
-
-    <div class="floating-buttons">
-        <a href="https://www.amazon.in/dp/B09DDH25MQ" class="amazon" target="_blank">A</a>
-        <a href="https://wa.me/+91XXXXXXXXXX" target="_blank">W</a>
-    </div>
-</body>
+    // Swipe/manual scroll logic (mobile only)
+    let startX = 0;
+    document.querySelector('.hero').addEventListener('touchstart', e => {
+      startX = e.touches[0].clientX;
+    });
+    document.querySelector('.hero').addEventListener('touchend', e => {
+      let endX = e.changedTouches[0].clientX;
+      if (endX < startX) {
+        cycleBanners();
+      } else if (endX > startX) {
+        banners[current].classList.remove('active');
+        current = (current - 1 + banners.length) % banners.length;
+        banners[current].classList.add('active');
+      }
+    });
+  </script></body>
 </html>
