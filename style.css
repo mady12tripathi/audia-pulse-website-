@@ -1,132 +1,118 @@
+/* style.css */
+
 body {
   margin: 0;
-  font-family: "Segoe UI", sans-serif;
-  background-color: #ffffff;
+  font-family: 'Poppins', sans-serif;
 }
 
-/* Logo Strip */
-.logo-strip {
-  background-color: #000;
-  padding: 10px 0;
-  text-align: center;
-}
-.logo-strip img {
-  height: 50px;
-}
-
-/* Banner */
-.banner-container {
+.banner-carousel {
   position: relative;
   width: 100%;
   overflow: hidden;
 }
-.banner-container img {
+
+.carousel-container {
+  display: flex;
+  transition: transform 0.5s ease;
+  width: 400%;
+}
+
+.carousel-slide {
+  flex: 0 0 100%;
+}
+
+.carousel-slide img {
   width: 100%;
   height: auto;
   display: block;
-  object-fit: cover;
-}
-
-/* Scrollable Carousel */
-.carousel {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-}
-.carousel::-webkit-scrollbar {
-  display: none;
-}
-.carousel img {
-  scroll-snap-align: start;
-  min-width: 100%;
-  height: auto;
-}
-
-/* Floating CTA Button */
-.floating-cta {
-  position: absolute;
-  bottom: 15px;
-  right: 15px;
-  background: #f6c90e;
-  padding: 10px 16px;
-  font-size: 14px;
-  color: #000;
-  border-radius: 6px;
-  font-weight: bold;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  text-decoration: none;
-}
-
-/* Price Strike & Save Info */
-.floating-cta span.strike {
-  text-decoration: line-through;
-  color: #555;
-  font-weight: normal;
-  font-size: 12px;
-  margin-left: 8px;
-}
-.floating-cta .save {
-  display: block;
-  font-size: 12px;
-  color: green;
-}
-
-/* Floating WhatsApp & Amazon Icons */
-.floating-icons {
-  position: fixed;
-  bottom: 90px;
-  right: 15px;
-  z-index: 1000;
-}
-.floating-icons a {
-  display: block;
-  margin-bottom: 10px;
-}
-.floating-icons img {
-  width: 45px;
-  height: 45px;
 }
 
 /* Info Strip */
 .info-strip {
-  background-color: #f1f1f1;
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 10px 0;
+  gap: 40px;
+  background-color: white;
+  padding: 8px 0;
+  font-weight: 500;
+  font-size: 14px;
+  border-bottom: 1px solid #eee;
 }
-.info-item {
-  text-align: center;
-  font-size: 12px;
+
+.info-strip span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
   cursor: pointer;
 }
-.info-item img {
-  height: 30px;
-  margin-bottom: 4px;
-}
 
-/* Sections */
-.section-title {
-  font-size: 20px;
+/* Sale Section */
+.sale-section {
+  text-align: center;
+  font-size: 24px;
   font-weight: bold;
-  margin: 30px 0 10px 15px;
-}
-.section-banner {
-  width: 100%;
-  height: auto;
+  margin: 20px 0 10px;
 }
 
-/* Tech Banners */
-.tech-carousel {
+.sale-section span {
+  color: red;
+}
+
+/* Floating WhatsApp & Amazon */
+.floating-icons {
+  position: fixed;
+  right: 10px;
+  bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+
+.floating-icons img {
+  width: 48px;
+  height: 48px;
+  cursor: pointer;
+}
+
+/* Technology Section */
+.tech-scroll-section {
   display: flex;
   overflow-x: auto;
+  gap: 12px;
+  padding: 20px;
   scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
+  background: #f5f5f5;
 }
-.tech-carousel img {
-  scroll-snap-align: center;
-  min-width: 100%;
-  height: auto;
-  object-fit: cover;
+
+.tech-scroll-section img {
+  width: 300px;
+  flex-shrink: 0;
+  border-radius: 12px;
+  scroll-snap-align: start;
+}
+
+/* Floating Buy Button */
+.buy-button-fixed {
+  position: absolute;
+  bottom: 10%;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #ffc107;
+  color: black;
+  font-weight: bold;
+  padding: 12px 20px;
+  border-radius: 999px;
+  text-decoration: none;
+  font-size: 16px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .buy-button-fixed {
+    font-size: 14px;
+    padding: 10px 18px;
+  }
 }
