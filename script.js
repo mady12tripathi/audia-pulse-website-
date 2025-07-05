@@ -1,27 +1,53 @@
-
-let currentSlide = 0;
-const slides = document.querySelectorAll('.slider img');
-const totalSlides = slides.length;
+let currentIndex = 0;
+const slides = document.querySelectorAll(".carousel-inner img");
+const carousel = document.querySelector(".carousel-inner");
 
 function showSlide(index) {
-  const slider = document.querySelector('.slider');
-  const width = slides[0].clientWidth;
-  slider.style.transform = `translateX(-${index * width}px)`;
+  if (!carousel) return;
+  const offset = index * -100;
+  carousel.style.transform = `translateX(${offset}vw)`;
 }
-function nextSlide() {
-  currentSlide = (currentSlide + 1) % totalSlides;
-  showSlide(currentSlide);
-}
-setInterval(nextSlide, 5000);
 
-document.querySelectorAll('.info-icon').forEach((el) => {
-  el.addEventListener('click', () => {
-    const target = el.getAttribute('data-target');
-    document.getElementById(target).style.display = 'block';
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % slides.length;
+  showSlide(currentIndex);
+}
+
+let autoScroll = setInterval(nextSlide, 5000);
+
+carousel.addEventListener("touchstart", handleTouchStart, false);
+carousel.addEventListener("touchmove", handleTouchMove, false);
+
+let xDown = null;
+
+function handleTouchStart(evt) {
+  xDown = evt.touches[0].clientX;
+}
+function handleTouchMove(evt) {
+  if (!xDown) return;
+  let xUp = evt.touches[0].clientX;
+  let xDiff = xDown - xUp;
+
+  if (xDiff > 5) nextSlide();
+  else if (xDiff < -5)
+    currentIndex = (currentIndex - 1 + slides.length) % slides.length;
+
+  showSlide(currentIndex);
+  xDown = null;
+}
+
+// Pause on hover
+carousel.addEventListener("mouseenter", () => clearInterval(autoScroll));
+carousel.addEventListener("mouseleave", () => autoScroll = setInterval(nextSlide, 5000));
+
+// Modal popups
+document.querySelectorAll(".info-item").forEach((item, i) => {
+  item.addEventListener("click", () => {
+    document.getElementById(`modal${i + 1}`).classList.add("show");
   });
 });
-document.querySelectorAll('.close').forEach((btn) => {
-  btn.addEventListener('click', () => {
-    btn.closest('.modal').style.display = 'none';
+document.querySelectorAll(".close").forEach(btn => {
+  btn.addEventListener("click", () => {
+    btn.parentElement.classList.remove("show");
   });
 });
