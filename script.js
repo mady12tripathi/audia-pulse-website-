@@ -1,25 +1,38 @@
-// Show modal on info item click
-document.querySelectorAll(".info-item").forEach((item, index) => {
-  item.addEventListener("click", () => {
-    const modal = document.getElementById(`modal${index + 1}`);
-    if (modal) {
-      modal.style.display = "block";
+// FAQ Accordion Logic
+document.querySelectorAll('.accordion').forEach(button => {
+  button.addEventListener('click', () => {
+    const panel = button.nextElementSibling;
+
+    // Toggle active state
+    button.classList.toggle('active');
+
+    // Open or close the panel
+    if (panel.style.display === 'block') {
+      panel.style.display = 'none';
+    } else {
+      panel.style.display = 'block';
     }
   });
 });
 
-// Close modal when 'x' is clicked
-document.querySelectorAll(".close").forEach((close) => {
-  close.addEventListener("click", () => {
-    close.closest(".modal").style.display = "none";
+// Modal popup placeholder logic (future use)
+/*
+document.querySelectorAll('.info-label').forEach(label => {
+  label.addEventListener('click', () => {
+    const modalId = label.getAttribute('data-modal');
+    document.getElementById(modalId).style.display = 'block';
   });
 });
 
-// Close modal on outside click
-window.addEventListener("click", (event) => {
-  document.querySelectorAll(".modal").forEach((modal) => {
-    if (event.target === modal) {
-      modal.style.display = "none";
-    }
+document.querySelectorAll('.modal .close').forEach(closeBtn => {
+  closeBtn.addEventListener('click', () => {
+    closeBtn.closest('.modal').style.display = 'none';
   });
 });
+
+window.addEventListener('click', (e) => {
+  if (e.target.classList.contains('modal')) {
+    e.target.style.display = 'none';
+  }
+});
+*/
