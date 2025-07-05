@@ -1,16 +1,27 @@
-// script.js
 
-let currentIndex = 0;
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider img');
+const totalSlides = slides.length;
 
+function showSlide(index) {
+  const slider = document.querySelector('.slider');
+  const width = slides[0].clientWidth;
+  slider.style.transform = `translateX(-${index * width}px)`;
+}
 function nextSlide() {
-  const carousel = document.querySelector(".carousel-container");
-  currentIndex = (currentIndex + 1) % 4;
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  currentSlide = (currentSlide + 1) % totalSlides;
+  showSlide(currentSlide);
 }
+setInterval(nextSlide, 5000);
 
-setInterval(nextSlide, 4000);
-
-// Info Modal Popup (if added later)
-function openModal(text) {
-  alert(text);
-}
+document.querySelectorAll('.info-icon').forEach((el) => {
+  el.addEventListener('click', () => {
+    const target = el.getAttribute('data-target');
+    document.getElementById(target).style.display = 'block';
+  });
+});
+document.querySelectorAll('.close').forEach((btn) => {
+  btn.addEventListener('click', () => {
+    btn.closest('.modal').style.display = 'none';
+  });
+});
