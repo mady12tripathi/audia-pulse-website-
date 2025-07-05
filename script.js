@@ -1,6 +1,11 @@
-function buyNow() {
-  const confirmed = confirm("You're being redirected to Amazon to complete your purchase. Continue?");
-  if (confirmed) {
-    window.open("https://amzn.to/4eEH6K2", "_blank");
-  }
-}
+// Footer collapsible menu logic
+document.querySelectorAll('.footer-section h4').forEach(section => {
+  section.addEventListener('click', () => {
+    section.parentElement.classList.toggle('active');
+  });
+});
+
+// Placeholder subscribe button
+document.querySelector('.email-alert-section button')?.addEventListener('click', () => {
+  alert("Thanks for subscribing! 🎉 (Functionality to be added)");
+});
