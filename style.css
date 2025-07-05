@@ -1,177 +1,275 @@
-/* General Reset */
+/* Reset and Base Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-
 body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #ffffff;
-  color: #111;
-  line-height: 1.5;
+  font-family: 'Poppins', sans-serif;
+  background: #fff;
+  color: #000;
+  line-height: 1.6;
+  overflow-x: hidden;
 }
 
-/* Header with Logo and Bag */
-.header {
+/* Logo Strip */
+.logo-strip {
   background-color: #000;
-  color: white;
-  padding: 12px 20px;
+  padding: 8px 0;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  justify-content: center;
+}
+.logo-strip img {
+  height: 36px;
 }
 
-.header .logo img {
-  height: 30px;
+/* Hero Banner Carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
 }
-
-.header .icons {
+.carousel-track {
   display: flex;
-  gap: 15px;
+  transition: transform 0.5s ease;
+}
+.carousel img {
+  width: 100%;
+  max-height: 480px;
+  object-fit: cover;
 }
 
-.header .icons i {
-  color: white;
-  font-size: 20px;
-  cursor: pointer;
-}
-
-/* Email Alert Section */
-.email-alert-section {
-  background-color: #f2f8fb;
+/* Banner Navigation Dots */
+.carousel-dots {
   text-align: center;
-  padding: 40px 20px;
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
 }
-
-.email-alert-section img {
-  height: 50px;
-  margin-bottom: 15px;
-}
-
-.email-alert-section h3 {
-  font-size: 20px;
-  margin-bottom: 20px;
-}
-
-.email-alert-section input[type="email"] {
-  padding: 12px 20px;
-  width: 300px;
-  max-width: 80%;
-  border-radius: 8px 0 0 8px;
-  border: 1px solid #ccc;
-  font-size: 16px;
-}
-
-.email-alert-section button {
-  padding: 12px 20px;
-  background-color: white;
-  border: 1px solid #ccc;
-  border-left: none;
-  font-size: 16px;
-  border-radius: 0 8px 8px 0;
+.carousel-dots button {
+  border: none;
+  background: #bbb;
+  border-radius: 50%;
+  width: 10px;
+  height: 10px;
+  margin: 0 5px;
   cursor: pointer;
+}
+.carousel-dots button.active {
+  background: #333;
+}
+
+/* Launch Offer Strip */
+.launch-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f9f9f9;
+  padding: 12px;
+  gap: 10px;
+}
+.launch-strip del {
+  color: #888;
+  font-weight: 600;
+}
+.launch-strip .save-btn {
+  background: red;
+  color: #fff;
+  padding: 8px 14px;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+}
+
+/* Info Strip */
+.info-strip {
+  display: flex;
+  justify-content: space-around;
+  background: #eee;
+  padding: 10px 0;
+}
+.info-icon {
+  text-align: center;
+  cursor: pointer;
+}
+.info-icon img {
+  height: 32px;
+  margin-bottom: 4px;
+}
+
+/* Sale Is Live */
+.sale-section {
+  padding: 24px 16px;
+}
+.sale-section h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.sale-banner {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+}
+.sale-banner img {
+  width: 100%;
+  border-radius: 8px;
+}
+.sale-banner .buy-btn {
+  position: absolute;
+  bottom: 10px;
+  left: 10px;
+  background: yellow;
+  color: #000;
+  font-weight: bold;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+}
+
+/* Audia+ Tech Section */
+.tech-section {
+  padding: 32px 0;
+}
+.tech-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.tech-scroll::-webkit-scrollbar {
+  display: none;
+}
+.tech-scroll img {
+  width: 100vw;
+  max-width: 100%;
+  flex: 0 0 auto;
+  scroll-snap-align: center;
+}
+
+/* Why Choose Audia+ */
+.why-choose {
+  background: #f2f2f2;
+  padding: 32px 16px;
+}
+.why-choose h2 {
+  text-align: center;
+  margin-bottom: 24px;
+}
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+}
+.why-choose li {
+  padding: 8px 0;
+  font-size: 16px;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 32px 16px;
+  background: #fff;
+}
+.testimonials h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.testimonials .card {
+  background: #f7f7f7;
+  padding: 16px;
+  border-radius: 10px;
+  margin: 10px 0;
+}
+
+/* FAQs */
+.faqs {
+  padding: 32px 16px;
+}
+.faqs h2 {
+  text-align: center;
+  margin-bottom: 16px;
+}
+.faqs details {
+  margin-bottom: 10px;
+}
+.faqs summary {
+  cursor: pointer;
+  font-weight: bold;
 }
 
 /* Footer */
-.footer {
-  background-color: #f2f8fb;
-  padding: 30px 20px;
+footer {
+  background: #111;
+  color: #fff;
+  padding: 32px 16px;
 }
-
-.footer .footer-section {
-  margin-bottom: 20px;
-}
-
-.footer .footer-section h4 {
-  font-size: 18px;
-  margin-bottom: 10px;
-  cursor: pointer;
+.footer-links {
   display: flex;
   justify-content: space-between;
-  align-items: center;
+  flex-wrap: wrap;
 }
-
-.footer .footer-section ul {
+.footer-col {
+  flex: 1 1 150px;
+  margin-bottom: 20px;
+}
+.footer-col h4 {
+  margin-bottom: 12px;
+}
+.footer-col ul {
   list-style: none;
-  display: none;
-  padding-left: 0;
 }
-
-.footer .footer-section ul li {
-  margin-bottom: 8px;
+.footer-col li {
+  margin-bottom: 6px;
   font-size: 14px;
 }
-
-/* Footer Social & Policies */
-.footer-social {
+.footer-bottom {
   text-align: center;
-  margin-top: 30px;
+  padding-top: 20px;
+  font-size: 12px;
 }
 
-.footer-social p {
-  font-size: 18px;
-  margin-bottom: 10px;
+/* Social + Floating Buttons */
+.social-icons img {
+  width: 24px;
+  margin-right: 10px;
 }
-
-.footer-social .icons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  margin-bottom: 10px;
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 10;
 }
-
-.footer-social .icons i {
-  font-size: 22px;
-  color: #111;
-  cursor: pointer;
-}
-
-.footer-policies {
-  text-align: center;
-  font-size: 13px;
-  color: #444;
-  padding-bottom: 20px;
-}
-
-.footer-policies a {
-  margin: 0 8px;
-  text-decoration: none;
-  color: #444;
-}
-
-.footer-policies a:hover {
-  text-decoration: underline;
-}
-
-/* Expand Footer on Click */
-.footer .footer-section.active ul {
+.floating-buttons a {
   display: block;
+  margin-top: 10px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .header {
-    flex-direction: column;
-    gap: 10px;
-  }
-
-  .email-alert-section input[type="email"],
-  .email-alert-section button {
-    width: 100%;
-    border-radius: 8px;
-    margin: 5px 0;
-  }
-
-  .footer .footer-section h4 {
-    font-size: 16px;
-  }
-
-  .footer .footer-section ul li {
-    font-size: 13px;
-  }
-
-  .footer-social p {
-    font-size: 16px;
-  }
+/* Modal Styles */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.5);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+}
+.modal.active {
+  display: flex;
+}
+.modal-content {
+  background: #fff;
+  padding: 24px;
+  border-radius: 10px;
+  max-width: 90%;
+  position: relative;
+}
+.modal-content .close {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  font-size: 20px;
+  cursor: pointer;
 }
