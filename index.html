@@ -1,61 +1,71 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Audia+ Pulse 1.0</title>
   <link rel="stylesheet" href="style.css" />
-  <link rel="icon" href="audia-logo.png" type="image/png" />
-</head><body>
-  <!-- Logo Strip -->
-  <div class="logo-strip">
-    <img src="audia-logo.png" alt="Audia+ Logo" class="logo" />
-  </div>  <!-- Carousel Banner Section -->  <div class="carousel-container">
-    <div class="carousel-track">
+</head>
+<body>
+
+  <!-- Info Strip -->
+  <div class="info-strip">
+    <span onclick="openModal('Free Delivery available on all orders.')">🚚 Free Delivery</span>
+    <span onclick="openModal('7-Day hassle-free replacement.')">🔁 7-Day Replacement</span>
+    <span onclick="openModal('1-Year Warranty on product.')">🛡️ 1-Year Warranty</span>
+  </div>
+
+  <!-- Banner Carousel -->
+  <div class="banner-carousel">
+    <div class="carousel-container">
       <div class="carousel-slide">
-        <img src="hero-image.png" alt="Hero 1" />
-        <div class="floating-cta">
-          <p class="cut-price">₹4999</p>
-          <p class="offer-price">₹1499</p>
-          <p class="save-text">Save ₹3500 Today!</p>
-          <div class="buy-buttons">
-            <a href="https://amzn.to/4eEH6K2" class="buy-now">Buy on Amazon</a>
-            <a href="https://wa.me/918090667890" class="buy-now whatsapp">Buy on WhatsApp</a>
-          </div>
-        </div>
+        <img src="Images/hero-image.jpg" alt="Hero Banner" />
+        <a href="https://amzn.to/4eEH6K2" class="buy-button-fixed">Buy Now – ₹1499</a>
       </div>
       <div class="carousel-slide">
-        <img src="banner2.jpg" alt="Banner 2" />
-        <div class="floating-cta">
-          <p class="cut-price">₹4999</p>
-          <p class="offer-price">₹1499</p>
-          <p class="save-text">Save ₹3500 Today!</p>
-          <div class="buy-buttons">
-            <a href="https://amzn.to/4eEH6K2" class="buy-now">Buy on Amazon</a>
-            <a href="https://wa.me/918090667890" class="buy-now whatsapp">Buy on WhatsApp</a>
-          </div>
-        </div>
+        <img src="Images/banner2.jpg" alt="Banner 2" />
+        <a href="https://amzn.to/4eEH6K2" class="buy-button-fixed">Buy Now – ₹1499</a>
       </div>
       <div class="carousel-slide">
-        <img src="banner3.jpg" alt="Banner 3" />
-        <div class="floating-cta">
-          <p class="cut-price">₹4999</p>
-          <p class="offer-price">₹1499</p>
-          <p class="save-text">Save ₹3500 Today!</p>
-          <div class="buy-buttons">
-            <a href="https://amzn.to/4eEH6K2" class="buy-now">Buy on Amazon</a>
-            <a href="https://wa.me/918090667890" class="buy-now whatsapp">Buy on WhatsApp</a>
-          </div>
-        </div>
+        <img src="Images/banner3.jpg" alt="Banner 3" />
+        <a href="https://amzn.to/4eEH6K2" class="buy-button-fixed">Buy Now – ₹1499</a>
+      </div>
+      <div class="carousel-slide">
+        <img src="Images/banner4.jpg" alt="Banner 4" />
+        <a href="https://amzn.to/4eEH6K2" class="buy-button-fixed">Buy Now – ₹1499</a>
       </div>
     </div>
-    <!-- Indicators -->
-    <div class="carousel-indicators">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-    </div>
-  </div>  <!-- Floating Icons -->  <a href="https://amzn.to/4eEH6K2" class="floating-icon amazon-icon" target="_blank">
-    <img src="amazon-icon.png" alt="Amazon">
-  </a>
-  <a href="https://wa.me/918090667890" class="floating-icon whatsapp-icon" target="_blank">
-    <img src="whatsapp-icon.png" alt="WhatsApp">
-  </a>  <!-- Scripts -->  <script src="script.js"></script></body></html>
+  </div>
+
+  <!-- Sale Section -->
+  <div class="sale-section">
+    Sale <span>Is Live</span>
+  </div>
+  <div style="text-align:center; margin-bottom: 30px;">
+    <img src="Images/sale-banner.jpg" style="width:90%; max-width:500px; border-radius:12px;" alt="Sale Banner">
+  </div>
+
+  <!-- Audia+ Technology Section -->
+  <div style="text-align:center; font-size: 24px; font-weight: bold; margin: 20px 0;">
+    Audia+ Technology
+  </div>
+  <div class="tech-scroll-section">
+    <img src="Images/tech-omniwave.jpg" alt="OmniWave™" />
+    <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™" />
+    <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™" />
+    <img src="Images/tech-silentsync.jpg" alt="SilentSync™" />
+  </div>
+
+  <!-- Floating WhatsApp & Amazon -->
+  <div class="floating-icons">
+    <a href="https://wa.me/918090667890" target="_blank">
+      <img src="Images/whatapp-icon.png" alt="WhatsApp" />
+    </a>
+    <a href="https://amzn.to/4eEH6K2" target="_blank">
+      <img src="Images/amazon-icon.png" alt="Amazon" />
+    </a>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
