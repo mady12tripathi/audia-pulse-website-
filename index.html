@@ -1,196 +1,213 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Audia+ | Pulse 1.0</title>
-  <link rel="icon" href="Images/audia-logo.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audia+ | Sound That Adapts To You</title>
+  <link rel="icon" type="image/png" href="Images/audia-logo.png" />
   <style>
     body {
+      font-family: Arial, sans-serif;
       margin: 0;
-      font-family: "Segoe UI", sans-serif;
-      background-color: #fff;
-    }
-    header {
-      text-align: center;
-      padding: 10px 0;
-    }
-    header img {
-      width: 140px;
-    }
-    .info-strip {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      padding: 10px 0;
-      background: #f8f8f8;
-      font-size: 14px;
-      font-weight: 600;
-    }
-    .info-strip span {
-      cursor: pointer;
-    }
-    .modal {
-      display: none;
-      position: fixed;
-      z-index: 999;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-    }
-    .modal-content {
-      background: white;
-      margin: 20% auto;
-      padding: 20px;
-      width: 90%;
-      max-width: 400px;
-      border-radius: 8px;
-      text-align: center;
-      font-size: 14px;
-    }
-    .modal-content span.close {
-      float: right;
-      font-size: 18px;
-      cursor: pointer;
-    }
-    .carousel {
-      display: flex;
-      overflow: auto;
-      scroll-snap-type: x mandatory;
-    }
-    .carousel img {
-      width: 100%;
-      scroll-snap-align: center;
-    }
-    .section-title {
-      text-align: center;
-      font-size: 24px;
-      font-weight: bold;
-      margin: 30px 0 10px;
-    }
-    .section-title span {
-      color: red;
-    }
-    .tech-section {
-      background-color: #f2f2f2;
-      padding: 30px 10px;
-      text-align: center;
-    }
-    .tech-title {
-      font-size: 22px;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-    .tech-images {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 20px;
-    }
-    .tech-images img {
-      width: 160px;
-      max-width: 100%;
-    }
-    .floating-icon {
-      position: fixed;
-      bottom: 20px;
-      z-index: 999;
-      width: 50px;
-      height: 50px;
-    }
-    .whatsapp {
-      right: 80px;
-    }
-    .amazon {
-      right: 20px;
-    }
+      padding: 0;
+    }.logo {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+}
+
+.logo img {
+  height: 50px;
+}
+
+.info-strip {
+  background-color: #f5f5f5;
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  padding: 10px;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.info-strip span {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  background-color: #fff;
+  margin: 15% auto;
+  padding: 20px;
+  border-radius: 8px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  font-size: 15px;
+  position: relative;
+}
+
+.close {
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  color: #888;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.sale-title {
+  text-align: center;
+  font-size: 26px;
+  margin: 30px 0 10px;
+  font-weight: bold;
+}
+
+.sale-title span {
+  color: red;
+}
+
+.sale-banner img {
+  width: 90%;
+  max-width: 600px;
+  display: block;
+  margin: 0 auto 30px;
+  border-radius: 12px;
+}
+
+.tech-section {
+  background-color: #f0f0f0;
+  padding: 40px 10px;
+  text-align: center;
+}
+
+.tech-title {
+  font-size: 26px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.tech-carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  gap: 20px;
+  padding: 10px 0;
+  justify-content: start;
+}
+
+.tech-carousel img {
+  flex-shrink: 0;
+  width: 90%;
+  max-width: 400px;
+  scroll-snap-align: center;
+  border-radius: 12px;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.floating-icons {
+  position: fixed;
+  bottom: 15px;
+  right: 15px;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.floating-icons img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+@media (max-width: 480px) {
+  .sale-title {
+    font-size: 22px;
+  }
+
+  .tech-title {
+    font-size: 22px;
+  }
+
+  .modal-content {
+    width: 90%;
+  }
+}
+
   </style>
 </head>
 <body>
-
-  <!-- Logo -->
-  <header>
+  <div class="logo">
     <img src="Images/audia-logo.png" alt="Audia+ Logo" />
-  </header>
-
-  <!-- Info Strip -->
-  <div class="info-strip">
-    <span onclick="openModal('deliveryModal')">🚚 Free Delivery</span>
+  </div>  <div class="info-strip">
+    <span onclick="openModal('freeDeliveryModal')">🚚 Free Delivery</span>
     <span onclick="openModal('replacementModal')">🔁 7-Day Replacement</span>
     <span onclick="openModal('warrantyModal')">🛡️ 1-Year Warranty</span>
-  </div>
-
-  <!-- Info Modals -->
-  <div id="deliveryModal" class="modal">
+  </div>  <div class="modal" id="freeDeliveryModal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('deliveryModal')">&times;</span>
+      <span class="close" onclick="closeModal('freeDeliveryModal')">×</span>
       Enjoy FREE delivery on every Audia+ Pulse 1.0 order. No extra charges.
     </div>
   </div>
-  <div id="replacementModal" class="modal">
+  <div class="modal" id="replacementModal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('replacementModal')">&times;</span>
+      <span class="close" onclick="closeModal('replacementModal')">×</span>
       7-Day hassle-free replacement available. If anything’s wrong, we’ve got your back.
     </div>
   </div>
-  <div id="warrantyModal" class="modal">
+  <div class="modal" id="warrantyModal">
     <div class="modal-content">
-      <span class="close" onclick="closeModal('warrantyModal')">&times;</span>
+      <span class="close" onclick="closeModal('warrantyModal')">×</span>
       Pulse 1.0 comes with a 1-Year warranty. Coverage includes manufacturing defects.
     </div>
-  </div>
-
-  <!-- Banner Carousel -->
-  <div class="carousel">
+  </div>  <div class="banner">
     <img src="Images/hero-image.jpg" alt="Hero Banner" />
-    <img src="Images/banner2.jpg" alt="Banner 2" />
-    <img src="Images/banner3.jpg" alt="Banner 3" />
-    <img src="Images/banner4.jpg" alt="Banner 4" />
-  </div>
-
-  <!-- Sale Section -->
-  <div class="section-title">Sale <span>Is Live</span></div>
-  <div style="text-align: center; margin: 10px 0 30px;">
-    <img src="Images/sale-banner.jpg" alt="Sale Is Live Banner" style="width: 90%; max-width: 500px;" />
-  </div>
-
-<!-- Technology Section -->
-<div class="tech-section">
-  <div class="tech-title">Audia+ Technology</div>
-  <div class="tech-carousel">
-    <img src="Images/tech-omniwave.jpg" alt="OmniWave™ AdaptIQ" />
-    <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™" />
-    <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™" />
-    <img src="Images/tech-silentsync.jpg" alt="SilentSync™" />
-  </div>
-</div>
-
-  <!-- Floating Icons -->
-  <a href="https://wa.me/your-number" class="floating-icon whatsapp">
-    <img src="Images/whatapp-icon.png" alt="WhatsApp Icon" width="50" height="50" />
-  </a>
-  <a href="https://www.amazon.in/dp/your-product-id" class="floating-icon amazon">
-    <img src="Images/amazon-icon.png" alt="Amazon Icon" width="50" height="50" />
-  </a>
-
-  <!-- JS for Modals -->
-  <script>
+  </div>  <div class="sale-title">Sale <span>Is Live</span></div>
+  <div class="sale-banner">
+    <img src="Images/sale-banner.jpg" alt="Sale Is Live Banner" />
+  </div>  <div class="tech-section">
+    <div class="tech-title">Audia+ Technology</div>
+    <div class="tech-carousel">
+      <img src="Images/tech-omniwave.jpg" alt="OmniWave" />
+      <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere" />
+      <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA" />
+      <img src="Images/tech-silentsync.jpg" alt="SilentSync" />
+    </div>
+  </div>  <div class="floating-icons">
+    <a href="https://wa.me/919999999999" target="_blank">
+      <img src="Images/whatapp-icon.png" alt="WhatsApp Icon" />
+    </a>
+    <a href="https://amazon.in/dp/B0XXXXXXXX" target="_blank">
+      <img src="Images/amazon-icon.png" alt="Amazon Icon" />
+    </a>
+  </div>  <script>
     function openModal(id) {
-      document.getElementById(id).style.display = "block";
+      document.getElementById(id).style.display = 'block';
     }
-    function closeModal(id) {
-      document.getElementById(id).style.display = "none";
-    }
-    window.onclick = function(event) {
-      ['deliveryModal', 'replacementModal', 'warrantyModal'].forEach(id => {
-        if (event.target == document.getElementById(id)) {
-          closeModal(id);
-        }
-      });
-    };
-  </script>
 
-</body>
+    function closeModal(id) {
+      document.getElementById(id).style.display = 'none';
+    }
+  </script></body>
 </html>
