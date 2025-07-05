@@ -5,97 +5,57 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Audia+ Pulse 1.0</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
 <body>
 
-  <!-- Floating Icons -->
-  <a href="https://amazon.in" target="_blank" class="floating-icon amazon"><img src="Images/amazon-icon.png" alt="Amazon"></a>
-  <a href="https://wa.me/91XXXXXXXXXX" target="_blank" class="floating-icon whatsapp"><img src="Images/whatapp-icon.png" alt="WhatsApp"></a>
-
-  <!-- Logo -->
-  <header class="logo-strip">
-    <img src="Images/audia-logo.png" alt="Audia+ Logo">
+  <!-- Header Logo -->
+  <header class="header">
+    <img src="Images/audia-logo.png" alt="Audia+ Logo" class="logo"/>
   </header>
 
-  <!-- Hero Banner -->
-  <section class="hero">
-    <img src="Images/hero-image.jpg" alt="Hero Banner" />
-  </section>
+  <!-- Hero Banner with Button -->
+  <div class="banner-wrapper">
+    <img src="Images/hero-image.jpg" alt="Hero Banner">
+    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
+  </div>
 
-  <!-- Info Strip with Modals -->
-  <section class="info-strip">
-    <span class="clickable-label" data-modal="deliveryModal">🚚 Free Delivery</span>
-    <span class="clickable-label" data-modal="replacementModal">📦 7-Day Replacement</span>
-    <span class="clickable-label" data-modal="warrantyModal">🛡️ 1-Year Warranty</span>
-  </section>
+  <!-- Info Strip -->
+  <div class="info-strip">
+    <span>🚚 Free Delivery</span>
+    <span>📦 7-Day Replacement</span>
+    <span>🛡️ 1-Year Warranty</span>
+  </div>
 
-  <!-- Modal Popups -->
-  <div class="modal" id="deliveryModal"><div class="modal-content"><span class="close">&times;</span><p>Free shipping across India within 3-5 business days.</p></div></div>
-  <div class="modal" id="replacementModal"><div class="modal-content"><span class="close">&times;</span><p>7-day replacement guarantee for defective items.</p></div></div>
-  <div class="modal" id="warrantyModal"><div class="modal-content"><span class="close">&times;</span><p>1-Year warranty from date of purchase.</p></div></div>
+  <!-- Launch Offer -->
+  <div class="sale-strip">
+    <s>₹4999</s> <span>Launch Offer: ₹1499</span>
+    <button class="save-btn">Save ₹3500 Today!</button>
+  </div>
 
-  <!-- Sale Strip -->
-  <section class="sale-strip">
-    <p><s>₹4999</s> Launch Offer: ₹1499 <button class="save-btn">Save ₹3500 Today!</button></p>
-  </section>
+  <!-- Additional Banners -->
+  <div class="banner-wrapper">
+    <img src="Images/banner2.jpg" alt="Banner 2">
+    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
+  </div>
 
-  <!-- Buy Now Section -->
-  <section class="buy-now-strip">
-    <button class="buy-btn">Buy Now – ₹1499</button>
-  </section>
+  <div class="banner-wrapper">
+    <img src="Images/banner3.jpg" alt="Banner 3">
+    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
+  </div>
 
-  <!-- Carousel -->
-  <section class="carousel">
-    <img src="Images/banner2.jpg" alt="Banner 2" />
-    <img src="Images/banner3.jpg" alt="Banner 3" />
-    <img src="Images/banner4.jpg" alt="Banner 4" />
-  </section>
+  <div class="banner-wrapper">
+    <img src="Images/banner4.jpg" alt="Banner 4">
+    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
+  </div>
 
-  <!-- Why Choose Audia+ -->
-  <section class="why-choose grey-bg">
-    <h2>Why Choose Audia+</h2>
-    <ul>
-      <li>✅ AI-powered sound personalization (OmniWave™ AdaptIQ)</li>
-      <li>✅ 360° Spatial Audio with SonicSphere™</li>
-      <li>✅ Real-time Noise Cancellation via SilentSync™</li>
-      <li>✅ IPX5 Waterproof – built for workouts</li>
-      <li>✅ Ultra-light titanium build – 4.8g per earbud</li>
-      <li>✅ 30-hour playtime with charging case</li>
-    </ul>
-  </section>
+  <!-- Floating Icons -->
+  <a href="https://wa.me/919999999999" target="_blank" class="float-icon whatsapp">
+    <img src="Images/whatapp-icon.png" alt="WhatsApp">
+  </a>
+  <a href="https://amzn.to/4eEH6K2" target="_blank" class="float-icon amazon">
+    <img src="Images/amazon-icon.png" alt="Amazon">
+  </a>
 
-  <!-- Audia+ Technology Banners -->
-  <section class="tech-section">
-    <img src="Images/tech-omniwave.jpg" alt="OmniWave™">
-    <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™">
-    <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™">
-    <img src="Images/tech-silentsync.jpg" alt="SilentSync™">
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Users Say</h2>
-    <blockquote>
-      "Absolutely amazing clarity and bass. Game changer!"<br><strong>– Priya S.</strong>
-    </blockquote>
-    <blockquote>
-      "No need to touch settings. It just adapts to me!"<br><strong>– Aman R.</strong>
-    </blockquote>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>Which devices are compatible with Audia+?</summary>
-      <p>Audia+ works with all Bluetooth-enabled devices including Android, iOS, Windows, and Mac.</p>
-    </details>
-    <details>
-      <summary>What is OmniWave™ AdaptIQ?</summary>
-      <p>It’s an AI engine that tailors sound to your ears and environment using adaptive calibration.</p>
-    </details>
-  </section>
-
+  <script src="script.js"></script>
 </body>
 </html>
