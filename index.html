@@ -1,61 +1,67 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-
-  <!-- Header Logo -->
-  <header class="header">
-    <img src="Images/audia-logo.png" alt="Audia+ Logo" class="logo"/>
-  </header>
-
-  <!-- Hero Banner with Button -->
-  <div class="banner-wrapper">
-    <img src="Images/hero-image.jpg" alt="Hero Banner">
-    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
+<!-- ✅ Updated Header with Audia+ Logo and Shopping Bag Icon --><header class="site-header">
+  <div class="container header-flex">
+    <img src="Images/audia-logo.png" alt="Audia+ Logo" class="logo">
+    <div class="header-icons">
+      <button class="hamburger">&#9776;</button>
+      <img src="Images/bag-icon.png" alt="Bag Icon" class="bag-icon">
+    </div>
   </div>
-
-  <!-- Info Strip -->
-  <div class="info-strip">
-    <span>🚚 Free Delivery</span>
-    <span>📦 7-Day Replacement</span>
-    <span>🛡️ 1-Year Warranty</span>
+</header><!-- ✅ Subscribe Section --><section class="subscribe-section">
+  <img src="Images/audia-logo.png" alt="Audia+ Logo" class="footer-logo">
+  <h3>Subscribe to our email alerts!</h3>
+  <form class="subscribe-form">
+    <input type="email" placeholder="Enter your email address" required>
+    <button type="submit">&rarr;</button>
+  </form>
+</section><!-- ✅ Collapsible Footer Menu --><footer class="main-footer">
+  <div class="collapsible-footer">
+    <div class="footer-group">
+      <button class="collapsible">Shop</button>
+      <div class="content">
+        <a href="#">Pulse 1.0</a>
+        <a href="#">Accessories</a>
+      </div>
+    </div>
+    <div class="footer-group">
+      <button class="collapsible">Help</button>
+      <div class="content">
+        <a href="#">FAQs</a>
+        <a href="#">Shipping Info</a>
+        <a href="#">Returns</a>
+      </div>
+    </div>
+    <div class="footer-group">
+      <button class="collapsible">Company</button>
+      <div class="content">
+        <a href="#">About Us</a>
+        <a href="#">Careers</a>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+  </div>  <!-- ✅ Social Media and Policies Strip -->  <div class="footer-bottom">
+    <p>Let's get social</p>
+    <div class="social-icons">
+      <a href="#"><i class="fab fa-facebook-f"></i></a>
+      <a href="#"><i class="fab fa-x-twitter"></i></a>
+      <a href="#"><i class="fab fa-instagram"></i></a>
+      <a href="#"><i class="fab fa-youtube"></i></a>
+      <a href="#"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+    <div class="footer-links">
+      <a href="#">Privacy Policy</a>
+      <span>•</span>
+      <a href="#">Terms of Use</a>
+      <span>•</span>
+      <a href="#">Warranty Policy</a>
+    </div>
   </div>
-
-  <!-- Launch Offer -->
-  <div class="sale-strip">
-    <s>₹4999</s> <span>Launch Offer: ₹1499</span>
-    <button class="save-btn">Save ₹3500 Today!</button>
-  </div>
-
-  <!-- Additional Banners -->
-  <div class="banner-wrapper">
-    <img src="Images/banner2.jpg" alt="Banner 2">
-    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
-  </div>
-
-  <div class="banner-wrapper">
-    <img src="Images/banner3.jpg" alt="Banner 3">
-    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
-  </div>
-
-  <div class="banner-wrapper">
-    <img src="Images/banner4.jpg" alt="Banner 4">
-    <button class="banner-buy-btn" onclick="buyNow()">Buy Now – ₹1499</button>
-  </div>
-
-  <!-- Floating Icons -->
-  <a href="https://wa.me/919999999999" target="_blank" class="float-icon whatsapp">
-    <img src="Images/whatapp-icon.png" alt="WhatsApp">
-  </a>
-  <a href="https://amzn.to/4eEH6K2" target="_blank" class="float-icon amazon">
-    <img src="Images/amazon-icon.png" alt="Amazon">
-  </a>
-
-  <script src="script.js"></script>
-</body>
-</html>
+</footer><!-- FontAwesome CDN for Social Icons --><script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script><!-- ✅ Collapsible Script --><script>
+  const collapsibles = document.querySelectorAll(".collapsible");
+  collapsibles.forEach((btn) => {
+    btn.addEventListener("click", function () {
+      this.classList.toggle("active");
+      const content = this.nextElementSibling;
+      content.style.display = content.style.display === "block" ? "none" : "block";
+    });
+  });
+</script>
