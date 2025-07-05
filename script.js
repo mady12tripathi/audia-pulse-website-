@@ -1,24 +1,25 @@
+// Auto-scroll banner
+let carousel = document.querySelector('.carousel');
+let banners = document.querySelectorAll('.carousel img');
+let index = 0;
 
-let slideIndex = 0;
-const slides = document.querySelector(".slides");
-const dots = document.querySelectorAll(".dot");
-
-function showSlide(index) {
-  slides.style.transform = `translateX(-${index * 100}%)`;
-  dots.forEach(dot => dot.classList.remove("active"));
-  dots[index].classList.add("active");
+function scrollBanners() {
+  index = (index + 1) % banners.length;
+  carousel.scrollTo({
+    left: banners[index].offsetLeft,
+    behavior: 'smooth'
+  });
 }
+setInterval(scrollBanners, 4000);
 
-function nextSlide() {
-  slideIndex = (slideIndex + 1) % dots.length;
-  showSlide(slideIndex);
-}
+// Pause on hover
+carousel.addEventListener("mouseover", () => clearInterval(scrollInterval));
+carousel.addEventListener("mouseout", () => scrollInterval = setInterval(scrollBanners, 4000));
 
-dots.forEach((dot, idx) => {
-  dot.addEventListener("click", () => {
-    slideIndex = idx;
-    showSlide(slideIndex);
+// Modal Clickable Info Strip
+const infoItems = document.querySelectorAll(".info-item");
+infoItems.forEach(item => {
+  item.addEventListener("click", () => {
+    alert(`You clicked on: ${item.innerText}`);
   });
 });
-
-setInterval(nextSlide, 4000);
