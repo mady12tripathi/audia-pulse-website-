@@ -2,36 +2,31 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="styles.css" />
+  <title>Audia+ | Sound That Adapts To You</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <!-- Hero Banner -->
-  <section class="hero">
-    <img src="hero-image.png" alt="Audia+ Pulse 1.0" class="hero-img" />
-  </section>  <!-- Info Strip -->  <section class="info-strip">
-    <div class="info-item">
-      <img src="icon-warranty.png" alt="Warranty" />
-      <p>1-Year Warranty</p>
+  <!-- Header Strip with Logo -->
+  <header class="header-strip">
+    <img src="audia-logo.png" alt="Audia+ Logo" class="header-logo" />
+  </header>  <!-- Info Strip with Clickable Labels -->  <div class="info-strip">
+    <span class="info-item" onclick="openModal('delivery')">🚚 Free Delivery</span>
+    <span class="info-item" onclick="openModal('replacement')">🔁 7-Day Replacement</span>
+    <span class="info-item" onclick="openModal('warranty')">🛡️ 1-Year Warranty</span>
+  </div>  <!-- Modals for Info Strip -->  <div id="delivery-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('delivery')">&times;</span>
+      <p>Enjoy FREE delivery on every Audia+ Pulse 1.0 order. No extra charges.</p>
     </div>
-    <div class="info-item">
-      <img src="icon-delivery.png" alt="Delivery" />
-      <p>Free Express Delivery</p>
+  </div>  <div id="replacement-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('replacement')">&times;</span>
+      <p>7-Day hassle-free replacement available. If anything’s wrong, we’ve got your back.</p>
     </div>
-    <div class="info-item">
-      <img src="icon-support.png" alt="Support" />
-      <p>24/7 Support</p>
+  </div>  <div id="warranty-modal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('warranty')">&times;</span>
+      <p>Pulse 1.0 comes with a 1-Year warranty. Coverage includes manufacturing defects.</p>
     </div>
-  </section>  <!-- Sale is Live Banner -->  <section class="sale-live">
-    <img src="sale-banner.jpg" alt="Sale is Live" class="sale-banner" />
-  </section>  <!-- Technology Section -->  <section class="technology">
-    <img src="tech-omniwave.jpg" alt="OmniWave™ AdaptIQ" />
-    <img src="tech-sonicsphere.jpg" alt="SonicSphere™ 360 Audio" />
-    <img src="tech-acousticdna.jpg" alt="AcousticDNA™ Personal Calibration" />
-    <img src="tech-silentsync.jpg" alt="SilentSync™ Noise Cancellation" />
-  </section>  <!-- Floating Icons -->  <div class="floating-icons">
-    <a href="https://wa.me/yourwhatsapplink"><img src="whatsapp-icon.png" alt="WhatsApp" /></a>
-    <a href="https://www.amazon.in/dp/yourproductlink"><img src="amazon-icon.png" alt="Amazon" /></a>
-  </div>
-</body>
+  </div>  <!-- Add remaining sections here like Sale Is Live, Scrolling Banners, etc. -->  <script src="script.js"></script></body>
 </html>
