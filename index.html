@@ -3,88 +3,116 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Audia+ Pulse 1.0 – Sound That Adapts To You</title>
+  <title>Audia+ Pulse 1.0</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Logo -->
-  <header class="header">
-    <img src="Images/audia-logo.png" alt="Audia+ Logo" class="logo" />
-  </header>
+  <!-- Logo Strip -->
+  <div class="logo-strip">
+    <img src="audia-logo.png" alt="Audia+ Logo" />
+  </div>
 
   <!-- Info Strip -->
   <div class="info-strip">
-    <span>🚚 Free Delivery</span>
-    <span>📦 7-Day Replacement</span>
-    <span>🛡️ 1-Year Warranty</span>
+    <span class="info-label" data-modal="modal-delivery">🚛 Free Delivery</span>
+    <span class="info-label" data-modal="modal-replacement">📦 7-Day Replacement</span>
+    <span class="info-label" data-modal="modal-warranty">🛡️ 1-Year Warranty</span>
   </div>
 
-  <!-- Hero Banners Carousel -->
-  <section class="carousel">
-    <img src="Images/hero-image.png" alt="Hero Banner" />
-    <img src="Images/banner2.jpg" alt="Banner 2" />
-    <img src="Images/banner3.jpg" alt="Banner 3" />
-    <img src="Images/banner4.jpg" alt="Banner 4" />
+  <!-- Hero Banner -->
+  <div class="banner-carousel">
+    <div class="banner-slide active"><img src="hero-image.png" alt="Hero Banner" /></div>
+    <div class="banner-slide"><img src="banner2.jpg" alt="Banner 2" /></div>
+    <div class="banner-slide"><img src="banner3.jpg" alt="Banner 3" /></div>
+    <div class="banner-slide"><img src="banner4.jpg" alt="Banner 4" /></div>
+  </div>
+
+  <!-- Floating Price Strip -->
+  <div class="price-strip">
+    <span class="strikethrough">₹4999</span>
+    <button class="save-button">Save ₹3500 Today!</button>
+  </div>
+
+  <!-- Sale is Live -->
+  <section class="sale-live">
+    <h2>🔥 Sale is Live</h2>
+    <img src="sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
+    <a href="https://amzn.to/4eEH6K2" class="buy-now-btn">Buy Now @ ₹1499</a>
   </section>
-
-  <!-- Launch Offer Strip -->
-  <div class="launch-offer">
-    <span class="strike">₹4999</span>
-    <span class="offer">Launch Offer: ₹1499</span>
-    <button class="save-btn">Save ₹3500 Today!</button>
-  </div>
 
   <!-- Why Choose Audia+ -->
   <section class="why-choose">
     <h2>Why Choose Audia+</h2>
     <ul>
-      <li>✅ AI-powered sound personalization (OmniWave™ AdaptIQ)</li>
-      <li>✅ 360° Spatial Audio with SonicSphere™</li>
-      <li>✅ Real-time Noise Cancellation via SilentSync™</li>
-      <li>✅ IPX5 Waterproof – built for workouts</li>
-      <li>✅ Ultra-light titanium build – 4.8g per earbud</li>
-      <li>✅ 30-hour playtime with charging case</li>
+      <li>✅ Personalized Sound with OmniWave™ AdaptIQ</li>
+      <li>✅ Adaptive Noise Cancellation via SilentSync™</li>
+      <li>✅ IPX5 Sweat & Rain Resistant</li>
+      <li>✅ Studio Quality Audio with AcousticDNA™</li>
     </ul>
   </section>
 
-  <!-- Tech Section -->
+  <!-- Audia+ Technology -->
   <section class="tech-section">
-    <img src="Images/tech-omniwave.jpg" alt="OmniWave™ AdaptIQ" />
-    <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™" />
-    <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™" />
-    <img src="Images/tech-silentsync.jpg" alt="SilentSync™" />
+    <h2>Audia+ Technology</h2>
+    <div class="tech-banners">
+      <img src="tech-omniwave.jpg" alt="OmniWave™ AdaptIQ" />
+      <img src="tech-sonicsphere.jpg" alt="SonicSphere™" />
+      <img src="tech-acousticdna.jpg" alt="AcousticDNA™" />
+      <img src="tech-silentsync.jpg" alt="SilentSync™" />
+    </div>
   </section>
 
   <!-- Testimonials -->
   <section class="testimonials">
-    <h2>What Our Users Say</h2>
-    <div class="testimonial">"Absolutely amazing clarity and bass. Game changer!"<br><strong>– Priya S.</strong></div>
-    <div class="testimonial">"No need to touch settings. It just adapts to me!"<br><strong>– Aman R.</strong></div>
+    <h2>What Customers Say</h2>
+    <p>⭐️⭐️⭐️⭐️⭐️ “Most adaptive sound I’ve ever used. Worth every penny!” – Riya M.</p>
+    <p>⭐️⭐️⭐️⭐️ “Fits perfectly during workouts. Great clarity.” – Arjun P.</p>
   </section>
 
-  <!-- FAQs -->
-  <section class="faq-section">
-    <h2>Frequently Asked Questions</h2>
-    <div class="faq">
-      <button class="accordion">What devices are compatible with Audia+?</button>
-      <div class="panel"><p>Audia+ works with all Bluetooth-enabled devices including smartphones, tablets, laptops, and smart TVs.</p></div>
-
+  <!-- FAQ -->
+  <section class="faq">
+    <h2>FAQs</h2>
+    <div class="faq-item">
       <button class="accordion">What is OmniWave™ AdaptIQ?</button>
-      <div class="panel"><p>It’s our AI-driven audio engine that personalizes sound to your ears and your environment.</p></div>
+      <div class="panel"><p>An AI system that adjusts audio to your hearing and environment.</p></div>
+    </div>
+    <div class="faq-item">
+      <button class="accordion">Is it waterproof?</button>
+      <div class="panel"><p>Yes, rated IPX5 – resistant to sweat and rain.</p></div>
     </div>
   </section>
 
-  <!-- Floating Buttons -->
-  <a href="https://wa.me/918090667890" class="floating-whatsapp">
-    <img src="Images/whatsapp-icon.png" alt="WhatsApp" />
+  <!-- Modals -->
+  <div id="modal-delivery" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>Free Delivery</h3>
+      <p>Enjoy free delivery across India on all Audia+ orders.</p>
+    </div>
+  </div>
+
+  <div id="modal-replacement" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>7-Day Replacement</h3>
+      <p>Request hassle-free replacement within 7 days if needed.</p>
+    </div>
+  </div>
+
+  <div id="modal-warranty" class="modal">
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <h3>1-Year Warranty</h3>
+      <p>Covered under 1-year limited warranty from purchase date.</p>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp Icon -->
+  <a href="https://wa.me/918090667890" class="whatsapp-float" target="_blank">
+    <img src="whatsapp-icon.png" alt="WhatsApp" />
   </a>
 
-  <a href="https://amzn.to/4eEH6K2" class="floating-amazon">
-    <img src="Images/amazon-icon.png" alt="Amazon" />
-  </a>
-
-  <!-- Scripts -->
   <script src="script.js"></script>
 </body>
 </html>
