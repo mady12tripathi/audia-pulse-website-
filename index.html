@@ -1,128 +1,196 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ Pulse 1.0</title>
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audia+ | Pulse 1.0</title>
+  <link rel="icon" href="Images/audia-logo.png" />
   <style>
     body {
-      font-family: Arial, sans-serif;
       margin: 0;
-      padding: 0;
+      font-family: "Segoe UI", sans-serif;
+      background-color: #fff;
+    }
+    header {
+      text-align: center;
+      padding: 10px 0;
+    }
+    header img {
+      width: 140px;
     }
     .info-strip {
       display: flex;
       justify-content: center;
-      gap: 40px;
-      background-color: #f9f9f9;
+      gap: 20px;
       padding: 10px 0;
-      border-bottom: 1px solid #ccc;
+      background: #f8f8f8;
       font-size: 14px;
-      font-weight: 500;
+      font-weight: 600;
     }
     .info-strip span {
       cursor: pointer;
     }
-    .banner {
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 999;
+      left: 0;
+      top: 0;
       width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
     }
-    .banner img {
-      width: 100%;
-      display: block;
-    }
-    .sale-section {
+    .modal-content {
+      background: white;
+      margin: 20% auto;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      border-radius: 8px;
       text-align: center;
-      padding: 40px 10px;
+      font-size: 14px;
     }
-    .sale-section img {
-      max-width: 100%;
-      height: auto;
+    .modal-content span.close {
+      float: right;
+      font-size: 18px;
+      cursor: pointer;
+    }
+    .carousel {
+      display: flex;
+      overflow: auto;
+      scroll-snap-type: x mandatory;
+    }
+    .carousel img {
+      width: 100%;
+      scroll-snap-align: center;
+    }
+    .section-title {
+      text-align: center;
+      font-size: 24px;
+      font-weight: bold;
+      margin: 30px 0 10px;
+    }
+    .section-title span {
+      color: red;
     }
     .tech-section {
-      padding: 40px 20px;
-      background-color: #f3f3f3;
-    }
-    .tech-section h2 {
+      background-color: #f2f2f2;
+      padding: 30px 10px;
       text-align: center;
-      margin-bottom: 30px;
     }
-    .tech-img {
-      max-width: 100%;
+    .tech-title {
+      font-size: 22px;
+      font-weight: bold;
       margin-bottom: 20px;
     }
+    .tech-images {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+    .tech-images img {
+      width: 160px;
+      max-width: 100%;
+    }
+    .floating-icon {
+      position: fixed;
+      bottom: 20px;
+      z-index: 999;
+      width: 50px;
+      height: 50px;
+    }
+    .whatsapp {
+      right: 80px;
+    }
+    .amazon {
+      right: 20px;
+    }
   </style>
-</head><body>
+</head>
+<body>
+
   <!-- Logo -->
-  <div class="text-center py-2">
-    <img src="audia-logo.png" alt="Audia+ Logo" height="40">
-  </div>  <!-- Info Strip -->  <div class="info-strip">
-    <span data-bs-toggle="modal" data-bs-target="#deliveryModal">🚛 Free Delivery</span>
-    <span data-bs-toggle="modal" data-bs-target="#replacementModal">🔁 7-Day Replacement</span>
-    <span data-bs-toggle="modal" data-bs-target="#warrantyModal">🛡️ 1-Year Warranty</span>
-  </div>  <!-- Hero Banner -->  <div class="banner">
-    <img src="hero-image.png" alt="Hero Banner">
-  </div>  <!-- Carousel Banners -->  <div id="carouselBanners" class="carousel slide" data-bs-ride="carousel">
-    <div class="carousel-inner">
-      <div class="carousel-item active">
-        <img src="banner2.jpg" class="d-block w-100" alt="Banner 2">
-      </div>
-      <div class="carousel-item">
-        <img src="banner3.jpg" class="d-block w-100" alt="Banner 3">
-      </div>
-      <div class="carousel-item">
-        <img src="banner4.jpg" class="d-block w-100" alt="Banner 4">
-      </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#carouselBanners" data-bs-slide="prev">
-      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#carouselBanners" data-bs-slide="next">
-      <span class="carousel-control-next-icon" aria-hidden="true"></span>
-    </button>
-  </div>  <!-- Sale Is Live Section -->  <div class="sale-section">
-    <h2>Sale <span style="color: red;">Is Live</span></h2>
-    <img src="sale-banner.jpg" alt="Sale Is Live Banner">
-  </div>  <!-- Tech Section -->  <div class="tech-section">
-    <h2>Audia+ Technology</h2>
-    <img src="tech-omniwave.jpg" class="tech-img" alt="OmniWave">
-    <img src="tech-sonicsphere.jpg" class="tech-img" alt="SonicSphere">
-    <img src="tech-acousticdna.jpg" class="tech-img" alt="AcousticDNA">
-    <img src="tech-silentsync.jpg" class="tech-img" alt="SilentSync">
-  </div>  <!-- Modals -->  <div class="modal fade" id="deliveryModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Free Delivery</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          Enjoy FREE delivery on every Audia+ Pulse 1.0 order. No extra charges.
-        </div>
-      </div>
-    </div>
-  </div>  <div class="modal fade" id="replacementModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">7-Day Replacement</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          7-Day hassle-free replacement available. If anything’s wrong, we’ve got your back.
-        </div>
-      </div>
-    </div>
-  </div>  <div class="modal fade" id="warrantyModal" tabindex="-1">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">1-Year Warranty</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-        </div>
-        <div class="modal-body">
-          Pulse 1.0 comes with a 1-Year warranty. Coverage includes manufacturing defects.
-        </div>
-      </div>
+  <header>
+    <img src="Images/audia-logo.png" alt="Audia+ Logo" />
+  </header>
+
+  <!-- Info Strip -->
+  <div class="info-strip">
+    <span onclick="openModal('deliveryModal')">🚚 Free Delivery</span>
+    <span onclick="openModal('replacementModal')">🔁 7-Day Replacement</span>
+    <span onclick="openModal('warrantyModal')">🛡️ 1-Year Warranty</span>
+  </div>
+
+  <!-- Info Modals -->
+  <div id="deliveryModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('deliveryModal')">&times;</span>
+      Enjoy FREE delivery on every Audia+ Pulse 1.0 order. No extra charges.
     </div>
   </div>
-</body></html>
+  <div id="replacementModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('replacementModal')">&times;</span>
+      7-Day hassle-free replacement available. If anything’s wrong, we’ve got your back.
+    </div>
+  </div>
+  <div id="warrantyModal" class="modal">
+    <div class="modal-content">
+      <span class="close" onclick="closeModal('warrantyModal')">&times;</span>
+      Pulse 1.0 comes with a 1-Year warranty. Coverage includes manufacturing defects.
+    </div>
+  </div>
+
+  <!-- Banner Carousel -->
+  <div class="carousel">
+    <img src="Images/hero-image.jpg" alt="Hero Banner" />
+    <img src="Images/banner2.jpg" alt="Banner 2" />
+    <img src="Images/banner3.jpg" alt="Banner 3" />
+    <img src="Images/banner4.jpg" alt="Banner 4" />
+  </div>
+
+  <!-- Sale Section -->
+  <div class="section-title">Sale <span>Is Live</span></div>
+  <div style="text-align: center; margin: 10px 0 30px;">
+    <img src="Images/sale-banner.jpg" alt="Sale Is Live Banner" style="width: 90%; max-width: 500px;" />
+  </div>
+
+  <!-- Technology Section -->
+  <div class="tech-section">
+    <div class="tech-title">Audia+ Technology</div>
+    <div class="tech-images">
+      <img src="Images/tech-omniwave.jpg" alt="OmniWave" />
+      <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere" />
+      <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA" />
+      <img src="Images/tech-silentsync.jpg" alt="SilentSync" />
+    </div>
+  </div>
+
+  <!-- Floating Icons -->
+  <a href="https://wa.me/your-number" class="floating-icon whatsapp">
+    <img src="Images/whatapp-icon.png" alt="WhatsApp Icon" width="50" height="50" />
+  </a>
+  <a href="https://www.amazon.in/dp/your-product-id" class="floating-icon amazon">
+    <img src="Images/amazon-icon.png" alt="Amazon Icon" width="50" height="50" />
+  </a>
+
+  <!-- JS for Modals -->
+  <script>
+    function openModal(id) {
+      document.getElementById(id).style.display = "block";
+    }
+    function closeModal(id) {
+      document.getElementById(id).style.display = "none";
+    }
+    window.onclick = function(event) {
+      ['deliveryModal', 'replacementModal', 'warrantyModal'].forEach(id => {
+        if (event.target == document.getElementById(id)) {
+          closeModal(id);
+        }
+      });
+    };
+  </script>
+
+</body>
+</html>
