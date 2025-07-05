@@ -1,84 +1,108 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Audia+ | Sound That Adapts To You</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
 </head>
-<body>  <!-- Logo Strip -->  <div class="logo-strip">
-    <img src="audia-logo.png" alt="Audia+ Logo" class="logo" />
-  </div>  <!-- Info Strip -->  <div class="info-strip">
-    <div class="info-item" onclick="openModal('delivery')">
-      🚚 Free Delivery
-    </div>
-    <div class="info-item" onclick="openModal('replacement')">
-      🔄 7-Day Replacement
-    </div>
-    <div class="info-item" onclick="openModal('warranty')">
-      🛡️ 1-Year Warranty
-    </div>
-  </div>  <!-- Banner Carousel -->  <div class="carousel" id="banner-carousel">
-    <div class="carousel-track">
-      <div class="banner-slide">
-        <img src="hero-image.png" alt="Hero Banner" />
-        <div class="floating-cta">
-          <div class="price-strip">₹<s>4999</s> <span class="deal">Buy Now @ ₹1499</span></div>
-          <a href="https://amzn.to/4eEH6K2" target="_blank" class="cta-button">Save ₹3500 Today!</a>
+<body>
+
+  <!-- Logo Strip -->
+  <div class="logo-strip">
+    <img src="audia-logo.png" alt="Audia+ Logo">
+  </div>
+
+  <!-- Hero Banner Carousel -->
+  <div class="carousel">
+    <div class="carousel-inner">
+      <div style="position: relative;">
+        <img src="hero-image.png" alt="Hero">
+        <div class="banner-cta">
+          <span class="line-through">₹4999</span> Buy Now @ ₹1499 <br> Save ₹3500 Today!
         </div>
       </div>
-      <div class="banner-slide"><img src="banner2.jpg" alt="Banner 2" /></div>
-      <div class="banner-slide"><img src="banner3.jpg" alt="Banner 3" /></div>
-      <div class="banner-slide"><img src="banner4.jpg" alt="Banner 4" /></div>
+      <div style="position: relative;">
+        <img src="banner2.jpg" alt="Banner 2">
+        <div class="banner-cta">
+          <span class="line-through">₹4999</span> Buy Now @ ₹1499 <br> Save ₹3500 Today!
+        </div>
+      </div>
+      <div style="position: relative;">
+        <img src="banner3.jpg" alt="Banner 3">
+        <div class="banner-cta">
+          <span class="line-through">₹4999</span> Buy Now @ ₹1499 <br> Save ₹3500 Today!
+        </div>
+      </div>
+      <div style="position: relative;">
+        <img src="banner4.jpg" alt="Banner 4">
+        <div class="banner-cta">
+          <span class="line-through">₹4999</span> Buy Now @ ₹1499 <br> Save ₹3500 Today!
+        </div>
+      </div>
     </div>
-    <div class="carousel-indicators"></div>
-  </div>  <!-- Sale is Live Section -->  <section class="sale-section">
-    <h2>🔥 SALE IS LIVE 🔥</h2>
-    <img src="sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
-  </section>  <!-- Audia+ Technology Section -->  <section class="tech-section">
-    <h2>Audia+ Technology</h2>
-    <div class="tech-banners">
-      <img src="tech-omniwave.jpg" alt="OmniWave AdaptIQ" />
-      <img src="tech-sonicsphere.jpg" alt="SonicSphere" />
-      <img src="tech-acousticdna.jpg" alt="AcousticDNA" />
-      <img src="tech-silentsync.jpg" alt="SilentSync" />
-    </div>
-  </section>  <!-- Why Choose Audia+ Section -->  <section class="why-audia">
-    <h2>Why Choose Audia+</h2>
+  </div>
+
+  <!-- Floating WhatsApp + Amazon Icons -->
+  <div class="floating-icons">
+    <a href="https://wa.me/918090667890" target="_blank"><img src="whatsapp-icon.png" alt="WhatsApp"></a>
+    <a href="https://amzn.to/4eEH6K2" target="_blank"><img src="amazon-icon.png" alt="Amazon"></a>
+  </div>
+
+  <!-- Info Strip -->
+  <div class="info-strip">
+    <div class="info-item"><img src="delivery.png" alt=""><span>Free Delivery</span></div>
+    <div class="info-item"><img src="replacement.png" alt=""><span>7-Day Replacement</span></div>
+    <div class="info-item"><img src="warranty.png" alt=""><span>1-Year Warranty</span></div>
+  </div>
+
+  <!-- Modals -->
+  <div class="modal" id="modal1"><span class="close">×</span><h3>Free Delivery</h3><p>We offer free delivery pan-India with tracking and secure packaging.</p></div>
+  <div class="modal" id="modal2"><span class="close">×</span><h3>7-Day Replacement</h3><p>Quick and easy 7-day replacement if anything goes wrong.</p></div>
+  <div class="modal" id="modal3"><span class="close">×</span><h3>1-Year Warranty</h3><p>Your Pulse 1.0 comes with 1-year limited warranty against manufacturing defects.</p></div>
+
+  <!-- Sale Strip -->
+  <div class="sale-strip">
+    <span class="strike">₹4999</span> Launch Offer: ₹1499
+    <button class="save-btn">Save ₹3500 Today!</button>
+  </div>
+
+  <!-- Why Choose Audia+ -->
+  <div class="why-audia">
+    <h2 class="section-heading">Why Choose Audia+</h2>
     <ul>
-      <li>🎧 Personalized Sound with OmniWave™ AdaptIQ</li>
-      <li>🔇 Adaptive Noise Cancellation for Any Environment</li>
-      <li>💧 IPX5 Waterproof and Sweat-Proof Design</li>
-      <li>🕒 30-Hour Battery with Fast Charging</li>
+      <li>AI-powered sound personalization (OmniWave™ AdaptIQ)</li>
+      <li>360° Spatial Audio with SonicSphere™</li>
+      <li>Real-time Noise Cancellation via SilentSync™</li>
+      <li>IPX5 Waterproof – built for workouts</li>
+      <li>Ultra-light titanium build – 4.8g per earbud</li>
+      <li>30-hour playtime with charging case</li>
     </ul>
-  </section>  <!-- Testimonials -->  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <blockquote>"Unmatched sound quality – I’ve never experienced audio like this before!"</blockquote>
-    <blockquote>"Perfect for my workouts and calls – the noise cancellation is top-notch."</blockquote>
-    <blockquote>"It adapts to my hearing perfectly. Total game-changer."</blockquote>
-  </section>  <!-- FAQ Section -->  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>How long does the battery last?</summary>
-      <p>8 hours on earbuds + 22 hours with the case.</p>
-    </details>
-    <details>
-      <summary>Is it waterproof?</summary>
-      <p>Yes, Pulse 1.0 is IPX5 rated for sweat and rain resistance.</p>
-    </details>
-    <details>
-      <summary>Can I return if I don’t like it?</summary>
-      <p>Yes, we offer a 7-day replacement guarantee.</p>
-    </details>
-  </section>  <!-- Floating WhatsApp & Amazon -->  <a href="https://amzn.to/4eEH6K2" target="_blank" class="floating-btn amazon-btn">
-    <img src="amazon-icon.png" alt="Amazon" />
-  </a>
-  <a href="https://wa.me/918090667890" target="_blank" class="floating-btn whatsapp-btn">
-    <img src="whatsapp-icon.png" alt="WhatsApp" />
-  </a>  <!-- Modal Info -->  <div class="modal" id="modal">
-    <div class="modal-content" id="modal-content">
-      <span class="close" onclick="closeModal()">&times;</span>
-      <div id="modal-body"></div>
-    </div>
-  </div></body>
+  </div>
+
+  <!-- Audia+ Technology Banners -->
+  <div class="tech-section">
+    <img src="tech-omniwave.jpg" alt="OmniWave™ AdaptIQ">
+    <img src="tech-sonicsphere.jpg" alt="SonicSphere™">
+    <img src="tech-acousticdna.jpg" alt="AcousticDNA™">
+    <img src="tech-silentsync.jpg" alt="SilentSync™">
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <h2 class="section-heading">What Our Users Say</h2>
+    <div class="card"><p>"Absolutely amazing clarity and bass. Game changer!"</p><strong>– Priya S.</strong></div>
+    <div class="card"><p>"No need to touch settings. It just adapts to me!"</p><strong>– Rahul M.</strong></div>
+  </div>
+
+  <!-- FAQs -->
+  <div class="faq-section">
+    <h2 class="section-heading">FAQs</h2>
+    <details><summary>Is Audia+ Pulse 1.0 waterproof?</summary><p>Yes, it has IPX5 water resistance – ideal for rain and sweat.</p></details>
+    <details><summary>Does it support voice assistants?</summary><p>Yes, compatible with Siri, Google Assistant, and Alexa.</p></details>
+    <details><summary>Is the sound really personalized?</summary><p>Yes! OmniWave™ AdaptIQ learns your hearing profile using AcousticDNA™ in-ear mapping.</p></details>
+  </div>
+
+  <script src="script.js"></script>
+</body>
 </html>
