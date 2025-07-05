@@ -1,220 +1,196 @@
-/* Reset & base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
 body {
+  margin: 0;
   font-family: 'Segoe UI', sans-serif;
-  background: #fff;
+  background-color: #fff;
   color: #111;
-  line-height: 1.6;
 }
 
-/* Logo strip */
 .logo-strip {
   background: #000;
-  padding: 12px 0;
   text-align: center;
+  padding: 10px;
 }
 
 .logo-strip img {
-  height: 40px;
+  height: 50px;
 }
 
-/* Info strip */
-.info-strip {
-  background: #f1f1f1;
-  display: flex;
-  justify-content: center;
-  gap: 25px;
-  padding: 10px 0;
-  font-size: 14px;
-  font-weight: 500;
-}
-
-.info-label {
-  cursor: pointer;
-  color: #000;
-}
-
-/* Carousel banners */
-.banner-carousel {
-  position: relative;
-  overflow: hidden;
-  max-height: 55vh;
-}
-
-.banner-slide {
-  display: none;
-}
-
-.banner-slide.active {
+.hero img {
+  width: 100%;
   display: block;
 }
 
-.banner-slide img {
-  width: 100%;
-  height: auto;
-  object-fit: cover;
+.info-strip {
+  display: flex;
+  justify-content: space-around;
+  background-color: #f5f5f5;
+  padding: 10px 0;
+  font-size: 14px;
+  font-weight: bold;
 }
 
-/* Floating Price Strip */
-.price-strip {
-  background: #fff0f0;
+.clickable-label {
+  cursor: pointer;
+  color: #333;
+}
+
+.sale-strip {
+  background-color: #ffecec;
   text-align: center;
-  padding: 10px;
+  padding: 12px;
   font-size: 16px;
 }
 
-.strikethrough {
-  text-decoration: line-through;
-  color: #777;
-  font-size: 18px;
-  margin-right: 10px;
+.sale-strip s {
+  color: #999;
+  margin-right: 5px;
 }
 
-.save-button {
-  background: red;
+.save-btn {
+  background-color: red;
   color: #fff;
   border: none;
-  padding: 8px 14px;
-  border-radius: 4px;
+  padding: 6px 12px;
+  border-radius: 5px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* Sale is Live */
-.sale-live {
+.buy-now-strip {
   text-align: center;
-  padding: 40px 20px;
-  background: #fdfdfd;
+  margin: 20px 0;
 }
 
-.sale-live h2 {
-  font-size: 24px;
-  margin-bottom: 15px;
+.buy-btn {
+  background-color: #222;
+  color: white;
+  padding: 12px 24px;
+  border: none;
+  font-size: 16px;
+  border-radius: 6px;
+  cursor: pointer;
 }
 
-.sale-banner {
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  gap: 10px;
+  padding: 10px;
+}
+
+.carousel img {
   width: 100%;
-  max-width: 600px;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  flex-shrink: 0;
 }
 
-.buy-now-btn {
-  display: inline-block;
-  margin-top: 15px;
-  background: #111;
-  color: #fff;
-  padding: 10px 18px;
-  text-decoration: none;
-  border-radius: 4px;
+.grey-bg {
+  background-color: #f0f0f0;
 }
 
-/* Why Choose Audia+ */
 .why-choose {
-  background: #f6f6f6;
-  padding: 40px 20px;
+  padding: 20px;
   text-align: center;
 }
 
 .why-choose h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
+  margin-bottom: 15px;
 }
 
 .why-choose ul {
   list-style: none;
   padding: 0;
+  text-align: left;
+  max-width: 600px;
+  margin: auto;
 }
 
-.why-choose li {
-  margin: 10px 0;
+.why-choose ul li {
+  padding: 8px 0;
   font-size: 16px;
 }
 
-/* Technology section */
 .tech-section {
-  padding: 40px 20px;
-  text-align: center;
-}
-
-.tech-section h2 {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.tech-banners {
   display: flex;
-  overflow-x: auto;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-  padding-bottom: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  padding: 20px 10px;
 }
 
-.tech-banners img {
-  flex: 0 0 auto;
-  width: 280px;
-  scroll-snap-align: start;
-  border-radius: 6px;
+.tech-section img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
 }
 
-/* Testimonials */
 .testimonials {
-  padding: 40px 20px;
-  background: #fff;
   text-align: center;
+  padding: 30px 20px;
+  background: #fff;
 }
 
 .testimonials h2 {
-  margin-bottom: 15px;
+  margin-bottom: 20px;
 }
 
-.testimonials p {
-  margin: 10px 0;
+.testimonials blockquote {
+  background: #f9f9f9;
+  border-left: 5px solid #ccc;
+  margin: 10px auto;
+  padding: 15px;
+  max-width: 600px;
   font-style: italic;
 }
 
-/* FAQ Accordion */
-.faq {
-  padding: 40px 20px;
-  background: #f7f7f7;
+.faq-section {
+  padding: 20px;
+  background-color: #fafafa;
 }
 
-.faq h2 {
-  margin-bottom: 20px;
+.faq-section h2 {
   text-align: center;
 }
 
-.accordion {
-  background-color: #eee;
-  cursor: pointer;
-  padding: 12px;
+.faq-section details {
+  margin: 15px auto;
+  max-width: 700px;
+  background: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+/* Floating icons */
+.floating-icon {
+  position: fixed;
+  bottom: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+}
+
+.floating-icon img {
   width: 100%;
-  border: none;
-  text-align: left;
-  outline: none;
-  font-size: 16px;
-  transition: background 0.3s ease;
+  height: 100%;
+  border-radius: 50%;
 }
 
-.accordion:hover {
-  background-color: #ccc;
+.floating-icon.whatsapp {
+  left: 20px;
 }
 
-.panel {
-  padding: 0 12px;
-  display: none;
-  background-color: white;
-  overflow: hidden;
+.floating-icon.amazon {
+  left: 70px;
 }
 
-/* Modals */
+/* Modal Styles */
 .modal {
   display: none;
   position: fixed;
-  z-index: 999;
+  z-index: 1000;
   left: 0;
   top: 0;
   width: 100%;
@@ -225,32 +201,29 @@ body {
 
 .modal-content {
   background-color: #fff;
-  margin: 10% auto;
-  padding: 25px;
-  border: 1px solid #888;
-  width: 80%;
-  max-width: 400px;
+  margin: 15% auto;
+  padding: 20px;
   border-radius: 8px;
+  width: 90%;
+  max-width: 400px;
   text-align: center;
+  animation: slideIn 0.4s ease-out;
 }
 
 .close {
-  color: #aaa;
   float: right;
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
 }
 
-/* WhatsApp Floating Icon */
-.whatsapp-float {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-}
-
-.whatsapp-float img {
-  width: 50px;
-  height: 50px;
+@keyframes slideIn {
+  from {
+    transform: translateY(-40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }
