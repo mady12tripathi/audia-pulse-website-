@@ -1,150 +1,74 @@
-/* General Reset */
-body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-}
-
-/* Logo */
-.logo-strip {
-  text-align: center;
-  background-color: black;
-  padding: 10px;
-}
-.logo-strip img {
-  height: 50px;
-}
-
-/* Carousel */
-.carousel {
-  overflow: hidden;
-  width: 100%;
-}
-.carousel-inner {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-}
-.carousel-inner img {
-  min-width: 100%;
-  scroll-snap-align: center;
-  object-fit: cover;
-}
-.banner-cta {
-  position: absolute;
-  bottom: 10%;
-  left: 5%;
-  background: rgba(255,255,255,0.8);
-  padding: 10px;
-  font-weight: bold;
-}
-
-/* Floating WhatsApp & Amazon */
-.floating-icons {
-  position: fixed;
-  right: 10px;
-  bottom: 40px;
-  z-index: 100;
-}
-.floating-icons img {
-  width: 50px;
-  margin: 10px 0;
-  border-radius: 50%;
-  box-shadow: 0 0 8px rgba(0,0,0,0.4);
-}
-
-/* Info Strip */
-.info-strip {
-  display: flex;
-  justify-content: space-around;
-  background: #f2f2f2;
-  padding: 10px 0;
-  font-weight: bold;
-}
-
-/* Sale Strip */
-.sale-strip {
-  background: #ffecec;
-  padding: 15px;
-  text-align: center;
-  font-size: 1.2em;
-}
-.sale-strip .strike {
-  text-decoration: line-through;
-  color: #888;
-  margin-right: 10px;
-}
-.sale-strip .save-btn {
-  background-color: red;
-  color: #fff;
-  border: none;
-  padding: 10px 18px;
-  font-weight: bold;
-  margin-left: 10px;
-  border-radius: 4px;
-}
-
-/* Why Choose Audia */
-.why-audia {
-  background: #f1f1f1;
-  padding: 20px;
-  text-align: center;
-}
-.why-audia ul {
-  list-style: none;
-  padding: 0;
-}
-.why-audia li::before {
-  content: "✔️ ";
-  color: green;
-}
-.section-heading {
-  font-size: 1.6em;
-  margin-bottom: 10px;
-}
-
-/* Tech Scroll Section */
-.tech-section {
-  display: flex;
-  overflow-x: auto;
-  padding: 20px 0;
-  gap: 20px;
-  scroll-snap-type: x mandatory;
-}
-.tech-section img {
-  height: 200px;
-  flex-shrink: 0;
-  scroll-snap-align: start;
-}
-
-/* Testimonials */
-.testimonials {
-  padding: 30px;
-  background: #fff;
-  text-align: center;
-}
-.testimonials .card {
-  background: #f9f9f9;
-  margin: 15px auto;
-  padding: 20px;
-  border-radius: 10px;
-  width: 90%;
-  max-width: 500px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-}
-
-/* FAQ Section */
-.faq-section {
-  padding: 30px;
-  background: #f2f2f2;
-}
-.faq-section details {
-  margin: 10px 0;
-  padding: 10px;
-  background: white;
-  border-radius: 5px;
-  cursor: pointer;
-}
-.faq-section summary {
-  font-weight: bold;
-}
+<!DOCTYPE html><html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audia+ | Sound That Adapts To You</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <!-- Info Strip -->
+  <div class="info-strip">
+    <div class="info-item">🚚 Free Delivery</div>
+    <div class="info-item">📦 7-Day Replacement</div>
+    <div class="info-item">🛡️ 1-Year Warranty</div>
+  </div>  <!-- Modal Popups -->  <div id="modal1" class="modal">
+    <div class="modal-content slide">
+      <span class="close">&times;</span>
+      <p>We offer free delivery across India on all orders.</p>
+    </div>
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content slide">
+      <span class="close">&times;</span>
+      <p>You can request a replacement within 7 days of delivery.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content slide">
+      <span class="close">&times;</span>
+      <p>1-Year warranty on all manufacturing defects.</p>
+    </div>
+  </div>  <!-- Banner Carousel -->  <div class="carousel">
+    <img src="Images/hero-image.png" alt="Hero" />
+    <img src="Images/banner2.jpg" alt="Banner 2" />
+    <img src="Images/banner3.jpg" alt="Banner 3" />
+    <img src="Images/banner4.jpg" alt="Banner 4" />
+    <a class="buy-now" href="https://amzn.to/4eEH6K2" target="_blank">Buy Now – ₹1499</a>
+  </div>  <!-- Offer Strip -->  <div class="offer-strip">
+    <span class="strike">₹4999</span>
+    <span class="launch">Launch Offer: ₹1499</span>
+    <button class="save-btn">Save ₹3500 Today!</button>
+  </div>  <!-- Why Choose Audia+ -->  <section class="why-audia">
+    <h2>Why Choose Audia+</h2>
+    <ul>
+      <li>✅ AI-powered sound personalization (OmniWave™ AdaptIQ)</li>
+      <li>✅ 360° Spatial Audio with SonicSphere™</li>
+      <li>✅ Real-time Noise Cancellation via SilentSync™</li>
+      <li>✅ IPX5 Waterproof – built for workouts</li>
+      <li>✅ Ultra-light titanium build – 4.8g per earbud</li>
+      <li>✅ 30-hour playtime with charging case</li>
+    </ul>
+  </section>  <!-- Tech Section -->  <section class="tech-section">
+    <img src="Images/tech-omniwave.jpg" alt="OmniWave™ AdaptIQ" />
+    <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™" />
+    <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™" />
+    <img src="Images/tech-silentsync.jpg" alt="SilentSync™" />
+  </section>  <!-- Testimonials -->  <section class="testimonials">
+    <h2>What Our Users Say</h2>
+    <div class="testimonial-box">"Absolutely amazing clarity and bass. Game changer!"<br/><strong>– Priya S.</strong></div>
+    <div class="testimonial-box">"No need to touch settings. It just adapts to me!"<br/><strong>– Aman R.</strong></div>
+  </section>  <!-- FAQ Section -->  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
+    <details>
+      <summary>What devices are compatible with Audia+?</summary>
+      <p>Audia+ works with all Bluetooth-enabled devices including Android, iOS, and laptops.</p>
+    </details>
+    <details>
+      <summary>What is OmniWave™ AdaptIQ?</summary>
+      <p>It’s our AI sound system that adapts audio in real-time to your hearing and environment.</p>
+    </details>
+  </section>  <!-- Floating Icons -->  <div class="floating-icons">
+    <a href="https://wa.me/918090667890" target="_blank"><img src="Images/whatsapp-icon.png" alt="WhatsApp" /></a>
+    <a href="https://amzn.to/4eEH6K2" target="_blank"><img src="Images/amazon-icon.png" alt="Amazon" /></a>
+  </div>  <script src="script.js"></script></body>
+</html>
