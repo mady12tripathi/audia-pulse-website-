@@ -1,179 +1,257 @@
-
-/* Reset and basic layout */
+/* Reset and base styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
 }
-
 body {
-  background-color: #fff;
-  color: #111;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #ffffff;
+  color: #000;
   overflow-x: hidden;
 }
+a {
+  text-decoration: none;
+  color: inherit;
+}
 
-/* Logo Header */
-.header-logo-strip {
-  width: 100%;
+/* Header logo strip */
+.logo-strip {
   background: #000;
   padding: 12px 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  text-align: center;
 }
-.header-logo-strip img {
+.logo-strip img {
+  height: 40px;
+}
+
+/* Hero carousel */
+.carousel {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+.carousel-inner {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+}
+.carousel-inner img {
+  width: 100vw;
+  max-height: 500px;
+  object-fit: contain;
+}
+
+/* Banner Floating Button on each slide */
+.banner-cta {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  background: red;
+  color: #fff;
+  font-weight: bold;
+  padding: 10px 18px;
+  border-radius: 8px;
+  font-size: 14px;
+  z-index: 5;
+  box-shadow: 0 0 10px rgba(0,0,0,0.3);
+}
+.banner-cta span.line-through {
+  text-decoration: line-through;
+  font-size: 13px;
+  opacity: 0.8;
+  margin-right: 6px;
+}
+
+/* Floating WhatsApp and Amazon Buttons */
+.floating-icons {
+  position: fixed;
+  bottom: 20px;
+  left: 15px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  z-index: 999;
+}
+.floating-icons a img {
+  width: 48px;
   height: 48px;
 }
 
 /* Info Strip */
 .info-strip {
+  background: #f5f5f5;
+  padding: 10px 0;
   display: flex;
-  justify-content: space-around;
-  padding: 10px;
-  background-color: #f4f4f4;
-  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
 }
-.info-icon {
+.info-strip .info-item {
   cursor: pointer;
   text-align: center;
+}
+.info-strip .info-item img {
+  width: 24px;
+  display: block;
+  margin: 0 auto 4px;
+  filter: grayscale(1);
+}
+.info-strip .info-item span {
   font-size: 14px;
-  color: #333;
 }
 
-/* Modals */
+/* Modal popups */
 .modal {
   display: none;
   position: fixed;
   z-index: 9999;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(0,0,0,0.6);
-}
-.modal-content {
-  background-color: #fff;
-  margin: 10% auto;
-  padding: 20px;
-  width: 90%;
-  max-width: 400px;
+  padding: 40px 20px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
   border-radius: 8px;
+  width: 90%;
+  max-width: 320px;
+  box-shadow: 0 0 20px rgba(0,0,0,0.2);
 }
-.close {
+.modal.show {
+  display: block;
+}
+.modal h3 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.modal p {
+  font-size: 14px;
+  line-height: 1.4;
+}
+.modal .close {
   float: right;
-  font-size: 20px;
+  font-weight: bold;
+  font-size: 16px;
   cursor: pointer;
 }
 
-/* Hero Slider */
-.slider-container {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-}
-.slider {
-  display: flex;
-  transition: transform 0.5s ease;
-}
-.slider img {
-  width: 100%;
-  height: auto;
-}
-.banner-floating-cta {
-  position: absolute;
-  bottom: 20px;
-  left: 20px;
-  background: #fff;
-  padding: 10px 16px;
-  border-radius: 30px;
-  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+/* Section headings */
+.section-heading {
+  text-align: center;
+  margin: 40px 0 20px;
+  font-size: 22px;
   font-weight: bold;
-  font-size: 16px;
 }
-.banner-floating-cta .strikethrough {
+
+/* Sale strip */
+.sale-strip {
+  background: #fff3f3;
+  text-align: center;
+  padding: 12px 20px;
+  font-size: 18px;
+}
+.sale-strip span.strike {
   text-decoration: line-through;
-  color: #999;
-  margin-right: 8px;
+  color: #888;
+  margin-right: 10px;
 }
-.banner-floating-cta .save-btn {
-  background-color: red;
-  color: white;
-  padding: 5px 10px;
-  border-radius: 15px;
+.sale-strip .save-btn {
+  background: red;
+  color: #fff;
+  padding: 8px 16px;
+  margin-left: 12px;
+  border-radius: 6px;
+  font-weight: bold;
   font-size: 14px;
 }
 
-/* Section Title */
-.section-title {
-  font-size: 20px;
-  font-weight: bold;
-  margin: 30px 16px 10px;
-}
-
-/* Sale Is Live */
-.sale-banner {
-  width: 100%;
-  margin: 10px 0;
-}
-
-/* Technology Banners */
-.tech-scroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  gap: 16px;
-  padding: 0 16px;
-}
-.tech-scroll img {
-  width: 300px;
-  flex-shrink: 0;
-  scroll-snap-align: center;
-  border-radius: 12px;
-}
-
 /* Why Choose Audia+ */
-.why-choose {
-  background-color: #f0f0f0;
-  padding: 30px 16px;
+.why-audia {
+  background: #f0f0f0;
+  padding: 30px 20px;
 }
-.why-choose h2 {
-  font-size: 24px;
-  margin-bottom: 10px;
+.why-audia ul {
+  max-width: 800px;
+  margin: auto;
+  list-style: none;
+}
+.why-audia ul li {
+  margin: 10px 0;
+  font-size: 15px;
+  position: relative;
+  padding-left: 20px;
+}
+.why-audia ul li::before {
+  content: "✔";
+  color: green;
+  position: absolute;
+  left: 0;
+}
+
+/* Tech section scroll banners */
+.tech-section {
+  overflow-x: auto;
+  display: flex;
+  gap: 10px;
+  padding: 10px 0 20px 10px;
+  scroll-snap-type: x mandatory;
+}
+.tech-section img {
+  flex: 0 0 auto;
+  width: 90%;
+  max-width: 350px;
+  scroll-snap-align: center;
+  border-radius: 10px;
 }
 
 /* Testimonials */
 .testimonials {
-  padding: 30px 16px;
-}
-.testimonial {
   background: #fafafa;
-  padding: 16px;
+  padding: 30px 20px;
+  text-align: center;
+}
+.testimonials .card {
+  max-width: 320px;
+  margin: 10px auto;
+  background: #fff;
+  padding: 15px;
+  border-radius: 10px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.testimonials .card p {
+  font-style: italic;
   margin-bottom: 10px;
-  border-left: 4px solid #222;
 }
-
-/* FAQs */
-.faq {
-  padding: 30px 16px;
-}
-.faq-item {
-  margin-bottom: 16px;
-}
-.faq-question {
+.testimonials .card strong {
+  display: block;
   font-weight: bold;
-  margin-bottom: 4px;
 }
 
-/* Floating Icons */
-.floating-icons {
-  position: fixed;
-  bottom: 20px;
-  right: 10px;
-  z-index: 999;
+/* FAQ section */
+.faq-section {
+  background: #f9f9f9;
+  padding: 30px 20px;
 }
-.floating-icons img {
-  width: 48px;
-  margin: 6px 0;
+.faq-section details {
+  margin: 12px 0;
+}
+.faq-section summary {
+  font-weight: bold;
   cursor: pointer;
+}
+.faq-section p {
+  margin: 8px 0 0;
+  font-size: 14px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-inner img {
+    max-height: 300px;
+    object-fit: contain;
+  }
+  .banner-cta {
+    font-size: 12px;
+    padding: 8px 14px;
+  }
+  .sale-strip {
+    font-size: 16px;
+  }
 }
