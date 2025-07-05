@@ -1,257 +1,162 @@
-/* Reset and base styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* Reset & Base */
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background: #ffffff;
-  color: #000;
-  overflow-x: hidden;
-}
-a {
-  text-decoration: none;
-  color: inherit;
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #fff;
+  color: #111;
 }
 
-/* Header logo strip */
-.logo-strip {
-  background: #000;
-  padding: 12px 0;
+/* Logo Header */
+.header {
   text-align: center;
+  padding: 10px 0;
+  background-color: #000;
 }
-.logo-strip img {
-  height: 40px;
-}
-
-/* Hero carousel */
-.carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-.carousel-inner {
-  display: flex;
-  transition: transform 0.5s ease-in-out;
-}
-.carousel-inner img {
-  width: 100vw;
-  max-height: 500px;
-  object-fit: contain;
-}
-
-/* Banner Floating Button on each slide */
-.banner-cta {
-  position: absolute;
-  bottom: 20px;
-  right: 20px;
-  background: red;
-  color: #fff;
-  font-weight: bold;
-  padding: 10px 18px;
-  border-radius: 8px;
-  font-size: 14px;
-  z-index: 5;
-  box-shadow: 0 0 10px rgba(0,0,0,0.3);
-}
-.banner-cta span.line-through {
-  text-decoration: line-through;
-  font-size: 13px;
-  opacity: 0.8;
-  margin-right: 6px;
-}
-
-/* Floating WhatsApp and Amazon Buttons */
-.floating-icons {
-  position: fixed;
-  bottom: 20px;
-  left: 15px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  z-index: 999;
-}
-.floating-icons a img {
-  width: 48px;
-  height: 48px;
+.logo {
+  height: 60px;
 }
 
 /* Info Strip */
 .info-strip {
-  background: #f5f5f5;
-  padding: 10px 0;
   display: flex;
-  justify-content: center;
-  gap: 30px;
-}
-.info-strip .info-item {
-  cursor: pointer;
-  text-align: center;
-}
-.info-strip .info-item img {
-  width: 24px;
-  display: block;
-  margin: 0 auto 4px;
-  filter: grayscale(1);
-}
-.info-strip .info-item span {
+  justify-content: space-around;
+  background-color: #f8f8f8;
+  padding: 10px;
   font-size: 14px;
+  border-bottom: 1px solid #ccc;
 }
 
-/* Modal popups */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  padding: 40px 20px;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  background: #fff;
-  border-radius: 8px;
-  width: 90%;
-  max-width: 320px;
-  box-shadow: 0 0 20px rgba(0,0,0,0.2);
+/* Carousel */
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
 }
-.modal.show {
+.carousel img {
+  min-width: 100%;
+  scroll-snap-align: center;
   display: block;
 }
-.modal h3 {
-  font-size: 18px;
-  margin-bottom: 10px;
-}
-.modal p {
-  font-size: 14px;
-  line-height: 1.4;
-}
-.modal .close {
-  float: right;
-  font-weight: bold;
+
+/* Offer Strip */
+.launch-offer {
+  background: #ffeeee;
+  text-align: center;
+  padding: 10px;
   font-size: 16px;
-  cursor: pointer;
 }
-
-/* Section headings */
-.section-heading {
-  text-align: center;
-  margin: 40px 0 20px;
-  font-size: 22px;
-  font-weight: bold;
-}
-
-/* Sale strip */
-.sale-strip {
-  background: #fff3f3;
-  text-align: center;
-  padding: 12px 20px;
-  font-size: 18px;
-}
-.sale-strip span.strike {
+.strike {
   text-decoration: line-through;
-  color: #888;
+  color: #999;
   margin-right: 10px;
 }
-.sale-strip .save-btn {
-  background: red;
-  color: #fff;
-  padding: 8px 16px;
-  margin-left: 12px;
-  border-radius: 6px;
+.offer {
   font-weight: bold;
-  font-size: 14px;
+  color: #111;
+}
+.save-btn {
+  background: #e60000;
+  color: #fff;
+  padding: 6px 12px;
+  margin-left: 10px;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 /* Why Choose Audia+ */
-.why-audia {
-  background: #f0f0f0;
+.why-choose {
+  background-color: #f0f0f0;
   padding: 30px 20px;
+  text-align: center;
 }
-.why-audia ul {
-  max-width: 800px;
-  margin: auto;
+.why-choose h2 {
+  margin-bottom: 20px;
+}
+.why-choose ul {
   list-style: none;
+  padding: 0;
 }
-.why-audia ul li {
-  margin: 10px 0;
-  font-size: 15px;
-  position: relative;
-  padding-left: 20px;
-}
-.why-audia ul li::before {
-  content: "✔";
-  color: green;
-  position: absolute;
-  left: 0;
+.why-choose li {
+  margin: 8px 0;
+  text-align: left;
+  font-size: 16px;
 }
 
-/* Tech section scroll banners */
+/* Tech Section */
 .tech-section {
-  overflow-x: auto;
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
   gap: 10px;
-  padding: 10px 0 20px 10px;
-  scroll-snap-type: x mandatory;
+  padding: 20px;
+  background-color: #fff;
 }
 .tech-section img {
-  flex: 0 0 auto;
-  width: 90%;
-  max-width: 350px;
-  scroll-snap-align: center;
+  width: 100%;
   border-radius: 10px;
+  object-fit: cover;
 }
 
 /* Testimonials */
 .testimonials {
-  background: #fafafa;
   padding: 30px 20px;
+  background: #f9f9f9;
   text-align: center;
 }
-.testimonials .card {
-  max-width: 320px;
-  margin: 10px auto;
+.testimonials h2 {
+  margin-bottom: 20px;
+}
+.testimonial {
   background: #fff;
   padding: 15px;
+  margin: 10px auto;
   border-radius: 10px;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.testimonials .card p {
-  font-style: italic;
-  margin-bottom: 10px;
-}
-.testimonials .card strong {
-  display: block;
-  font-weight: bold;
+  max-width: 500px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.05);
 }
 
-/* FAQ section */
+/* FAQs */
 .faq-section {
-  background: #f9f9f9;
   padding: 30px 20px;
+  background: #fff;
 }
-.faq-section details {
-  margin: 12px 0;
+.faq-section h2 {
+  margin-bottom: 20px;
+  text-align: center;
 }
-.faq-section summary {
-  font-weight: bold;
+.accordion {
+  background-color: #eee;
+  color: #444;
   cursor: pointer;
+  padding: 12px;
+  width: 100%;
+  border: none;
+  text-align: left;
+  outline: none;
+  transition: 0.3s;
+  margin-bottom: 5px;
 }
-.faq-section p {
-  margin: 8px 0 0;
-  font-size: 14px;
+.panel {
+  padding: 0 12px;
+  background-color: white;
+  display: none;
+  overflow: hidden;
 }
 
-/* Responsive */
-@media (max-width: 768px) {
-  .carousel-inner img {
-    max-height: 300px;
-    object-fit: contain;
-  }
-  .banner-cta {
-    font-size: 12px;
-    padding: 8px 14px;
-  }
-  .sale-strip {
-    font-size: 16px;
-  }
+/* Floating Buttons */
+.floating-whatsapp,
+.floating-amazon {
+  position: fixed;
+  bottom: 80px;
+  left: 20px;
+  z-index: 999;
+}
+.floating-amazon {
+  bottom: 20px;
+}
+.floating-whatsapp img,
+.floating-amazon img {
+  height: 40px;
+  width: 40px;
 }
