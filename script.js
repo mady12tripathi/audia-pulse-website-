@@ -1,49 +1,92 @@
-// Auto-scroll carousel (hero and tech sections)
-let heroIndex = 0;
-const heroImages = ["Images/hero-image.jpg", "Images/banner2.jpg", "Images/banner3.jpg", "Images/banner4.jpg"];
-const heroImgElement = document.getElementById("hero-carousel-img");
-
-function autoScrollHero() {
-  heroIndex = (heroIndex + 1) % heroImages.length;
-  heroImgElement.src = heroImages[heroIndex];
-}
-setInterval(autoScrollHero, 4000); // every 4 seconds
-
-// Info strip modal logic
-const modals = document.querySelectorAll(".modal");
-const openBtns = document.querySelectorAll(".info-strip span");
-const closeBtns = document.querySelectorAll(".close");
-
-openBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    modals[index].style.display = "block";
+// ----- Collapsible Footer Menu -----
+document.querySelectorAll('.footer-section h4').forEach(heading => {
+  heading.addEventListener('click', () => {
+    heading.classList.toggle('active');
+    const submenu = heading.nextElementSibling;
+    submenu.classList.toggle('open');
   });
 });
 
-closeBtns.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    modals[index].style.display = "none";
+// ----- Modal Pop-ups for Info Labels -----
+const modals = document.querySelectorAll('.info-modal');
+const modalTriggers = document.querySelectorAll('.info-label');
+const closeBtns = document.querySelectorAll('.close-modal');
+
+modalTriggers.forEach(trigger => {
+  trigger.addEventListener('click', () => {
+    const modalId = trigger.getAttribute('data-modal');
+    document.getElementById(modalId).classList.add('show');
   });
 });
 
-window.addEventListener("click", (e) => {
+closeBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    btn.closest('.info-modal').classList.remove('show');
+  });
+});
+
+window.addEventListener('click', e => {
   modals.forEach(modal => {
     if (e.target === modal) {
-      modal.style.display = "none";
+      modal.classList.remove('show');
     }
   });
 });
 
-// Collapsible footer sections
-const collapsibles = document.querySelectorAll(".collapsible");
-collapsibles.forEach((item) => {
-  item.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-    if (content.style.maxHeight) {
-      content.style.maxHeight = null;
-    } else {
-      content.style.maxHeight = content.scrollHeight + "px";
-    }
-  });
+// ----- Buy Now Button Confirmation -----
+const buyBtn = document.querySelector('.buy-now-btn');
+const confirmation = document.querySelector('.confirmation-popup');
+const confirmClose = document.querySelector('.close-confirmation');
+
+buyBtn.addEventListener('click', () => {
+  confirmation.classList.add('visible');
 });
+
+confirmClose.addEventListener('click', () => {
+  confirmation.classList.remove('visible');
+});
+
+window.addEventListener('click', e => {
+  if (e.target === confirmation) {
+    confirmation.classList.remove('visible');
+  }
+});
+
+// ----- Horizontal Scroll for Tech Banners -----
+const techContainer = document.querySelector('.tech-scroll');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+techContainer.addEventListener('mousedown', e => {
+  isDown = true;
+  techContainer.classList.add('grabbing');
+  startX = e.pageX - techContainer.offsetLeft;
+  scrollLeft = techContainer.scrollLeft;
+});
+
+techContainer.addEventListener('mouseleave', () => {
+  isDown = false;
+  techContainer.classList.remove('grabbing');
+});
+
+techContainer.addEventListener('mouseup', () => {
+  isDown = false;
+  techContainer.classList.remove('grabbing');
+});
+
+techContainer.addEventListener('mousemove', e => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - techContainer.offsetLeft;
+  const walk = (x - startX) * 2; // Speed factor
+  techContainer.scrollLeft = scrollLeft - walk;
+});
+
+// ----- Auto Scroll Tech Section -----
+setInterval(() => {
+  techContainer.scrollBy({ left: 320, behavior: 'smooth' });
+  if (techContainer.scrollLeft + techContainer.offsetWidth >= techContainer.scrollWidth) {
+    techContainer.scrollTo({ left: 0, behavior: 'smooth' });
+  }
+}, 4000);
