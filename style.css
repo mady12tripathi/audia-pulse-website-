@@ -1,218 +1,81 @@
-/* Reset & Fonts */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
+// JavaScript for collapsible footer menus
+const collapsibles = document.querySelectorAll('.footer-menu h4');
+collapsibles.forEach((header) => {
+  header.addEventListener('click', () => {
+    header.nextElementSibling.classList.toggle('open');
+  });
+});
+
+// Script for tech carousel scroll (horizontal scroll)
+const techCarousel = document.querySelector('.tech-carousel');
+let isDown = false;
+let startX;
+let scrollLeft;
+
+techCarousel.addEventListener('mousedown', (e) => {
+  isDown = true;
+  techCarousel.classList.add('active');
+  startX = e.pageX - techCarousel.offsetLeft;
+  scrollLeft = techCarousel.scrollLeft;
+});
+techCarousel.addEventListener('mouseleave', () => {
+  isDown = false;
+  techCarousel.classList.remove('active');
+});
+techCarousel.addEventListener('mouseup', () => {
+  isDown = false;
+  techCarousel.classList.remove('active');
+});
+techCarousel.addEventListener('mousemove', (e) => {
+  if (!isDown) return;
+  e.preventDefault();
+  const x = e.pageX - techCarousel.offsetLeft;
+  const walk = (x - startX) * 2; // scroll-fast
+  techCarousel.scrollLeft = scrollLeft - walk;
+});
+
+// Smooth modal popup for info labels
+const modalTriggers = document.querySelectorAll('.info-label');
+const modals = document.querySelectorAll('.info-modal');
+const closeButtons = document.querySelectorAll('.close-modal');
+
+modalTriggers.forEach((trigger, index) => {
+  trigger.addEventListener('click', () => {
+    modals[index].classList.add('show');
+  });
+});
+
+closeButtons.forEach((btn, index) => {
+  btn.addEventListener('click', () => {
+    modals[index].classList.remove('show');
+  });
+});
+
+window.addEventListener('click', (e) => {
+  modals.forEach((modal) => {
+    if (e.target === modal) {
+      modal.classList.remove('show');
+    }
+  });
+});
+
+// Buy Now confirmation
+const buyBtn = document.querySelector('.buy-btn');
+if (buyBtn) {
+  buyBtn.addEventListener('click', () => {
+    const confirmBuy = confirm('Redirecting to purchase page. Continue?');
+    if (confirmBuy) {
+      window.location.href = 'https://www.amazon.in/';
+    }
+  });
 }
 
-/* Basic Layout */
-body {
-  background-color: #fff;
-  color: #111;
-  line-height: 1.6;
-  overflow-x: hidden;
-}
-
-/* Header Logo and Bag Icon */
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-.header img {
-  height: 40px;
-}
-
-/* Floating Icons */
-.floating-icons {
-  position: fixed;
-  bottom: 20px;
-  right: 20px;
-  z-index: 999;
-}
-
-.floating-icons a {
-  display: inline-block;
-  margin-left: 10px;
-}
-
-.floating-icons img {
-  width: 40px;
-  height: 40px;
-}
-
-/* Hero Banner Carousel */
-.hero-carousel {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-carousel img {
-  width: 100%;
-  display: block;
-}
-
-/* Auto Scroll Banners */
-.tech-scroll {
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 10px 0;
-  gap: 10px;
-}
-
-.tech-scroll img {
-  width: 90%;
-  max-width: 300px;
-  height: auto;
-  border-radius: 8px;
-  flex-shrink: 0;
-}
-
-/* Info Strip */
-.info-strip {
-  background-color: #f4f4f4;
-  display: flex;
-  justify-content: space-around;
-  padding: 8px 0;
-  border-bottom: 1px solid #ddd;
-  text-align: center;
-}
-
-.info-strip span {
-  cursor: pointer;
-  font-size: 14px;
-}
-
-/* Sale Banner */
-.sale-banner {
-  width: 100%;
-  display: block;
-}
-
-/* Price Strip */
-.price-strip {
-  background: #fff3f3;
-  color: #d00;
-  text-align: center;
-  padding: 10px;
-  font-size: 16px;
-  font-weight: bold;
-}
-
-.price-strip button {
-  background-color: red;
-  color: white;
-  border: none;
-  padding: 5px 10px;
-  margin-left: 10px;
-  cursor: pointer;
-  border-radius: 5px;
-}
-
-/* Technology Section */
-.tech-section {
-  padding: 20px;
-}
-
-.tech-section h2 {
-  margin-bottom: 10px;
-}
-
-/* Modals */
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 9999;
-  left: 0; top: 0;
-  width: 100%; height: 100%;
-  background: rgba(0,0,0,0.6);
-}
-
-.modal-content {
-  background: white;
-  margin: 10% auto;
-  padding: 20px;
-  width: 80%;
-  max-width: 400px;
-  border-radius: 8px;
-  position: relative;
-  animation: slideIn 0.3s ease-in-out;
-}
-
-.modal-content .close {
-  position: absolute;
-  right: 10px;
-  top: 5px;
-  font-size: 24px;
-  cursor: pointer;
-}
-
-@keyframes slideIn {
-  from { transform: translateY(-50px); opacity: 0; }
-  to { transform: translateY(0); opacity: 1; }
-}
-
-/* Footer */
-footer {
-  background-color: #f2f2f2;
-  padding: 20px;
-  text-align: center;
-}
-
-footer h4 {
-  margin-bottom: 10px;
-}
-
-footer input[type="email"] {
-  padding: 8px;
-  width: 60%;
-  max-width: 300px;
-  margin-right: 5px;
-}
-
-footer button {
-  padding: 8px 12px;
-  background-color: #111;
-  color: #fff;
-  border: none;
-  cursor: pointer;
-}
-
-/* Collapsible Footer Menu */
-.collapsible {
-  background: #eee;
-  border: none;
-  cursor: pointer;
-  padding: 10px;
-  text-align: left;
-  width: 100%;
-  font-size: 16px;
-}
-
-.collapsible + .content {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.2s ease-out;
-  background: #fff;
-  padding-left: 15px;
-}
-
-.collapsible.active + .content {
-  max-height: 200px;
-  padding: 10px 15px;
-}
-
-/* Links */
-a {
-  color: #333;
-  text-decoration: none;
-}
-
-a:hover {
-  text-decoration: underline;
-}
+// Auto-scroll tech carousel
+setInterval(() => {
+  if (techCarousel.scrollLeft + techCarousel.offsetWidth >= techCarousel.scrollWidth) {
+    techCarousel.scrollLeft = 0;
+  } else {
+    techCarousel.scrollLeft += 1;
+  }
+}, 30);
+  
