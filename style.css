@@ -1,81 +1,255 @@
-// JavaScript for collapsible footer menus
-const collapsibles = document.querySelectorAll('.footer-menu h4');
-collapsibles.forEach((header) => {
-  header.addEventListener('click', () => {
-    header.nextElementSibling.classList.toggle('open');
-  });
-});
-
-// Script for tech carousel scroll (horizontal scroll)
-const techCarousel = document.querySelector('.tech-carousel');
-let isDown = false;
-let startX;
-let scrollLeft;
-
-techCarousel.addEventListener('mousedown', (e) => {
-  isDown = true;
-  techCarousel.classList.add('active');
-  startX = e.pageX - techCarousel.offsetLeft;
-  scrollLeft = techCarousel.scrollLeft;
-});
-techCarousel.addEventListener('mouseleave', () => {
-  isDown = false;
-  techCarousel.classList.remove('active');
-});
-techCarousel.addEventListener('mouseup', () => {
-  isDown = false;
-  techCarousel.classList.remove('active');
-});
-techCarousel.addEventListener('mousemove', (e) => {
-  if (!isDown) return;
-  e.preventDefault();
-  const x = e.pageX - techCarousel.offsetLeft;
-  const walk = (x - startX) * 2; // scroll-fast
-  techCarousel.scrollLeft = scrollLeft - walk;
-});
-
-// Smooth modal popup for info labels
-const modalTriggers = document.querySelectorAll('.info-label');
-const modals = document.querySelectorAll('.info-modal');
-const closeButtons = document.querySelectorAll('.close-modal');
-
-modalTriggers.forEach((trigger, index) => {
-  trigger.addEventListener('click', () => {
-    modals[index].classList.add('show');
-  });
-});
-
-closeButtons.forEach((btn, index) => {
-  btn.addEventListener('click', () => {
-    modals[index].classList.remove('show');
-  });
-});
-
-window.addEventListener('click', (e) => {
-  modals.forEach((modal) => {
-    if (e.target === modal) {
-      modal.classList.remove('show');
-    }
-  });
-});
-
-// Buy Now confirmation
-const buyBtn = document.querySelector('.buy-btn');
-if (buyBtn) {
-  buyBtn.addEventListener('click', () => {
-    const confirmBuy = confirm('Redirecting to purchase page. Continue?');
-    if (confirmBuy) {
-      window.location.href = 'https://www.amazon.in/';
-    }
-  });
+/* Base Reset */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: #fff;
+  color: #222;
 }
 
-// Auto-scroll tech carousel
-setInterval(() => {
-  if (techCarousel.scrollLeft + techCarousel.offsetWidth >= techCarousel.scrollWidth) {
-    techCarousel.scrollLeft = 0;
-  } else {
-    techCarousel.scrollLeft += 1;
-  }
-}, 30);
-  
+/* Logo Strip */
+.logo-strip {
+  padding: 10px;
+  text-align: center;
+  background: #fff;
+}
+.logo-strip img {
+  height: 40px;
+}
+
+/* Info Strip */
+.info-strip {
+  display: flex;
+  justify-content: space-around;
+  background: #f7f7f7;
+  padding: 10px 0;
+  font-weight: 600;
+  cursor: pointer;
+}
+.info-label:hover {
+  text-decoration: underline;
+}
+
+/* Carousel Banner */
+.banner-carousel {
+  position: relative;
+  display: flex;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+}
+.banner-slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  position: relative;
+}
+.banner-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+.floating-btn {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  background: yellow;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 8px;
+}
+.floating-btn .price {
+  display: block;
+  margin-bottom: 5px;
+}
+.floating-btn button {
+  background: red;
+  color: #fff;
+  border: none;
+  padding: 6px 12px;
+  font-weight: bold;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Scroll Buttons */
+.scroll-indicator {
+  text-align: center;
+  margin: 10px 0;
+  font-size: 20px;
+}
+.scroll-indicator span {
+  cursor: pointer;
+  margin: 0 8px;
+}
+
+/* Sale Section */
+.sale-section {
+  text-align: center;
+  padding: 20px;
+}
+.sale-banner {
+  max-width: 100%;
+  border-radius: 12px;
+}
+
+/* Launch Offer Strip */
+.launch-strip {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+  background: #fff3f3;
+  padding: 12px;
+  font-weight: bold;
+}
+.launch-strip del {
+  font-size: 18px;
+  color: #888;
+}
+.launch-strip button {
+  background: #ff0000;
+  color: #fff;
+  border: none;
+  padding: 6px 15px;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* Why Choose */
+.why-choose {
+  background: #f2f2f2;
+  padding: 30px;
+}
+.why-choose h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.why-choose ul {
+  list-style: none;
+  padding: 0;
+}
+.why-choose li {
+  margin: 10px 0;
+  font-size: 16px;
+}
+
+/* Tech Section Scrollable */
+.tech-scroll {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+}
+.tech-slide {
+  flex: 0 0 auto;
+  width: 100%;
+  scroll-snap-align: start;
+}
+.tech-slide img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Testimonials */
+.testimonials {
+  padding: 30px;
+  text-align: center;
+  background: #fff;
+}
+.testimonials blockquote {
+  font-style: italic;
+  margin: 10px 0;
+}
+
+/* FAQ */
+.faq {
+  padding: 30px;
+  background: #f9f9f9;
+}
+.faq details {
+  margin-bottom: 10px;
+}
+
+/* Footer */
+footer {
+  background: #000;
+  color: #fff;
+  padding: 30px 20px;
+}
+.footer-logo {
+  height: 40px;
+  margin-bottom: 10px;
+}
+.footer-links {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.footer-links h4 {
+  cursor: pointer;
+}
+.footer-links ul {
+  list-style: none;
+  padding-left: 0;
+  display: none;
+}
+.footer-links ul li {
+  margin: 5px 0;
+}
+.footer-bottom {
+  margin-top: 20px;
+  border-top: 1px solid #444;
+  padding-top: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.social-icons img {
+  width: 24px;
+  margin-left: 10px;
+}
+
+/* Floating Icons */
+.floating-icon {
+  position: fixed;
+  bottom: 20px;
+  z-index: 999;
+}
+.floating-icon img {
+  width: 40px;
+}
+.floating-icon.amazon {
+  right: 70px;
+}
+.floating-icon.whatsapp {
+  right: 20px;
+}
+
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.5);
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  margin: 15% auto;
+  max-width: 300px;
+  position: relative;
+  animation: slideIn 0.4s ease;
+}
+.modal .close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  font-size: 20px;
+  cursor: pointer;
+}
+@keyframes slideIn {
+  from { top: -100px; opacity: 0; }
+  to { top: 0; opacity: 1; }
+}
