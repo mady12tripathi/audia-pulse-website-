@@ -1,137 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Audia+ | Sound That Adapts To You</title>
-  <link rel="stylesheet" href="style.css"/>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audia+ | Premium Audio Experience</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
+    <!-- Header -->
+    <header>
+        <img src="Images/audia-logo.png" alt="Audia+ Logo" class="logo">
+    </header>
 
-  <!-- Logo Strip -->
-  <div class="logo-strip">
-    <img src="audia-logo.png" alt="Audia+" />
-  </div>
-
-  <!-- Info Strip -->
-  <div class="info-strip">
-    <span class="info-label" onclick="openModal('deliveryModal')">🚚 Free Delivery</span>
-    <span class="info-label" onclick="openModal('replaceModal')">🔁 7-Day Replacement</span>
-    <span class="info-label" onclick="openModal('warrantyModal')">🛡️ 1-Year Warranty</span>
-  </div>
-
-  <!-- Hero Banner Section -->
-  <div class="banner-carousel" id="heroCarousel">
-    <div class="banner-slide">
-      <img src="hero-image.png" alt="Hero Banner" />
-      <div class="floating-btn">
-        <span class="price"><del>₹4999</del> ₹1499</span>
-        <button>Save ₹3500 Today!</button>
-      </div>
-    </div>
-    <div class="banner-slide"><img src="banner2.jpg" alt="Banner 2" /></div>
-    <div class="banner-slide"><img src="banner3.jpg" alt="Banner 3" /></div>
-    <div class="banner-slide"><img src="banner4.jpg" alt="Banner 4" /></div>
-  </div>
-
-  <!-- Scroll Indicator -->
-  <div class="scroll-indicator">
-    <span onclick="prevSlide()">◀</span>
-    <span onclick="nextSlide()">▶</span>
-  </div>
-
-  <!-- Sale is Live -->
-  <div class="sale-section">
-    <h2>🔥 Sale is Live</h2>
-    <img src="sale-banner.jpg" alt="Sale Banner" class="sale-banner"/>
-  </div>
-
-  <!-- Launch Offer Strip -->
-  <div class="launch-strip">
-    <span><del>₹4999</del> ₹1499</span>
-    <button>Save ₹3500 Today!</button>
-  </div>
-
-  <!-- Why Choose Audia+ -->
-  <section class="why-choose">
-    <h2>Why Choose Audia+</h2>
-    <ul>
-      <li>🎧 Personalized Sound with OmniWave™ AdaptIQ</li>
-      <li>📱 AI Noise Cancellation via SilentSync™</li>
-      <li>🌀 360° Spatial Audio via SonicSphere™</li>
-      <li>💧 Sweat & Rain-Proof (IPX5)</li>
-    </ul>
-  </section>
-
-  <!-- Tech Section Scrollable -->
-  <section class="tech-scroll" id="techCarousel">
-    <div class="tech-slide"><img src="tech-omniwave.jpg" alt="OmniWave" /></div>
-    <div class="tech-slide"><img src="tech-sonicsphere.jpg" alt="SonicSphere" /></div>
-    <div class="tech-slide"><img src="tech-acousticdna.jpg" alt="AcousticDNA" /></div>
-    <div class="tech-slide"><img src="tech-silentsync.jpg" alt="SilentSync" /></div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="testimonials">
-    <h2>What Our Customers Say</h2>
-    <blockquote>"Best sound ever. It's like music was made for my ears!" – A. Sharma</blockquote>
-    <blockquote>"Battery and noise cancellation are a game changer!" – R. Mehta</blockquote>
-  </section>
-
-  <!-- FAQ -->
-  <section class="faq">
-    <h2>FAQs</h2>
-    <details>
-      <summary>Is Audia+ compatible with iOS & Android?</summary>
-      <p>Yes, fully compatible with all Bluetooth-enabled devices.</p>
-    </details>
-    <details>
-      <summary>How do I claim the 1-Year Warranty?</summary>
-      <p>You can register via our support app or email us directly.</p>
-    </details>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-top">
-      <img src="audia-logo.png" alt="Audia+" class="footer-logo" />
-      <div class="footer-links">
-        <div>
-          <h4 onclick="toggleMenu(this)">Shop +</h4>
-          <ul><li>Earbuds</li><li>Accessories</li></ul>
+    <!-- Hero Carousel -->
+    <section class="hero">
+        <div class="carousel">
+            <div class="slide active">
+                <img src="Images/hero-image.jpg" alt="Audia+ Headphones">
+                <a href="#offer" class="buy-now-btn">Buy Now</a>
+            </div>
+            <div class="slide">
+                <img src="Images/banner2.jpg" alt="Premium Sound">
+                <a href="#offer" class="buy-now-btn">Buy Now</a>
+            </div>
+            <div class="slide">
+                <img src="Images/banner3.jpg" alt="Wireless Experience">
+                <a href="#offer" class="buy-now-btn">Buy Now</a>
+            </div>
+            <div class="slide">
+                <img src="Images/banner4.jpg" alt="Noise Cancellation">
+                <a href="#offer" class="buy-now-btn">Buy Now</a>
+            </div>
         </div>
-        <div>
-          <h4 onclick="toggleMenu(this)">Help +</h4>
-          <ul><li>Support</li><li>Warranty</li></ul>
+        <div class="carousel-dots"></div>
+    </section>
+
+    <!-- Info Strip -->
+    <section class="info-strip">
+        <div class="info-item" data-modal="delivery">
+            <i class="fas fa-truck"></i>
+            <span>Free Delivery</span>
         </div>
-        <div>
-          <h4 onclick="toggleMenu(this)">Company +</h4>
-          <ul><li>About</li><li>Contact</li></ul>
+        <div class="info-item" data-modal="replacement">
+            <i class="fas fa-sync-alt"></i>
+            <span>7-Day Replacement</span>
         </div>
-      </div>
+        <div class="info-item" data-modal="warranty">
+            <i class="fas fa-shield-alt"></i>
+            <span>1-Year Warranty</span>
+        </div>
+    </section>
+
+    <!-- Offer Banner -->
+    <section class="offer-banner" id="offer">
+        <div class="price-container">
+            <span class="original-price">₹4999</span>
+            <span class="offer-price">₹1499</span>
+        </div>
+        <button class="save-btn" id="saveBtn">Save ₹3500 Today!</button>
+    </section>
+
+    <!-- Why Choose Audia+ -->
+    <section class="features">
+        <h2>Why Choose Audia+</h2>
+        <ul>
+            <li><i class="fas fa-check-circle"></i> Premium Sound Quality</li>
+            <li><i class="fas fa-check-circle"></i> 50hr Battery Life</li>
+            <li><i class="fas fa-check-circle"></i> IPX5 Water Resistance</li>
+            <li><i class="fas fa-check-circle"></i> Comfort Fit Design</li>
+        </ul>
+    </section>
+
+    <!-- Technology Banner -->
+    <section class="tech-banner">
+        <div class="tech-item">
+            <img src="Images/tech-omniwave.jpg" alt="OmniWave™">
+            <h3>OmniWave™</h3>
+        </div>
+        <div class="tech-item">
+            <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™">
+            <h3>SonicSphere™</h3>
+        </div>
+        <div class="tech-item">
+            <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™">
+            <h3>AcousticDNA™</h3>
+        </div>
+        <div class="tech-item">
+            <img src="Images/tech-silentsync.jpg" alt="SilentSync™">
+            <h3>SilentSync™</h3>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="testimonials">
+        <h2>What Our Users Say</h2>
+        <div class="testimonial-grid">
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"The sound quality is incredible! Best headphones I've ever owned."</p>
+                <p class="author">- Priya S.</p>
+            </div>
+            <div class="testimonial-card">
+                <i class="fas fa-quote-left"></i>
+                <p>"Super comfortable for long hours. Battery lasts forever!"</p>
+                <p class="author">- Aman R.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq">
+        <h2>Frequently Asked Questions</h2>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>How long does delivery take?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Delivery takes 3-5 business days across India.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <span>Is the warranty valid internationally?</span>
+                <i class="fas fa-chevron-down"></i>
+            </div>
+            <div class="faq-answer">
+                <p>Yes, our warranty is valid worldwide.</p>
+            </div>
+        </div>
+        <!-- Add more FAQ items as needed -->
+    </section>
+
+    <!-- Floating Buttons -->
+    <div class="floating-btns">
+        <a href="https://wa.me/918090667890" class="float-btn whatsapp">
+            <img src="Images/whatsapp-icon.png" alt="WhatsApp">
+        </a>
+        <a href="https://amzn.to/4eEH6K2" class="float-btn amazon">
+            <img src="Images/amazon-icon.png" alt="Amazon">
+        </a>
     </div>
-    <div class="footer-bottom">
-      <p>© 2025 Audia+. All rights reserved.</p>
-      <div class="social-icons">
-        <img src="whatsapp-icon.png" alt="WhatsApp" />
-        <img src="amazon-icon.png" alt="Amazon" />
-      </div>
+
+    <!-- Modals -->
+    <div class="modal" id="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
     </div>
-  </footer>
 
-  <!-- Floating Icons -->
-  <a href="https://amzn.to/4eEH6K2" class="floating-icon amazon" target="_blank">
-    <img src="amazon-icon.png" alt="Amazon"/>
-  </a>
-  <a href="https://wa.me/918090667890" class="floating-icon whatsapp" target="_blank">
-    <img src="whatsapp-icon.png" alt="WhatsApp"/>
-  </a>
-
-  <!-- Modals -->
-  <div id="deliveryModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('deliveryModal')">&times;</span><p>Free delivery available PAN India.</p></div></div>
-  <div id="replaceModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('replaceModal')">&times;</span><p>Replace your product within 7 days of delivery.</p></div></div>
-  <div id="warrantyModal" class="modal"><div class="modal-content"><span class="close" onclick="closeModal('warrantyModal')">&times;</span><p>1-Year limited warranty on Pulse 1.0.</p></div></div>
-
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
