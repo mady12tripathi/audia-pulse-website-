@@ -1,644 +1,81 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audia Pulse | Premium Audio Solutions</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        :root {
-            --primary: #1a1a2e;
-            --secondary: #16213e;
-            --accent: #0f3460;
-            --highlight: #e94560;
-            --light: #f1f1f1;
-            --gray: #8c8c8c;
-        }
-
-        body {
-            font-family: 'Montserrat', sans-serif;
-            background: linear-gradient(135deg, var(--primary), var(--secondary));
-            color: var(--light);
-            line-height: 1.6;
-            overflow-x: hidden;
-        }
-
-        .container {
-            width: 100%;
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        /* Header Styles */
-        header {
-            background-color: rgba(10, 10, 20, 0.95);
-            position: fixed;
-            width: 100%;
-            top: 0;
-            z-index: 1000;
-            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-            backdrop-filter: blur(10px);
-        }
-
-        .header-container {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 0;
-        }
-
-        .logo {
-            display: flex;
-            align-items: center;
-        }
-
-        .radial-logo {
-            width: 60px;
-            height: 60px;
-            background: radial-gradient(circle, var(--highlight) 0%, var(--accent) 70%);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            box-shadow: 0 0 15px rgba(233, 69, 96, 0.6);
-        }
-
-        .radial-logo span {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            color: white;
-        }
-
-        .logo-text {
-            font-family: 'Orbitron', sans-serif;
-            font-weight: 700;
-            font-size: 24px;
-            color: var(--light);
-            text-transform: uppercase;
-        }
-
-        .logo-text span {
-            color: var(--highlight);
-        }
-
-        nav ul {
-            display: flex;
-            list-style: none;
-        }
-
-        nav li {
-            margin-left: 30px;
-        }
-
-        nav a {
-            color: var(--light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 16px;
-            transition: color 0.3s;
-            position: relative;
-            padding: 5px 0;
-        }
-
-        nav a:hover {
-            color: var(--highlight);
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--highlight);
-            transition: width 0.3s;
-        }
-
-        nav a:hover::after {
-            width: 100%;
-        }
-
-        /* Hero Banner */
-        .hero-section {
-            padding-top: 100px;
-            position: relative;
-            height: 80vh;
-            overflow: hidden;
-        }
-
-        .banner-container {
-            position: relative;
-            height: 100%;
-        }
-
-        .banner-slide {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            opacity: 0;
-            transition: opacity 1.5s ease-in-out;
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            align-items: center;
-        }
-
-        .banner-slide.active {
-            opacity: 1;
-        }
-
-        .banner-content {
-            max-width: 600px;
-            padding: 40px;
-            background: rgba(10, 10, 20, 0.7);
-            border-radius: 10px;
-            margin-left: 10%;
-            backdrop-filter: blur(5px);
-        }
-
-        .banner-content h1 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 48px;
-            margin-bottom: 20px;
-            color: var(--highlight);
-        }
-
-        .banner-content p {
-            font-size: 18px;
-            margin-bottom: 30px;
-        }
-
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--highlight);
-            color: white;
-            text-decoration: none;
-            border-radius: 30px;
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .btn:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(233, 69, 96, 0.3);
-        }
-
-        .banner-nav {
-            position: absolute;
-            bottom: 30px;
-            left: 50%;
-            transform: translateX(-50%);
-            display: flex;
-        }
-
-        .banner-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.5);
-            margin: 0 8px;
-            cursor: pointer;
-            transition: background 0.3s;
-        }
-
-        .banner-dot.active {
-            background: var(--highlight);
-        }
-
-        /* Products Section */
-        .products-section {
-            padding: 100px 0;
-            background: rgba(15, 15, 30, 0.7);
-        }
-
-        .section-title {
-            text-align: center;
-            margin-bottom: 60px;
-        }
-
-        .section-title h2 {
-            font-family: 'Orbitron', sans-serif;
-            font-size: 36px;
-            color: var(--light);
-            margin-bottom: 15px;
-            text-transform: uppercase;
-        }
-
-        .section-title p {
-            color: var(--gray);
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .products-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 30px;
-        }
-
-        .product-card {
-            background: rgba(30, 30, 50, 0.7);
-            border-radius: 10px;
-            overflow: hidden;
-            transition: transform 0.3s, box-shadow 0.3s;
-            backdrop-filter: blur(5px);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .product-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
-        }
-
-        .product-img {
-            height: 200px;
-            background: linear-gradient(45deg, var(--accent), var(--primary));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .product-img::before {
-            content: '';
-            position: absolute;
-            width: 150%;
-            height: 40px;
-            background: rgba(255, 255, 255, 0.1);
-            transform: rotate(-25deg) translateY(-50px);
-        }
-
-        .product-img i {
-            font-size: 80px;
-            color: rgba(255, 255, 255, 0.1);
-        }
-
-        .product-info {
-            padding: 20px;
-        }
-
-        .product-info h3 {
-            font-size: 22px;
-            margin-bottom: 10px;
-            color: var(--light);
-        }
-
-        .product-info p {
-            color: var(--gray);
-            margin-bottom: 15px;
-            font-size: 14px;
-        }
-
-        .price {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .original-price {
-            text-decoration: line-through;
-            color: var(--gray);
-            margin-right: 15px;
-            font-size: 18px;
-        }
-
-        .discounted-price {
-            color: var(--highlight);
-            font-size: 24px;
-            font-weight: 700;
-        }
-
-        .discount-badge {
-            background: var(--highlight);
-            color: white;
-            padding: 3px 10px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-left: auto;
-        }
-
-        /* Features Section */
-        .features-section {
-            padding: 100px 0;
-        }
-
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 30px;
-        }
-
-        .feature-card {
-            background: rgba(30, 30, 50, 0.5);
-            border-radius: 10px;
-            padding: 30px;
-            text-align: center;
-            transition: transform 0.3s;
-            backdrop-filter: blur(5px);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-        }
-
-        .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--accent);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 30px;
-            color: var(--highlight);
-        }
-
-        .feature-card h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-            color: var(--light);
-        }
-
-        .feature-card p {
-            color: var(--gray);
-        }
-
-        /* Footer */
-        footer {
-            background: rgba(10, 10, 20, 0.95);
-            padding: 60px 0 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .footer-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 40px;
-        }
-
-        .footer-column h3 {
-            font-size: 20px;
-            margin-bottom: 20px;
-            color: var(--light);
-            position: relative;
-            padding-bottom: 10px;
-        }
-
-        .footer-column h3::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 2px;
-            background: var(--highlight);
-        }
-
-        .footer-column ul {
-            list-style: none;
-        }
-
-        .footer-column ul li {
-            margin-bottom: 12px;
-        }
-
-        .footer-column ul li a {
-            color: var(--gray);
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-
-        .footer-column ul li a:hover {
-            color: var(--highlight);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: var(--gray);
-            font-size: 14px;
-        }
-
-        /* Responsive */
-        @media (max-width: 768px) {
-            .header-container {
-                flex-direction: column;
-                padding: 15px 0;
-            }
-            
-            nav ul {
-                margin-top: 15px;
-            }
-            
-            nav li {
-                margin: 0 10px;
-            }
-            
-            .banner-content {
-                margin: 0 auto;
-                text-align: center;
-            }
-            
-            .banner-content h1 {
-                font-size: 36px;
-            }
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audia+ | Sound That Adapts To You</title>
+  <link rel="stylesheet" href="style.css" />
+  <script defer src="script.js"></script>
 </head>
 <body>
-    <!-- Header with Logo -->
-    <header>
-        <div class="container header-container">
-            <div class="logo">
-                <div class="radial-logo">
-                    <span>AP</span>
-                </div>
-                <div class="logo-text">AUDIA <span>PULSE</span></div>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#products">Products</a></li>
-                    <li><a href="#technology">Technology</a></li>
-                    <li><a href="#support">Support</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <!-- Hero Banner Section -->
-    <section class="hero-section" id="home">
-        <div class="banner-container">
-            <div class="banner-slide active" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');">
-                <div class="banner-content">
-                    <h1>Premium Sound Experience</h1>
-                    <p>Discover the next generation of audio technology with our cutting-edge headphones and speakers designed for audiophiles.</p>
-                    <a href="#products" class="btn">Explore Products</a>
-                </div>
-            </div>
-            
-            <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1546435770-a3e426bf472b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2065&q=80');">
-                <div class="banner-content">
-                    <h1>Immersive Audio Technology</h1>
-                    <p>Experience sound like never before with our advanced noise cancellation and spatial audio technologies.</p>
-                    <a href="#technology" class="btn">Learn More</a>
-                </div>
-            </div>
-            
-            <div class="banner-slide" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2068&q=80');">
-                <div class="banner-content">
-                    <h1>Summer Sale Now On</h1>
-                    <p>Get up to 40% off on our premium audio products. Limited time offer!</p>
-                    <a href="#products" class="btn">Shop Now</a>
-                </div>
-            </div>
-            
-            <div class="banner-nav">
-                <div class="banner-dot active"></div>
-                <div class="banner-dot"></div>
-                <div class="banner-dot"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Products with Strike-Through Pricing -->
-    <section class="products-section" id="products">
-        <div class="container">
-            <div class="section-title">
-                <h2>Featured Products</h2>
-                <p>Experience premium audio with our cutting-edge technology and superior sound quality</p>
-            </div>
-            
-            <div class="products-grid">
-                <!-- Product 1 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-headphones"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Quantum Headphones</h3>
-                        <p>Premium over-ear headphones with active noise cancellation</p>
-                        <div class="price">
-                            <span class="original-price">$299.99</span>
-                            <span class="discounted-price">$249.99</span>
-                            <span class="discount-badge">Save 17%</span>
-                        </div>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <!-- Product 2 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-music"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Pulse Wireless Earbuds</h3>
-                        <p>True wireless earbuds with 24h battery life</p>
-                        <div class="price">
-                            <span class="original-price">$199.99</span>
-                            <span class="discounted-price">$149.99</span>
-                            <span class="discount-badge">Save 25%</span>
-                        </div>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <!-- Product 3 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-volume-up"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Nebula Soundbar</h3>
-                        <p>Immersive home theater experience with Dolby Atmos</p>
-                        <div class="price">
-                            <span class="original-price">$499.99</span>
-                            <span class="discounted-price">$399.99</span>
-                            <span class="discount-badge">Save 20%</span>
-                        </div>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-                
-                <!-- Product 4 -->
-                <div class="product-card">
-                    <div class="product-img">
-                        <i class="fas fa-podcast"></i>
-                    </div>
-                    <div class="product-info">
-                        <h3>Studio Monitor Speakers</h3>
-                        <p>Professional studio monitors for accurate sound reproduction</p>
-                        <div class="price">
-                            <span class="original-price">$799.99</span>
-                            <span class="discounted-price">$699.99</span>
-                            <span class="discount-badge">Save 13%</span>
-                        </div>
-                        <a href="#" class="btn">Add to Cart</a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Features Section -->
-    <section class="features-section">
-        <div class="container">
-            <div class="section-title">
-                <h2>Why Choose Audia Pulse</h2>
-                <p>Our commitment to excellence in audio technology</p>
-            </div>
-            
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-wifi"></i>
-                    </div>
-                    <h3>Wireless Freedom</h3>
-                    <p>Bluetooth 5.0 technology with stable connection up to 30 meters</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-battery-full"></i>
-                    </div>
-                    <h3>Extended Battery</h3>
-                    <p>Up to 40 hours of playback time on a single charge</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-water"></i>
-                    </div>
-                    <h3>Water Resistant</h3>
-                    <p>IPX7 rating protects against rain, sweat, and splashes</p>
-                </div>
-                
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-microchip"></i>
-                    </div>
-                    <h3>Advanced Tech</h3>
-                 
+  <!-- Header with logo and shopping bag -->
+  <header class="header">
+    <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
+    <img src="images/bag-icon.png" alt="Shopping Bag" class="bag-icon" />
+  </header>  <!-- Hero Section -->  <section class="hero">
+    <img src="images/hero-image.png" alt="Audia Hero Image" class="hero-banner" />
+  </section>  <!-- Info Strip -->  <section class="info-strip">
+    <div class="info-item" data-popup="delivery">Free Delivery</div>
+    <div class="info-item" data-popup="replacement">7-Day Replacement</div>
+    <div class="info-item" data-popup="warranty">1-Year Warranty</div>
+    <div class="info-item" data-popup="secure">Secure Checkout</div>
+  </section>  <!-- Carousel Banners -->  <section class="carousel">
+    <img src="images/banner2.jpg" alt="Banner 2" />
+    <img src="images/banner3.jpg" alt="Banner 3" />
+    <img src="images/banner4.jpg" alt="Banner 4" />
+  </section>  <!-- Sale Section -->  <section class="sale">
+    <img src="images/sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
+  </section>  <!-- Pricing Strip -->  <section class="price-strip">
+    <span class="strike">₹4,999</span>
+    <button class="save-btn">Save ₹3500 Today!</button>
+  </section>  <!-- Why Choose Audia+ -->  <section class="why-audia">
+    <h2>Why Choose Audia+</h2>
+    <ul>
+      <li>OmniWave™ AdaptIQ – Sound tailored to you</li>
+      <li>30-Hour Battery Life with wireless charging case</li>
+      <li>Adaptive Noise Cancellation (SilentSync™)</li>
+      <li>Personalized 360° Audio (SonicSphere™)</li>
+      <li>Secure Fit, IPX5 Sweatproof</li>
+    </ul>
+  </section>  <!-- Audia+ Technology -->  <section class="tech">
+    <img src="images/tech-omniwave.jpg" alt="OmniWave" />
+    <img src="images/tech-sonicsphere.jpg" alt="SonicSphere" />
+    <img src="images/tech-acousticdna.jpg" alt="AcousticDNA" />
+    <img src="images/tech-silentsync.jpg" alt="SilentSync" />
+  </section>  <!-- Testimonials -->  <section class="testimonials">
+    <h2>What Customers Say</h2>
+    <div class="testimonial">"The sound feels personal – literally built for my ears!"</div>
+    <div class="testimonial">"Best gift I gave my partner – she uses it every day."</div>
+  </section>  <!-- FAQ -->  <section class="faq">
+    <h2>FAQs</h2>
+    <details>
+      <summary>What is OmniWave™ AdaptIQ?</summary>
+      <p>It's our AI-powered engine that personalizes your sound based on your hearing and environment.</p>
+    </details>
+    <details>
+      <summary>Is it water-resistant?</summary>
+      <p>Yes! Pulse 1.0 comes with IPX5 water and sweat resistance.</p>
+    </details>
+    <details>
+      <summary>How long does the battery last?</summary>
+      <p>Up to 8 hours on earbuds + 22 hours with the case.</p>
+    </details>
+  </section>  <!-- Floating Icons -->  <img src="images/whatsapp-icon.png" class="floating-icon whatsapp" alt="WhatsApp" />
+  <img src="images/amazon-icon.png" class="floating-icon amazon" alt="Amazon" />  <!-- Footer -->  <footer class="footer">
+    <div class="footer-top">
+      <form class="subscribe">
+        <input type="email" placeholder="Join our newsletter" />
+        <button type="submit">Subscribe</button>
+      </form>
+    </div>
+    <div class="footer-bottom">
+      <a href="#">Privacy Policy</a>
+      <a href="#">Terms of Use</a>
+      <div class="social-icons">
+        <img src="images/icon-facebook.png" alt="Facebook" />
+        <img src="images/icon-instagram.png" alt="Instagram" />
+        <img src="images/icon-youtube.png" alt="YouTube" />
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
