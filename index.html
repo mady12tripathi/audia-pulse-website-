@@ -1,81 +1,125 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audia+ | Sound That Adapts To You</title>
   <link rel="stylesheet" href="style.css" />
   <script defer src="script.js"></script>
-</head>
-<body>
-  <!-- Header with logo and shopping bag -->
+</head><body>
+  <!-- Header -->
   <header class="header">
     <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
-    <img src="images/bag-icon.png" alt="Shopping Bag" class="bag-icon" />
-  </header>  <!-- Hero Section -->  <section class="hero">
-    <img src="images/hero-image.png" alt="Audia Hero Image" class="hero-banner" />
+    <img src="images/bag-icon.png" alt="Bag Icon" class="bag-icon" />
+  </header>  <!-- Hero Carousel -->  <section class="carousel">
+    <div class="slides">
+      <img src="images/hero-image.png" class="slide" />
+      <img src="images/banner2.jpg" class="slide" />
+      <img src="images/banner3.jpg" class="slide" />
+      <img src="images/banner4.jpg" class="slide" />
+    </div>
+    <div class="carousel-indicators">
+      <span class="dot active"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+      <span class="dot"></span>
+    </div>
   </section>  <!-- Info Strip -->  <section class="info-strip">
-    <div class="info-item" data-popup="delivery">Free Delivery</div>
-    <div class="info-item" data-popup="replacement">7-Day Replacement</div>
-    <div class="info-item" data-popup="warranty">1-Year Warranty</div>
-    <div class="info-item" data-popup="secure">Secure Checkout</div>
-  </section>  <!-- Carousel Banners -->  <section class="carousel">
-    <img src="images/banner2.jpg" alt="Banner 2" />
-    <img src="images/banner3.jpg" alt="Banner 3" />
-    <img src="images/banner4.jpg" alt="Banner 4" />
-  </section>  <!-- Sale Section -->  <section class="sale">
-    <img src="images/sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
-  </section>  <!-- Pricing Strip -->  <section class="price-strip">
-    <span class="strike">₹4,999</span>
+    <div class="info-label" data-modal="modal1">
+      <img src="images/warranty-icon.png" alt="Warranty" />
+      <span>1-Year Warranty</span>
+    </div>
+    <div class="info-label" data-modal="modal2">
+      <img src="images/delivery-icon.png" alt="Delivery" />
+      <span>Free Delivery</span>
+    </div>
+    <div class="info-label" data-modal="modal3">
+      <img src="images/return-icon.png" alt="Replacement" />
+      <span>7-Day Replacement</span>
+    </div>
+  </section>  <!-- Price Strip -->  <section class="price-strip">
+    <span class="strike">₹4999</span>
     <button class="save-btn">Save ₹3500 Today!</button>
-  </section>  <!-- Why Choose Audia+ -->  <section class="why-audia">
+  </section>  <!-- Sale is Live -->  <section class="sale-section">
+    <img src="images/sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
+    <div class="floating-buy">
+      <button onclick="confirmBuy()">Buy Now ₹1499</button>
+    </div>
+  </section>  <!-- Audia+ Technology Section -->  <section class="tech-section">
+    <h2>Audia+ Technology</h2>
+    <div class="tech-carousel">
+      <img src="images/tech-omniwave.jpg" />
+      <img src="images/tech-sonicsphere.jpg" />
+      <img src="images/tech-acousticdna.jpg" />
+      <img src="images/tech-silentsync.jpg" />
+    </div>
+  </section>  <!-- Why Choose Audia+ -->  <section class="why-audia grey-bg">
     <h2>Why Choose Audia+</h2>
     <ul>
-      <li>OmniWave™ AdaptIQ – Sound tailored to you</li>
-      <li>30-Hour Battery Life with wireless charging case</li>
-      <li>Adaptive Noise Cancellation (SilentSync™)</li>
-      <li>Personalized 360° Audio (SonicSphere™)</li>
-      <li>Secure Fit, IPX5 Sweatproof</li>
+      <li>Personalized Sound Calibration</li>
+      <li>AI-Driven AdaptIQ Technology</li>
+      <li>Studio-Grade Quality</li>
+      <li>Sweat & Rain Resistant (IPX5)</li>
     </ul>
-  </section>  <!-- Audia+ Technology -->  <section class="tech">
-    <img src="images/tech-omniwave.jpg" alt="OmniWave" />
-    <img src="images/tech-sonicsphere.jpg" alt="SonicSphere" />
-    <img src="images/tech-acousticdna.jpg" alt="AcousticDNA" />
-    <img src="images/tech-silentsync.jpg" alt="SilentSync" />
   </section>  <!-- Testimonials -->  <section class="testimonials">
-    <h2>What Customers Say</h2>
-    <div class="testimonial">"The sound feels personal – literally built for my ears!"</div>
-    <div class="testimonial">"Best gift I gave my partner – she uses it every day."</div>
+    <h2>What Our Users Say</h2>
+    <p>“Best earbuds I've ever used – truly adaptive!” – Riya S.</p>
+    <p>“Excellent sound clarity and comfort.” – Ankit T.</p>
   </section>  <!-- FAQ -->  <section class="faq">
     <h2>FAQs</h2>
     <details>
-      <summary>What is OmniWave™ AdaptIQ?</summary>
-      <p>It's our AI-powered engine that personalizes your sound based on your hearing and environment.</p>
+      <summary>How does the personalized sound work?</summary>
+      <p>OmniWave™ AdaptIQ calibrates sound based on your unique ear profile.</p>
     </details>
     <details>
-      <summary>Is it water-resistant?</summary>
-      <p>Yes! Pulse 1.0 comes with IPX5 water and sweat resistance.</p>
+      <summary>Is it waterproof?</summary>
+      <p>Yes, Pulse 1.0 is IPX5 certified – perfect for sweat and rain.</p>
     </details>
-    <details>
-      <summary>How long does the battery last?</summary>
-      <p>Up to 8 hours on earbuds + 22 hours with the case.</p>
-    </details>
-  </section>  <!-- Floating Icons -->  <img src="images/whatsapp-icon.png" class="floating-icon whatsapp" alt="WhatsApp" />
-  <img src="images/amazon-icon.png" class="floating-icon amazon" alt="Amazon" />  <!-- Footer -->  <footer class="footer">
+  </section>  <!-- Footer -->  <footer class="footer">
     <div class="footer-top">
-      <form class="subscribe">
-        <input type="email" placeholder="Join our newsletter" />
+      <div class="social-icons">
+        <img src="images/facebook-icon.png" alt="Facebook" />
+        <img src="images/instagram-icon.png" alt="Instagram" />
+        <img src="images/youtube-icon.png" alt="YouTube" />
+      </div>
+      <form class="subscribe-form">
+        <input type="email" placeholder="Enter your email" />
         <button type="submit">Subscribe</button>
       </form>
     </div>
-    <div class="footer-bottom">
-      <a href="#">Privacy Policy</a>
-      <a href="#">Terms of Use</a>
-      <div class="social-icons">
-        <img src="images/icon-facebook.png" alt="Facebook" />
-        <img src="images/icon-instagram.png" alt="Instagram" />
-        <img src="images/icon-youtube.png" alt="YouTube" />
-      </div>
+    <div class="footer-menu">
+      <details>
+        <summary>Shop</summary>
+        <ul><li>Earbuds</li><li>Accessories</li></ul>
+      </details>
+      <details>
+        <summary>Help</summary>
+        <ul><li>FAQs</li><li>Contact Us</li></ul>
+      </details>
+      <details>
+        <summary>Company</summary>
+        <ul><li>About</li><li>Careers</li></ul>
+      </details>
     </div>
-  </footer>
-</body>
-</html>
+    <p class="copyright">© 2025 Audia+ | All rights reserved.</p>
+  </footer>  <!-- Floating Icons -->  <a href="https://wa.me/8090667890" class="floating-icon whatsapp" target="_blank">
+    <img src="images/whatsapp-icon.png" alt="WhatsApp" />
+  </a>
+  <a href="https://amzn.to/4eEH6K2" class="floating-icon amazon" target="_blank">
+    <img src="images/amazon-icon.png" alt="Amazon" />
+  </a>  <!-- Modals -->  <div id="modal1" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <p>Audia+ Pulse 1.0 comes with a full 1-Year Warranty covering all manufacturing defects.</p>
+    </div>
+  </div>
+  <div id="modal2" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <p>We offer FREE delivery across India within 2–4 business days.</p>
+    </div>
+  </div>
+  <div id="modal3" class="modal">
+    <div class="modal-content">
+      <span class="close">×</span>
+      <p>7-Day No-Questions-Asked Replacement Policy on all orders.</p>
+    </div>
+  </div></body></html>
