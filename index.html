@@ -4,154 +4,247 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Audia+ | Premium Audio Experience</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-    <!-- Header -->
-    <header>
-        <img src="Images/audia-logo.png" alt="Audia+ Logo" class="logo">
-    </header>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
 
-    <!-- Hero Carousel -->
-    <section class="hero">
-        <div class="carousel">
-            <div class="slide active">
-                <img src="Images/hero-image.jpg" alt="Audia+ Headphones">
-                <a href="#offer" class="buy-now-btn">Buy Now</a>
-            </div>
-            <div class="slide">
-                <img src="Images/banner2.jpg" alt="Premium Sound">
-                <a href="#offer" class="buy-now-btn">Buy Now</a>
-            </div>
-            <div class="slide">
-                <img src="Images/banner3.jpg" alt="Wireless Experience">
-                <a href="#offer" class="buy-now-btn">Buy Now</a>
-            </div>
-            <div class="slide">
-                <img src="Images/banner4.jpg" alt="Noise Cancellation">
-                <a href="#offer" class="buy-now-btn">Buy Now</a>
-            </div>
-        </div>
-        <div class="carousel-dots"></div>
-    </section>
+        body {
+            line-height: 1.6;
+            color: #333;
+            overflow-x: hidden;
+            background: #f8f9fa;
+        }
 
-    <!-- Info Strip -->
-    <section class="info-strip">
-        <div class="info-item" data-modal="delivery">
-            <i class="fas fa-truck"></i>
-            <span>Free Delivery</span>
-        </div>
-        <div class="info-item" data-modal="replacement">
-            <i class="fas fa-sync-alt"></i>
-            <span>7-Day Replacement</span>
-        </div>
-        <div class="info-item" data-modal="warranty">
-            <i class="fas fa-shield-alt"></i>
-            <span>1-Year Warranty</span>
-        </div>
-    </section>
+        /* Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+            background: white;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
 
-    <!-- Offer Banner -->
-    <section class="offer-banner" id="offer">
-        <div class="price-container">
-            <span class="original-price">₹4999</span>
-            <span class="offer-price">₹1499</span>
-        </div>
-        <button class="save-btn" id="saveBtn">Save ₹3500 Today!</button>
-    </section>
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
 
-    <!-- Why Choose Audia+ -->
-    <section class="features">
-        <h2>Why Choose Audia+</h2>
-        <ul>
-            <li><i class="fas fa-check-circle"></i> Premium Sound Quality</li>
-            <li><i class="fas fa-check-circle"></i> 50hr Battery Life</li>
-            <li><i class="fas fa-check-circle"></i> IPX5 Water Resistance</li>
-            <li><i class="fas fa-check-circle"></i> Comfort Fit Design</li>
-        </ul>
-    </section>
+        .logo-text {
+            font-family: 'Montserrat', sans-serif;
+            font-size: 2.2rem;
+            font-weight: 900;
+            background: linear-gradient(to right, #1d3557, #e63946);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: -1px;
+        }
 
-    <!-- Technology Banner -->
-    <section class="tech-banner">
-        <div class="tech-item">
-            <img src="Images/tech-omniwave.jpg" alt="OmniWave™">
-            <h3>OmniWave™</h3>
-        </div>
-        <div class="tech-item">
-            <img src="Images/tech-sonicsphere.jpg" alt="SonicSphere™">
-            <h3>SonicSphere™</h3>
-        </div>
-        <div class="tech-item">
-            <img src="Images/tech-acousticdna.jpg" alt="AcousticDNA™">
-            <h3>AcousticDNA™</h3>
-        </div>
-        <div class="tech-item">
-            <img src="Images/tech-silentsync.jpg" alt="SilentSync™">
-            <h3>SilentSync™</h3>
-        </div>
-    </section>
+        .logo-plus {
+            color: #e63946;
+            font-weight: 900;
+            font-size: 2.5rem;
+            margin-left: 2px;
+        }
 
-    <!-- Testimonials -->
-    <section class="testimonials">
-        <h2>What Our Users Say</h2>
-        <div class="testimonial-grid">
-            <div class="testimonial-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"The sound quality is incredible! Best headphones I've ever owned."</p>
-                <p class="author">- Priya S.</p>
-            </div>
-            <div class="testimonial-card">
-                <i class="fas fa-quote-left"></i>
-                <p>"Super comfortable for long hours. Battery lasts forever!"</p>
-                <p class="author">- Aman R.</p>
-            </div>
-        </div>
-    </section>
+        .main-nav {
+            display: flex;
+            gap: 30px;
+        }
 
-    <!-- FAQ -->
-    <section class="faq">
-        <h2>Frequently Asked Questions</h2>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>How long does delivery take?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Delivery takes 3-5 business days across India.</p>
-            </div>
-        </div>
-        <div class="faq-item">
-            <div class="faq-question">
-                <span>Is the warranty valid internationally?</span>
-                <i class="fas fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer">
-                <p>Yes, our warranty is valid worldwide.</p>
-            </div>
-        </div>
-        <!-- Add more FAQ items as needed -->
-    </section>
+        .main-nav a {
+            color: #1d3557;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+            font-size: 1.1rem;
+        }
 
-    <!-- Floating Buttons -->
-    <div class="floating-btns">
-        <a href="https://wa.me/918090667890" class="float-btn whatsapp">
-            <img src="Images/whatsapp-icon.png" alt="WhatsApp">
-        </a>
-        <a href="https://amzn.to/4eEH6K2" class="float-btn amazon">
-            <img src="Images/amazon-icon.png" alt="Amazon">
-        </a>
-    </div>
+        .main-nav a:hover {
+            color: #e63946;
+        }
 
-    <!-- Modals -->
-    <div class="modal" id="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3 id="modal-title"></h3>
-            <p id="modal-text"></p>
-        </div>
-    </div>
+        .cart-icon {
+            position: relative;
+            cursor: pointer;
+        }
 
-    <script src="script.js"></script>
-</body>
-</html>
+        .cart-icon img {
+            width: 30px;
+        }
+
+        .cart-count {
+            position: absolute;
+            top: -8px;
+            right: -8px;
+            background: #e63946;
+            color: white;
+            border-radius: 50%;
+            width: 20px;
+            height: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.8rem;
+        }
+
+        /* Hero Section */
+        .hero {
+            position: relative;
+            height: 90vh;
+            overflow: hidden;
+            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            padding: 0 5%;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            z-index: 2;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: #e63946;
+        }
+
+        .hero-subtitle {
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            font-weight: 300;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 900px;
+            margin: 0 auto 50px;
+        }
+
+        .feature-item {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            padding: 25px;
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .feature-item h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: #a8dadc;
+        }
+
+        .feature-item p {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+
+        .order-btn {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-size: 1.3rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
+        }
+
+        .order-btn:hover {
+            background: #c1121f;
+            transform: translateY(-5px);
+            box-shadow: 0 15px 25px rgba(230, 57, 70, 0.4);
+        }
+
+        .save-note {
+            margin-top: 25px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #f1faee;
+            background: rgba(29, 53, 87, 0.7);
+            display: inline-block;
+            padding: 10px 25px;
+            border-radius: 30px;
+        }
+
+        .save-note span {
+            color: #ffd166;
+        }
+
+        /* Info Strip */
+        .info-strip {
+            display: flex;
+            justify-content: center;
+            background: #f8f9fa;
+            padding: 15px 0;
+            gap: 40px;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #eee;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            font-weight: 500;
+        }
+
+        .info-item:hover {
+            color: #e63946;
+        }
+
+        .info-item i {
+            font-size: 1.2rem;
+            color: #2a9d8f;
+        }
+
+        /* Offer Banner */
+        .offer-banner {
+            background: linear-gradient(135deg, #ff6b6b, #e63946);
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+        }
+
+        .price-container {
+            margin-bottom: 15px;
+        }
+
+        .original-price {
+            text-decoration: line-through;
+            font-size: 1.8rem;
+            margin-right: 15px;
+            opacity: 0.8;
+        }
+
+        .offer-price {
+            font-size: 2.5rem;
+            font-weight: 700;
