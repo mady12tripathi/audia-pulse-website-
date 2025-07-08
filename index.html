@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Audia+ | Premium Audio Experience</title>
+    <title>AUDIA+ | Premium Audio Experience</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@800;900&display=swap" rel="stylesheet">
     <style>
+        /* Global Styles */
         * {
             margin: 0;
             padding: 0;
@@ -18,42 +18,96 @@
             line-height: 1.6;
             color: #333;
             overflow-x: hidden;
-            background: #f8f9fa;
+            background: #f9f9f9;
         }
 
-        /* Header */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: #e63946;
+            color: white;
+            text-decoration: none;
+            border-radius: 30px;
+            font-weight: 600;
+            transition: all 0.3s;
+            cursor: pointer;
+            border: none;
+        }
+
+        .btn:hover {
+            background: #c1121f;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(230, 57, 70, 0.3);
+        }
+
+        section {
+            padding: 80px 0;
+        }
+
+        h2.section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            color: #1d3557;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        h2.section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: #e63946;
+            border-radius: 2px;
+        }
+
+        /* Header Styles */
         header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 20px 5%;
             background: white;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            box-shadow: 0 2px 15px rgba(0,0,0,0.1);
+        }
+
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
         }
 
         .logo-container {
             display: flex;
             align-items: center;
+            gap: 15px;
         }
 
-        .logo-text {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 2.2rem;
-            font-weight: 900;
-            background: linear-gradient(to right, #1d3557, #e63946);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            letter-spacing: -1px;
+        .logo-icon {
+            height: 50px;
         }
 
-        .logo-plus {
+        .logo-text h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: 1px;
+            color: #1d3557;
+        }
+
+        .logo-text p {
+            font-size: 0.8rem;
             color: #e63946;
-            font-weight: 900;
-            font-size: 2.5rem;
-            margin-left: 2px;
+            margin-top: -5px;
+            font-weight: 500;
         }
 
         .main-nav {
@@ -101,141 +155,58 @@
         .hero {
             position: relative;
             height: 90vh;
-            overflow: hidden;
-            background: linear-gradient(135deg, #1d3557 0%, #457b9d 100%);
+            background: linear-gradient(rgba(0,0,0,0.5), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
+            background-size: cover;
+            background-position: center;
             display: flex;
             align-items: center;
             justify-content: center;
-            color: white;
             text-align: center;
-            padding: 0 5%;
+            color: white;
         }
 
         .hero-content {
-            max-width: 900px;
-            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 0 20px;
         }
 
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 900;
-            margin-bottom: 20px;
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 10px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            line-height: 1.2;
+            letter-spacing: 3px;
         }
 
-        .hero h1 span {
-            color: #e63946;
-        }
-
-        .hero-subtitle {
-            font-size: 1.8rem;
-            margin-bottom: 40px;
+        .hero h3 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
             font-weight: 300;
         }
 
-        .features-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 900px;
-            margin: 0 auto 50px;
-        }
-
-        .feature-item {
-            background: rgba(255, 255, 255, 0.1);
-            backdrop-filter: blur(10px);
-            padding: 25px;
-            border-radius: 15px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .feature-item h3 {
-            font-size: 1.4rem;
-            margin-bottom: 15px;
-            color: #a8dadc;
-        }
-
-        .feature-item p {
-            font-size: 1rem;
-            opacity: 0.9;
-        }
-
-        .order-btn {
-            background: #e63946;
-            color: white;
-            border: none;
-            padding: 18px 50px;
-            border-radius: 50px;
-            font-size: 1.3rem;
-            font-weight: 600;
-            cursor: pointer;
-            transition: all 0.3s;
-            margin-top: 20px;
-            box-shadow: 0 10px 20px rgba(230, 57, 70, 0.3);
-        }
-
-        .order-btn:hover {
-            background: #c1121f;
-            transform: translateY(-5px);
-            box-shadow: 0 15px 25px rgba(230, 57, 70, 0.4);
-        }
-
-        .save-note {
-            margin-top: 25px;
-            font-size: 1.5rem;
-            font-weight: 700;
-            color: #f1faee;
-            background: rgba(29, 53, 87, 0.7);
-            display: inline-block;
-            padding: 10px 25px;
-            border-radius: 30px;
-        }
-
-        .save-note span {
-            color: #ffd166;
-        }
-
-        /* Info Strip */
-        .info-strip {
+        .hero-features {
             display: flex;
             justify-content: center;
-            background: #f8f9fa;
-            padding: 15px 0;
             gap: 40px;
+            margin: 40px 0;
             flex-wrap: wrap;
-            border-bottom: 1px solid #eee;
         }
 
-        .info-item {
+        .feature {
             display: flex;
+            flex-direction: column;
             align-items: center;
             gap: 10px;
-            cursor: pointer;
-            transition: all 0.3s;
-            font-weight: 500;
+            max-width: 250px;
         }
 
-        .info-item:hover {
+        .feature i {
+            font-size: 2rem;
             color: #e63946;
         }
 
-        .info-item i {
-            font-size: 1.2rem;
-            color: #2a9d8f;
-        }
-
-        /* Offer Banner */
-        .offer-banner {
-            background: linear-gradient(135deg, #ff6b6b, #e63946);
-            color: white;
-            text-align: center;
-            padding: 30px 20px;
-        }
-
         .price-container {
-            margin-bottom: 15px;
+            margin: 30px 0;
         }
 
         .original-price {
@@ -248,3 +219,580 @@
         .offer-price {
             font-size: 2.5rem;
             font-weight: 700;
+        }
+
+        .hero .info-strip {
+            display: flex;
+            justify-content: center;
+            background: transparent;
+            padding: 15px 0;
+            gap: 40px;
+            flex-wrap: wrap;
+            margin-top: 30px;
+        }
+
+        .hero .info-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            transition: all 0.3s;
+            color: white;
+        }
+
+        .hero .info-item:hover {
+            color: #e63946;
+        }
+
+        .hero .info-item i {
+            font-size: 1.2rem;
+        }
+
+        /* Why Choose Section */
+        .features {
+            background: #f1faee;
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .feature-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+            text-align: center;
+            transition: transform 0.3s;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+
+        .feature-card i {
+            font-size: 2.5rem;
+            color: #2a9d8f;
+            margin-bottom: 20px;
+        }
+
+        .feature-card h3 {
+            color: #1d3557;
+            margin-bottom: 15px;
+        }
+
+        /* Tech Banner */
+        .tech-banner {
+            background: #1d3557;
+            color: white;
+            padding: 60px 0;
+        }
+
+        .tech-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .tech-item {
+            text-align: center;
+            padding: 20px;
+            background: rgba(255,255,255,0.05);
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .tech-item:hover {
+            background: rgba(255,255,255,0.1);
+            transform: translateY(-5px);
+        }
+
+        .tech-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin: 0 auto 15px;
+            display: block;
+        }
+
+        .tech-item h3 {
+            font-weight: 500;
+        }
+
+        /* Testimonials */
+        .testimonials {
+            background: #a8dadc;
+        }
+
+        .testimonial-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .testimonial-card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        .testimonial-card i {
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            font-size: 2rem;
+            color: #e9c46a;
+            opacity: 0.3;
+        }
+
+        .testimonial-card p {
+            margin-top: 30px;
+            font-style: italic;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .author {
+            margin-top: 20px;
+            font-weight: 600;
+            color: #e63946;
+            font-size: 1.1rem;
+        }
+
+        /* FAQ Section */
+        .faq {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            overflow: hidden;
+            background: white;
+        }
+
+        .faq-question {
+            padding: 20px;
+            background: #f8f9fa;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 1.1rem;
+        }
+
+        .faq-question i {
+            transition: transform 0.3s;
+        }
+
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-answer p {
+            padding: 20px 0;
+            line-height: 1.8;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 300px;
+        }
+
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+
+        /* Floating Buttons */
+        .floating-btns {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 100;
+        }
+
+        .float-btn {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+            transition: all 0.3s;
+        }
+
+        .float-btn:hover {
+            transform: translateY(-5px);
+        }
+
+        .float-btn img {
+            width: 70%;
+            height: auto;
+        }
+
+        .whatsapp {
+            background: #25D366;
+        }
+
+        .amazon {
+            background: #FF9900;
+        }
+
+        /* Footer */
+        footer {
+            background: #1d3557;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .email-subscription {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        .email-subscription h3 {
+            margin-bottom: 20px;
+            font-size: 1.5rem;
+        }
+
+        .email-subscription form {
+            display: flex;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .email-subscription input {
+            flex: 1;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 30px 0 0 30px;
+            font-size: 1rem;
+        }
+
+        .email-subscription button {
+            background: #e63946;
+            color: white;
+            border: none;
+            padding: 0 25px;
+            border-radius: 0 30px 30px 0;
+            cursor: pointer;
+            font-weight: 600;
+            transition: background 0.3s;
+        }
+
+        .email-subscription button:hover {
+            background: #c1121f;
+        }
+
+        .footer-columns {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1400px;
+            margin: 0 auto 40px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            padding-bottom: 40px;
+        }
+
+        .footer-col h4 {
+            margin-bottom: 20px;
+            font-size: 1.2rem;
+            position: relative;
+            padding-bottom: 10px;
+        }
+
+        .footer-col h4::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 2px;
+            background: #e63946;
+        }
+
+        .footer-col ul {
+            list-style: none;
+        }
+
+        .footer-col li {
+            margin-bottom: 10px;
+        }
+
+        .footer-col a {
+            color: #a8dadc;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-col a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1400px;
+            margin: 0 auto;
+            padding-top: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+            transition: color 0.3s;
+        }
+
+        .social-links a:hover {
+            color: #e63946;
+        }
+
+        .legal-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .legal-links a {
+            color: #a8dadc;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 0.9rem;
+        }
+
+        .legal-links a:hover {
+            color: white;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .header-container {
+                flex-direction: column;
+                gap: 20px;
+            }
+            
+            .hero h2 {
+                font-size: 2.5rem;
+            }
+            
+            .hero h3 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .main-nav {
+                gap: 15px;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .hero h2 {
+                font-size: 2rem;
+            }
+            
+            .hero h3 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-features {
+                flex-direction: column;
+                align-items: center;
+                gap: 30px;
+            }
+            
+            .hero .info-strip {
+                flex-direction: column;
+                gap: 15px;
+            }
+            
+            h2.section-title {
+                font-size: 2rem;
+            }
+            
+            .footer-bottom {
+                flex-direction: column;
+                gap: 20px;
+                text-align: center;
+            }
+            
+            .social-links {
+                justify-content: center;
+            }
+            
+            .legal-links {
+                justify-content: center;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero {
+                height: auto;
+                padding: 100px 0;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero h3 {
+                font-size: 1.5rem;
+            }
+            
+            .price-container {
+                display: flex;
+                flex-direction: column;
+                gap: 10px;
+            }
+            
+            .original-price, .offer-price {
+                display: block;
+                text-align: center;
+            }
+            
+            .floating-btns {
+                bottom: 20px;
+                right: 20px;
+            }
+            
+            .float-btn {
+                width: 50px;
+                height: 50px;
+            }
+        }
+
+        /* Animation for cart counter */
+        .cart-count.pulse {
+            animation: pulse 0.5s;
+        }
+
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.3); }
+            100% { transform: scale(1); }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-container">
+                <!-- Logo with Text -->
+                <div class="logo-container">
+                    <img src="https://i.ibb.co/0Z7XJvF/headphones.png" alt="Audia+ Logo" class="logo-icon">
+                    <div class="logo-text">
+                        <h1>AUDIA+</h1>
+                        <p>SOUND THAT ADAPTS TO YOU</p>
+                    </div>
+                </div>
+                
+                <!-- Navigation Menu -->
+                <nav class="main-nav">
+                    <a href="#">Products</a>
+                    <a href="#">Technology</a>
+                    <a href="#">Support</a>
+                    <a href="#">About</a>
+                </nav>
+                
+                <!-- Cart Icon -->
+                <div class="cart-icon">
+                    <img src="https://i.ibb.co/0jR2X6v/shopping-bag.png" alt="Cart">
+                    <span class="cart-count">0</span>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Immersive 360°</h2>
+            <h3>iosphere™</h3>
+            
+            <div class="hero-features">
+                <div class="feature">
+                    <i class="fas fa-brain"></i>
+                    <span>Al-Powered Adaptive Sound</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-bolt"></i>
+                    <span>Gaming-Grade Low Latency</span>
+                </div>
+                <div class="feature">
+                    <i class="fas fa-microphone"></i>
+                    <span>Professional Call Quality</span>
+                </div>
+            </div>
+            
+            <div class="price-container">
+                <span class="original-price">₹4999</span>
+                <span class="offer-price">₹1499</span>
+            </div>
+            
+            <a href="#offer" class="btn">Buy Now</a>
+            
+            <div class="info-strip">
+                <div class="info-item">
+                    <i class="fas fa-truck"></i>
+                    <span>Free Delivery</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-sync-alt"></i>
+                    <span>7-Day Replacement</span>
+                </div>
+                <div class="info-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <span>1-Year Warranty</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Audia+ -->
+    <section class="features">
+        <div class="container">
+            <h2 class="section-title">Why Choose Audia+</h2>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-headphones"></i>
+                    <h3>Premium Sound Quality</h3>
+                    <p>Crystal clear audio with deep bass and crisp highs for an immersive experience.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-battery-full"></i>
+                    <h3>50hr Battery Life</h3>
+                    <p>Enjoy uninterrupted listening for days on a single charge.</p>
+                </div>
+                <div class="feature-card">
+                    <i class="fas fa-tint"></i>
+                    <h3>IPX5 Water Resistance</h3>
+             
