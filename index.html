@@ -1,165 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Audia+ Pulse 1.0 | Sound That Adapts To You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Audia+ | Sound That Adapts To You</title>
   <link rel="stylesheet" href="style.css" />
-  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
 </head>
 <body>
-
-  <!-- Sticky Header with Logo and Icons -->
-  <header class="main-header">
-    <img src="images/audia-logo.png" alt="Audia+" class="logo" />
+  <header class="header">
+    <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
     <div class="header-icons">
-      <i class="fas fa-search"></i>
-      <i class="fas fa-user-circle"></i>
-      <i class="fas fa-shopping-bag"></i>
+      <img src="images/search-icon.png" alt="Search" class="icon" />
+      <img src="images/user-icon.png" alt="User" class="icon" />
+      <img src="images/bag-icon.png" alt="Bag" class="icon" />
     </div>
-  </header>
-
-  <!-- Hero Banner Carousel -->
-  <section class="hero-banner">
-    <div class="carousel">
-      <img src="images/hero-image.png" alt="Pulse 1.0" />
-      <img src="images/banner2.jpg" alt="Banner 2" />
-      <img src="images/banner3.jpg" alt="Banner 3" />
-      <img src="images/banner4.jpg" alt="Banner 4" />
-    </div>
-  </section>
-  <!-- Font Awesome CDN for icons -->
-<link
-  rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
-/>
-
-<!-- Info Strip -->
-<div class="info-strip">
-  <a href="#warranty" class="info-link">
-    <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
-    <span>1-Year Warranty</span>
-  </a>
-  <a href="#delivery" class="info-link">
-    <div class="icon-circle"><i class="fas fa-truck"></i></div>
-    <span>Free Delivery</span>
-  </a>
-  <a href="#replacement" class="info-link">
-    <div class="icon-circle"><i class="fas fa-sync-alt"></i></div>
-    <span>7-Day Replacement</span>
-  </a>
-</div>
-
-  <!-- Info Strip with Scroll-To Links -->
-  <div class="info-strip">
-    <a href="#warranty" class="info-link">
-      <span class="icon-circle"><i class="fas fa-shield-alt"></i></span>
-      <span>1-Year Warranty</span>
-    </a>
-    <a href="#delivery" class="info-link">
-      <span class="icon-circle"><i class="fas fa-truck"></i></span>
-      <span>Free Delivery</span>
-    </a>
-    <a href="#replacement" class="info-link">
-      <span class="icon-circle"><i class="fas fa-sync-alt"></i></span>
-      <span>7-Day Replacement</span>
-    </a>
+  </header>  <main>
+    <!-- Hero Carousel -->
+    <section class="carousel">
+      <div class="carousel-track">
+        <img src="images/hero-image.jpg" class="carousel-img" alt="Hero Banner" />
+        <img src="images/banner2.jpg" class="carousel-img" alt="Banner 2" />
+        <img src="images/banner3.jpg" class="carousel-img" alt="Banner 3" />
+        <img src="images/banner4.jpg" class="carousel-img" alt="Banner 4" />
+      </div>
+      <div class="carousel-dots">
+        <span class="dot active"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+        <span class="dot"></span>
+      </div>
+    </section><!-- Info Strip -->
+<section class="info-strip">
+  <div class="info-item">
+    <div class="info-icon">🛡️</div>
+    <p>1-Year Warranty</p>
   </div>
+  <div class="info-item">
+    <div class="info-icon">🚚</div>
+    <p>Free Delivery</p>
+  </div>
+  <div class="info-item">
+    <div class="info-icon">🔁</div>
+    <p>7-Day Replacement</p>
+  </div>
+</section>
 
-  <!-- Sale Is Live Section -->
-  <section class="sale-banner">
-    <img src="images/sale-banner.jpg" alt="Sale Is Live" />
-    <div class="floating-buy">
-      <p class="launch-offer"><s>₹4999</s> <span class="price-highlight">Buy Now ₹1499</span></p>
-      <button class="save-btn">Save ₹3500 Today!</button>
+<!-- Sale Banner -->
+<section class="sale-banner">
+  <img src="images/sale-banner.jpg" alt="Sale Banner" />
+</section>
+
+<!-- Audia+ Technology Carousel -->
+<section class="tech-carousel">
+  <h2 class="tech-heading">Audia+ Technology</h2>
+  <div class="tech-slider-container">
+    <div class="tech-slider">
+      <img src="images/tech-omniwave.jpg" alt="OmniWave" class="tech-slide" />
+      <img src="images/tech-sonicsphere.jpg" alt="SonicSphere" class="tech-slide" />
+      <img src="images/tech-acousticdna.jpg" alt="AcousticDNA" class="tech-slide" />
+      <img src="images/tech-silentsync.jpg" alt="SilentSync" class="tech-slide" />
     </div>
-  </section>
-
-  <!-- Audia+ Technology Section -->
-  <section class="tech-section">
-    <h2>Audia+ Technology</h2>
-    <div class="tech-carousel">
-      <img src="images/tech-omniwave.jpg" alt="OmniWave AdaptIQ" />
-      <img src="images/tech-sonicsphere.jpg" alt="SonicSphere 360°" />
-      <img src="images/tech-acousticdna.jpg" alt="AcousticDNA Personalization" />
-      <img src="images/tech-silentsync.jpg" alt="SilentSync ANC" />
+    <div class="tech-dots">
+      <span class="tech-dot active"></span>
+      <span class="tech-dot"></span>
+      <span class="tech-dot"></span>
+      <span class="tech-dot"></span>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- Why Choose Audia+ -->
-  <section class="why-choose" id="why">
-    <h2>Why Choose Audia+</h2>
-    <ul>
-      <li>🎧 Personalized AI sound tuning</li>
-      <li>🔇 Adaptive noise cancellation</li>
-      <li>💧 Sweat & rain-proof (IPX5)</li>
-      <li>📦 30-hour battery + wireless case</li>
-    </ul>
-  </section>
-
-  <!-- Testimonials Section -->
-  <section class="testimonials">
-    <h2>What Our Users Say</h2>
-    <blockquote>“Absolutely game-changing sound! The adaptive audio is real.” – Sneha R.</blockquote>
-    <blockquote>“Crystal-clear calls, deep bass. Worth every penny.” – Karan M.</blockquote>
-  </section>
-
-  <!-- FAQs Section -->
-  <section class="faq">
-    <h2>Frequently Asked Questions</h2>
-    <details>
-      <summary>Is Audia+ compatible with iOS and Android?</summary>
-      <p>Yes, Audia+ Pulse 1.0 works with all Bluetooth-enabled devices.</p>
-    </details>
-    <details>
-      <summary>What’s included in the box?</summary>
-      <p>Pulse 1.0 earbuds, wireless case, USB-C cable, 4 silicone tips.</p>
-    </details>
-  </section>
-
-  <!-- Scroll Target Sections for Info Strip -->
-  <section id="warranty">
-    <h3>1-Year Warranty</h3>
-    <p>Your purchase includes a 1-year limited warranty.</p>
-  </section>
-
-  <section id="delivery">
-    <h3>Free Delivery</h3>
-    <p>We offer free express delivery PAN India.</p>
-  </section>
-
-  <section id="replacement">
-    <h3>7-Day Replacement</h3>
-    <p>Get a hassle-free replacement within 7 days for defective units.</p>
-  </section>
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-top">
-      <img src="images/audia-logo.png" class="footer-logo" />
-      <p>Sound That Adapts To You</p>
-    </div>
-    <div class="footer-menu">
-      <details>
-        <summary>Shop</summary>
-        <ul><li>Pulse 1.0</li><li>Accessories</li></ul>
-      </details>
-      <details>
-        <summary>Help</summary>
-        <ul><li>FAQs</li><li>Contact</li></ul>
-      </details>
-      <details>
-        <summary>Company</summary>
-        <ul><li>About Us</li><li>Careers</li></ul>
-      </details>
-    </div>
-    <div class="footer-icons">
-      <i class="fab fa-instagram"></i>
-      <i class="fab fa-facebook"></i>
-      <i class="fab fa-x-twitter"></i>
-    </div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
+  </main>  <script src="script.js"></script></body>
 </html>
