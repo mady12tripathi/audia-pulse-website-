@@ -1,162 +1,144 @@
-<!DOCTYPE html><html lang="en"><head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Audia+ | Sound That Adapts To You</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Audia+ Pulse 1.0 | Sound That Adapts To You</title>
   <link rel="stylesheet" href="style.css" />
-  <script defer src="script.js"></script>
-<header style="
-  background-color: #000;
-  padding: 12px 20px;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: sticky;
-  top: 0;
-  z-index: 999;
-">
-  <!-- Left spacer -->
-  <div style="width: 24px;"></div>
+  <script src="https://kit.fontawesome.com/your-kit-code.js" crossorigin="anonymous"></script>
+</head>
+<body>
 
-  <!-- Center: Logo -->
-  <img src="images/audia-logo.png" alt="Audia+" style="height: 48px;" />
-
-  <!-- Right: Clickable Icons -->
-  <div style="display: flex; gap: 22px; align-items: center;">
-    <!-- Search Icon -->
-    <button onclick="handleSearchClick()" style="background: none; border: none; cursor: pointer;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/search--v1.png" alt="Search" style="height: 24px;">
-    </button>
-
-    <!-- Profile Icon -->
-    <a href="login.html" style="cursor: pointer;">
-      <img src="https://img.icons8.com/ios-filled/24/ffffff/user-male-circle.png" alt="Profile" style="height: 24px;">
-    </a>
-
-    <!-- Bag Icon -->
-    <a href="cart.html" style="cursor: pointer;">
-      <img src="images/bag-icon.png" alt="Cart" style="height: 24px;">
-    </a>
-  </div>
-</header>
-    <!-- Hero Slider Section -->
-<div class="slider">
-  <div class="slides">
-    <img src="images/hero-image.jpg" alt="Hero 1">
-    <img src="images/banner2.jpg" alt="Hero 2">
-    <img src="images/banner3.jpg" alt="Hero 3">
-    <img src="images/banner4.jpg" alt="Hero 4">
-  </div>
-</div>
-    <div class="carousel-indicators">
-      <span class="dot active"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
-      <span class="dot"></span>
+  <!-- Sticky Header with Logo and Icons -->
+  <header class="main-header">
+    <img src="images/audia-logo.png" alt="Audia+" class="logo" />
+    <div class="header-icons">
+      <i class="fas fa-search"></i>
+      <i class="fas fa-user-circle"></i>
+      <i class="fas fa-shopping-bag"></i>
     </div>
-  </section>  <!-- Info Strip -->  <section class="info-strip">
-    <div class="info-label" data-modal="modal1">
-      <img src="images/warranty-icon.png" alt="Warranty" />
+  </header>
+
+  <!-- Hero Banner Carousel -->
+  <section class="hero-banner">
+    <div class="carousel">
+      <img src="images/hero-image.png" alt="Pulse 1.0" />
+      <img src="images/banner2.jpg" alt="Banner 2" />
+      <img src="images/banner3.jpg" alt="Banner 3" />
+      <img src="images/banner4.jpg" alt="Banner 4" />
+    </div>
+  </section>
+
+  <!-- Info Strip with Scroll-To Links -->
+  <div class="info-strip">
+    <a href="#warranty" class="info-link">
+      <span class="icon-circle"><i class="fas fa-shield-alt"></i></span>
       <span>1-Year Warranty</span>
-    </div>
-    <div class="info-label" data-modal="modal2">
-      <img src="images/delivery-icon.png" alt="Delivery" />
+    </a>
+    <a href="#delivery" class="info-link">
+      <span class="icon-circle"><i class="fas fa-truck"></i></span>
       <span>Free Delivery</span>
-    </div>
-    <div class="info-label" data-modal="modal3">
-      <img src="images/return-icon.png" alt="Replacement" />
+    </a>
+    <a href="#replacement" class="info-link">
+      <span class="icon-circle"><i class="fas fa-sync-alt"></i></span>
       <span>7-Day Replacement</span>
-    </div>
-  </section>  <!-- Price Strip -->  <section class="price-strip">
-    <span class="strike">₹4999</span>
-    <button class="save-btn">Save ₹3500 Today!</button>
-  </section>  <!-- Sale is Live -->  <section class="sale-section">
-    <img src="images/sale-banner.jpg" alt="Sale Banner" class="sale-banner" />
+    </a>
+  </div>
+
+  <!-- Sale Is Live Section -->
+  <section class="sale-banner">
+    <img src="images/sale-banner.jpg" alt="Sale Is Live" />
     <div class="floating-buy">
-      <button onclick="confirmBuy()">Buy Now ₹1499</button>
+      <p class="launch-offer"><s>₹4999</s> <span class="price-highlight">Buy Now ₹1499</span></p>
+      <button class="save-btn">Save ₹3500 Today!</button>
     </div>
-  </section>  <!-- Audia+ Technology Section -->  <section class="tech-section">
+  </section>
+
+  <!-- Audia+ Technology Section -->
+  <section class="tech-section">
     <h2>Audia+ Technology</h2>
     <div class="tech-carousel">
-      <img src="images/tech-omniwave.jpg" />
-      <img src="images/tech-sonicsphere.jpg" />
-      <img src="images/tech-acousticdna.jpg" />
-      <img src="images/tech-silentsync.jpg" />
+      <img src="images/tech-omniwave.jpg" alt="OmniWave AdaptIQ" />
+      <img src="images/tech-sonicsphere.jpg" alt="SonicSphere 360°" />
+      <img src="images/tech-acousticdna.jpg" alt="AcousticDNA Personalization" />
+      <img src="images/tech-silentsync.jpg" alt="SilentSync ANC" />
     </div>
-  </section>  <!-- Why Choose Audia+ -->  <section class="why-audia grey-bg">
+  </section>
+
+  <!-- Why Choose Audia+ -->
+  <section class="why-choose" id="why">
     <h2>Why Choose Audia+</h2>
     <ul>
-      <li>Personalized Sound Calibration</li>
-      <li>AI-Driven AdaptIQ Technology</li>
-      <li>Studio-Grade Quality</li>
-      <li>Sweat & Rain Resistant (IPX5)</li>
+      <li>🎧 Personalized AI sound tuning</li>
+      <li>🔇 Adaptive noise cancellation</li>
+      <li>💧 Sweat & rain-proof (IPX5)</li>
+      <li>📦 30-hour battery + wireless case</li>
     </ul>
-  </section>  <!-- Testimonials -->  <section class="testimonials">
+  </section>
+
+  <!-- Testimonials Section -->
+  <section class="testimonials">
     <h2>What Our Users Say</h2>
-    <p>“Best earbuds I've ever used – truly adaptive!” – Riya S.</p>
-    <p>“Excellent sound clarity and comfort.” – Ankit T.</p>
-  </section>  <!-- FAQ -->  <section class="faq">
-    <h2>FAQs</h2>
+    <blockquote>“Absolutely game-changing sound! The adaptive audio is real.” – Sneha R.</blockquote>
+    <blockquote>“Crystal-clear calls, deep bass. Worth every penny.” – Karan M.</blockquote>
+  </section>
+
+  <!-- FAQs Section -->
+  <section class="faq">
+    <h2>Frequently Asked Questions</h2>
     <details>
-      <summary>How does the personalized sound work?</summary>
-      <p>OmniWave™ AdaptIQ calibrates sound based on your unique ear profile.</p>
+      <summary>Is Audia+ compatible with iOS and Android?</summary>
+      <p>Yes, Audia+ Pulse 1.0 works with all Bluetooth-enabled devices.</p>
     </details>
     <details>
-      <summary>Is it waterproof?</summary>
-      <p>Yes, Pulse 1.0 is IPX5 certified – perfect for sweat and rain.</p>
+      <summary>What’s included in the box?</summary>
+      <p>Pulse 1.0 earbuds, wireless case, USB-C cable, 4 silicone tips.</p>
     </details>
-  </section>  <!-- Footer -->  <footer class="footer">
+  </section>
+
+  <!-- Scroll Target Sections for Info Strip -->
+  <section id="warranty">
+    <h3>1-Year Warranty</h3>
+    <p>Your purchase includes a 1-year limited warranty.</p>
+  </section>
+
+  <section id="delivery">
+    <h3>Free Delivery</h3>
+    <p>We offer free express delivery PAN India.</p>
+  </section>
+
+  <section id="replacement">
+    <h3>7-Day Replacement</h3>
+    <p>Get a hassle-free replacement within 7 days for defective units.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer>
     <div class="footer-top">
-      <div class="social-icons">
-        <img src="images/facebook-icon.png" alt="Facebook" />
-        <img src="images/instagram-icon.png" alt="Instagram" />
-        <img src="images/youtube-icon.png" alt="YouTube" />
-      </div>
-      <form class="subscribe-form">
-        <input type="email" placeholder="Enter your email" />
-        <button type="submit">Subscribe</button>
-      </form>
+      <img src="images/audia-logo.png" class="footer-logo" />
+      <p>Sound That Adapts To You</p>
     </div>
     <div class="footer-menu">
       <details>
         <summary>Shop</summary>
-        <ul><li>Earbuds</li><li>Accessories</li></ul>
+        <ul><li>Pulse 1.0</li><li>Accessories</li></ul>
       </details>
       <details>
         <summary>Help</summary>
-        <ul><li>FAQs</li><li>Contact Us</li></ul>
+        <ul><li>FAQs</li><li>Contact</li></ul>
       </details>
       <details>
         <summary>Company</summary>
-        <ul><li>About</li><li>Careers</li></ul>
+        <ul><li>About Us</li><li>Careers</li></ul>
       </details>
     </div>
-    <p class="copyright">© 2025 Audia+ | All rights reserved.</p>
-  </footer>  <!-- Floating Icons -->  <a href="https://wa.me/8090667890" class="floating-icon whatsapp" target="_blank">
-    <img src="images/whatsapp-icon.png" alt="WhatsApp" />
-  </a>
-  <a href="https://amzn.to/4eEH6K2" class="floating-icon amazon" target="_blank">
-    <img src="images/amazon-icon.png" alt="Amazon" />
-  </a>  <!-- Modals -->  <div id="modal1" class="modal">
-    <div class="modal-content">
-      <span class="close">×</span>
-      <p>Audia+ Pulse 1.0 comes with a full 1-Year Warranty covering all manufacturing defects.</p>
+    <div class="footer-icons">
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-facebook"></i>
+      <i class="fab fa-x-twitter"></i>
     </div>
-  </div>
-  <div id="modal2" class="modal">
-    <div class="modal-content">
-      <span class="close">×</span>
-      <p>We offer FREE delivery across India within 2–4 business days.</p>
-    </div>
-  </div>
-  <div id="modal3" class="modal">
-    <div class="modal-content">
-      <span class="close">×</span>
-      <p>7-Day No-Questions-Asked Replacement Policy on all orders.</p>
-    </div>
-  </div></body></html>
-<script>
-  function handleSearchClick() {
-    alert("Search button clicked! Add your function here.");
-    // You can open a modal or redirect to search.html
-  }
-</script>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
