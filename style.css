@@ -1,136 +1,30 @@
-/* Reset & Base */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-body {
-  font-family: 'Segoe UI', sans-serif;
-  background-color: #fff;
-  color: #111;
-  line-height: 1.6;
-}
-
-/* Header */
-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 10px 20px;
-  background-color: #fff;
-  border-bottom: 1px solid #eee;
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-}
-header img {
-  height: 40px;
-}
-
-/* Hero Banner */
-.carousel {
-  position: relative;
-  overflow: hidden;
+.slider {
   width: 100%;
-  height: auto;
+  overflow: hidden;
+  position: relative;
+  height: 480px;
 }
+
 .slides {
   display: flex;
-  transition: transform 0.5s ease-in-out;
+  width: 400%;
+  animation: slide 16s infinite;
 }
+
 .slides img {
   width: 100%;
-  max-height: 400px;
+  height: 480px;
   object-fit: cover;
 }
 
-/* Floating Buy Now */
-.buy-now-strip {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  background: #fff0f0;
-  padding: 10px;
-  font-weight: bold;
+/* Slide animation */
+@keyframes slide {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(0); }
+  30% { transform: translateX(-100%); }
+  50% { transform: translateX(-100%); }
+  55% { transform: translateX(-200%); }
+  75% { transform: translateX(-200%); }
+  80% { transform: translateX(-300%); }
+  100% { transform: translateX(-300%); }
 }
-.buy-now-strip del {
-  color: #999;
-}
-.buy-now-strip .offer {
-  background-color: #ff2e2e;
-  color: #fff;
-  padding: 5px 12px;
-  border-radius: 5px;
-  font-size: 14px;
-}
-
-/* Info Strip */
-.info-strip {
-  display: flex;
-  justify-content: space-around;
-  background: #fafafa;
-  padding: 10px 0;
-  border-top: 1px solid #eee;
-  border-bottom: 1px solid #eee;
-}
-.info-strip div {
-  cursor: pointer;
-  text-align: center;
-}
-.info-strip img {
-  width: 24px;
-  height: 24px;
-  display: block;
-  margin: auto;
-}
-
-/* Sale Is Live */
-.sale-banner {
-  margin: 20px 0;
-  text-align: center;
-}
-.sale-banner img {
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-/* Tech Section */
-.tech-carousel {
-  overflow-x: auto;
-  white-space: nowrap;
-  margin: 20px 0;
-}
-.tech-carousel img {
-  display: inline-block;
-  height: auto;
-  max-height: 220px;
-  margin: 0 5px;
-  border-radius: 8px;
-}
-
-/* Why Choose */
-.why-choose {
-  background: #f0f0f0;
-  padding: 30px 20px;
-}
-.why-choose h2 {
-  text-align: center;
-  margin-bottom: 20px;
-}
-.why-choose ul {
-  list-style: disc;
-  padding-left: 20px;
-}
-
-/* Testimonials */
-.testimonials {
-  padding: 30px 20px;
-  background: #fff;
-}
-.testimonials h2 {
-  text-align: center;
-}
-.testimonials blockquote {
-  background: #f9f9f9;
