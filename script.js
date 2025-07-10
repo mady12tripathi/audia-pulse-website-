@@ -1,64 +1,36 @@
-// Modal logic for info strip
-const modalTriggers = document.querySelectorAll(".info-strip span");
-const modals = document.querySelectorAll(".modal");
-const closeButtons = document.querySelectorAll(".close");
+// Hero Banner Carousel
+let currentIndex = 0;
+const carouselImages = document.querySelector('.carousel-images');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = dots.length;
 
-// Open modal on info strip click
-modalTriggers.forEach((trigger, index) => {
-  trigger.addEventListener("click", () => {
-    modals[index].style.display = "block";
+function updateCarousel() {
+  carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
+  dots.forEach((dot, index) => {
+    dot.classList.toggle('active', index === currentIndex);
+  });
+}
+
+function nextSlide() {
+  currentIndex = (currentIndex + 1) % totalSlides;
+  updateCarousel();
+}
+
+dots.forEach((dot, index) => {
+  dot.addEventListener('click', () => {
+    currentIndex = index;
+    updateCarousel();
   });
 });
 
-// Close modal on 'X' click
-closeButtons.forEach((btn, index) => {
-  btn.addEventListener("click", () => {
-    modals[index].style.display = "none";
-  });
+// Auto slide every 5 seconds
+setInterval(nextSlide, 5000);
+
+// Floating icon actions
+document.getElementById("whatsapp-icon").addEventListener("click", () => {
+  window.open("https://wa.me/919999999999", "_blank");
 });
 
-// Close modal on outside click
-window.addEventListener("click", (e) => {
-  modals.forEach((modal) => {
-    if (e.target == modal) {
-      modal.style.display = "none";
-    }
-  });
-});
-
-// Buy Now confirmation popup
-const buyNowButtons = document.querySelectorAll(".floating-buy");
-buyNowButtons.forEach((btn) => {
-  btn.addEventListener("click", () => {
-    const confirmBuy = confirm("Buy Now for ₹1499?\n(This will redirect you to Amazon)");
-    if (confirmBuy) {
-      window.open("https://amzn.to/4eEH6K2", "_blank");
-    }
-  });
-});
-
-// Scrollable Hero Slider Auto Scroll (optional)
-let heroSlider = document.querySelector(".hero-slider");
-let slideInterval = setInterval(() => {
-  heroSlider.scrollBy({ left: window.innerWidth, behavior: "smooth" });
-}, 5000);
-
-// Stop scroll if user interacts
-heroSlider.addEventListener("mouseenter", () => clearInterval(slideInterval));
-
-// Restart scroll on leave
-heroSlider.addEventListener("mouseleave", () => {
-  slideInterval = setInterval(() => {
-    heroSlider.scrollBy({ left: window.innerWidth, behavior: "smooth" });
-  }, 5000);
-});
-
-// Collapsible footer menu
-const collapsibles = document.querySelectorAll(".collapsible");
-collapsibles.forEach((collapsible) => {
-  collapsible.addEventListener("click", function () {
-    this.classList.toggle("active");
-    const content = this.nextElementSibling;
-    content.style.display = content.style.display === "block" ? "none" : "block";
-  });
+document.getElementById("amazon-icon").addEventListener("click", () => {
+  window.open("https://www.amazon.in/dp/YOUR_PRODUCT_ID", "_blank");
 });
