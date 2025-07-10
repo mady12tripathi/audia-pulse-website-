@@ -1,141 +1,125 @@
-/* Reset & Base Styles */
-body {
+/* Reset & Base */
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background-color: #fff;
+  padding: 0;
+  box-sizing: border-box;
 }
-
-img {
-  max-width: 100%;
-  display: block;
+body {
+  font-family: 'Segoe UI', sans-serif;
+  line-height: 1.6;
+  background: #fff;
+  color: #000;
 }
 
 /* Sticky Header */
-header {
+.sticky-header {
   position: sticky;
   top: 0;
-  background: #fff;
+  background: #000;
+  padding: 10px 20px;
   z-index: 999;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 16px;
-  border-bottom: 1px solid #ddd;
+}
+.logo {
+  height: 32px;
+}
+.bag-icon {
+  height: 28px;
+  cursor: pointer;
 }
 
-header img {
-  height: 40px;
+/* Carousel */
+.carousel, .tech-carousel {
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+.carousel-track, .tech-carousel .carousel-track {
+  display: flex;
+  scroll-snap-align: start;
+  width: max-content;
+}
+.carousel-track img, .tech-carousel .carousel-track img {
+  width: 100vw;
+  height: auto;
+  scroll-snap-align: start;
+  flex-shrink: 0;
 }
 
-/* Full Width Banners */
+/* Info Strip */
+.info-strip {
+  display: flex;
+  justify-content: space-around;
+  background: #f3f3f3;
+  padding: 10px;
+  font-weight: bold;
+}
+.info-strip div {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Sale Banner */
 .full-width-banner {
   width: 100%;
   display: block;
 }
 
-/* Carousel Styles */
-.carousel-container {
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
+/* Sections */
+section {
+  padding: 20px;
 }
-
-.carousel-track img {
-  width: 100vw;
-  height: auto;
-  display: inline-block;
-  scroll-snap-align: start;
-}
-
-/* Info Strip */
-.info-strip {
-  background: #f4f4f4;
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  padding: 10px 0;
-  font-weight: bold;
-  font-size: 14px;
-}
-
-.info-strip div {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-}
-
-/* Section Headings */
 h2 {
   text-align: center;
-  font-size: 20px;
-  margin-top: 30px;
   margin-bottom: 15px;
 }
-
-/* Technology Carousel */
-.tech-carousel {
-  overflow-x: auto;
-  white-space: nowrap;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  background: #000;
-}
-
-.tech-carousel .carousel-track img {
-  width: 100vw;
-  height: auto;
-  display: inline-block;
-  scroll-snap-align: start;
-}
-
-/* Why Choose Audia+ */
-ul {
+.why-choose ul {
   list-style: none;
-  padding: 0 20px;
+  padding: 0;
+  text-align: center;
 }
-
-ul li::before {
-  content: '🔸';
-  margin-right: 8px;
+.why-choose li {
+  margin: 10px 0;
 }
-
-/* Testimonials */
-blockquote {
-  margin: 10px 20px;
+.testimonials blockquote {
   font-style: italic;
-  font-size: 14px;
+  margin: 10px auto;
+  max-width: 90%;
+  text-align: center;
 }
-
-/* FAQ */
-details {
-  margin: 10px 20px;
-  font-size: 14px;
+.faq details {
+  margin-bottom: 10px;
 }
 
 /* Footer */
-footer {
-  background: #f4f4f4;
+.footer {
+  background: #f5f5f5;
   padding: 20px;
-  font-size: 14px;
   text-align: center;
 }
-
-footer a {
+.footer-links {
+  margin-bottom: 10px;
+}
+.footer-links a {
   margin: 0 10px;
+  color: #000;
   text-decoration: none;
-  color: #333;
 }
-
-footer input[type="email"] {
-  padding: 6px;
-  width: 180px;
-  margin: 5px 0;
+.subscribe {
+  margin-bottom: 10px;
 }
-
-footer input[type="submit"] {
-  padding: 6px 10px;
-  background: #333;
+.subscribe input[type="email"] {
+  padding: 5px;
+  margin-left: 5px;
+  border: 1px solid #ccc;
+}
+.subscribe button {
+  padding: 6px 12px;
+  margin-left: 5px;
+  background: #000;
   color: #fff;
   border: none;
   cursor: pointer;
@@ -146,41 +130,26 @@ footer input[type="submit"] {
   position: fixed;
   width: 40px;
   height: 40px;
-  z-index: 1000;
-  cursor: pointer;
+  z-index: 999;
 }
-
 #amazon-icon {
-  bottom: 160px;
+  bottom: 80px;
   right: 20px;
 }
-
 #whatsapp-icon {
-  bottom: 110px;
+  bottom: 140px;
+  right: 20px;
+}
+#bag-icon-float {
+  bottom: 200px;
   right: 20px;
 }
 
-#bag-icon {
-  bottom: 60px;
-  right: 20px;
-}
-
-/* Responsive Fixes */
-@media screen and (max-width: 600px) {
+/* Responsive */
+@media (max-width: 768px) {
   .info-strip {
     flex-direction: column;
-    gap: 6px;
-  }
-
-  header img {
-    height: 32px;
-  }
-
-  h2 {
-    font-size: 18px;
-  }
-
-  footer input[type="email"] {
-    width: 140px;
+    gap: 10px;
+    text-align: center;
   }
 }
