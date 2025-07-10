@@ -1,39 +1,37 @@
-<!DOCTYPE html><html lang="en">
-<head>
+<!DOCTYPE html><html lang="en"><head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Audia+ Pulse 1.0</title>
   <link rel="stylesheet" href="style.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-</head>
-<body>  <!-- Sticky Header -->  <header class="sticky-header">
-    <img src="audia-logo.png" alt="Audia+ Logo" class="logo" />
+  <script defer src="script.js"></script>
+</head><body>
+  <!-- Sticky Header -->
+  <header class="sticky-header">
+    <img src="audia-logo.png" alt="Logo" class="logo" />
     <img src="bag-icon.png" alt="Bag" class="bag-icon" />
-  </header>  <!-- Hero Banner Carousel -->  <section class="carousel">
+  </header>  <!-- Hero Carousel -->  <div class="carousel">
     <div class="carousel-track">
       <img src="hero-image.jpg" alt="Hero Banner 1" />
       <img src="banner2.jpg" alt="Banner 2" />
       <img src="banner3.jpg" alt="Banner 3" />
       <img src="banner4.jpg" alt="Banner 4" />
     </div>
-  </section>  <!-- Info Strip -->  <section class="info-strip">
-    <span>🚚 Free Delivery</span>
-    <span>🔁 7-Day Replacement</span>
-    <span>🛡️ 1-Year Warranty</span>
-  </section>  <!-- Sale Banner -->  <section>
-    <img src="sale-banner.jpg" class="full-width-banner" alt="Sale Banner" />
-  </section>  <!-- Audia+ Technology Carousel -->  <section class="tech-carousel">
+  </div>  <!-- Info Strip -->  <div class="info-strip">
+    <div><span>🚚</span> Free Delivery</div>
+    <div><span>🔄</span> 7-Day Replacement</div>
+    <div><span>🛡️</span> 1-Year Warranty</div>
+  </div>  <!-- Sale Banner -->  <img src="sale-banner.jpg" alt="Sale Banner" class="full-width-banner" />  <!-- Audia+ Technology Section -->  <div class="tech-carousel">
     <div class="carousel-track">
       <img src="tech-omniwave.jpg" alt="OmniWave" />
       <img src="tech-sonicsphere.jpg" alt="SonicSphere" />
       <img src="tech-acousticdna.jpg" alt="AcousticDNA" />
       <img src="tech-silentsync.jpg" alt="SilentSync" />
     </div>
-  </section>  <!-- Why Choose Audia+ -->  <section class="why-choose">
+  </div>  <!-- Why Choose Audia+ -->  <section class="why-choose">
     <h2>Why Choose Audia+</h2>
     <ul>
       <li>🎧 Personalized Audio Calibration</li>
-      <li>🔇 Adaptive Noise Cancellation</li>
+      <li>🚫 Adaptive Noise Cancellation</li>
       <li>💧 IPX5 Water Resistance</li>
       <li>🏆 Award-Winning Innovation</li>
     </ul>
@@ -41,34 +39,33 @@
     <h2>What Our Customers Say</h2>
     <blockquote>“Pulse 1.0 changed how I hear music – it's like it knows me.” – Neha, Delhi</blockquote>
     <blockquote>“Noise cancellation on the go! Perfect for travel.” – Raj, Mumbai</blockquote>
-  </section>  <!-- FAQs -->  <section class="faqs">
+  </section>  <!-- FAQ Section -->  <section class="faq">
     <h2>Frequently Asked Questions</h2>
     <details>
       <summary>Is the Audia+ Pulse 1.0 waterproof?</summary>
-      <p>Yes, it is IPX5 rated – safe from sweat and rain.</p>
+      <p>Yes, it has an IPX5 water resistance rating.</p>
     </details>
     <details>
       <summary>How does Adaptive Sound work?</summary>
-      <p>It uses OmniWave™ AI to auto-tune based on your hearing & environment.</p>
+      <p>It customizes audio based on your hearing and surroundings.</p>
     </details>
     <details>
       <summary>How do I charge it?</summary>
-      <p>Use the included USB-C cable or any Qi wireless charger.</p>
+      <p>Using the included USB-C cable and wireless charging case.</p>
     </details>
-  </section>  <!-- Footer -->  <footer class="site-footer">
+  </section>  <!-- Footer -->  <footer class="footer">
     <div class="footer-links">
       <a href="#">Privacy Policy</a>
       <a href="#">Terms of Service</a>
       <a href="#">Contact Us</a>
     </div>
-    <form class="newsletter">
-      <label>Subscribe for updates:</label>
-      <input type="email" placeholder="Enter your email" />
-      <button type="submit">Subscribe</button>
-    </form>
-    <p>© 2025 Audia+ | All rights reserved</p>
-  </footer>  <!-- Floating Icons -->  <img src="amazon-icon.png" alt="Amazon" class="floating-icon" id="amazon-icon" onclick="window.open('https://www.amazon.in')" />
-  <img src="whatsapp-icon.png" alt="WhatsApp" class="floating-icon" id="whatsapp-icon" onclick="window.open('https://wa.me/91XXXXXXXXXX')" />
-  <img src="bag-icon.png" alt="Bag" class="floating-icon" id="bag-icon" /></body>
-</html>
-<script src="script.js"></script>
+    <div class="subscribe">
+      <label for="email">Subscribe for updates:</label>
+      <input type="email" id="email" placeholder="Enter your email" />
+      <button>Subscribe</button>
+    </div>
+    <p>&copy; 2025 Audia+ | All rights reserved</p>
+  </footer>  <!-- Floating Icons -->  <img src="amazon-icon.png" alt="Amazon" class="floating-icon" id="amazon-icon" />
+  <img src="whatsapp-icon.png" alt="WhatsApp" class="floating-icon" id="whatsapp-icon" />
+  <img src="bag-icon.png" alt="Bag" class="floating-icon" id="bag-icon-float" />
+</body></html>
