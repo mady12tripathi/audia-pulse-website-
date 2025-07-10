@@ -1,77 +1,36 @@
-/* Reset & Base */
+/* General Styles */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
   background-color: #fff;
 }
 
-img {
-  max-width: 100%;
-  display: block;
-}
-
-/* Logo + Header */
-.logo {
-  width: 160px;
-  margin: 10px auto;
-  display: block;
-}
-
-header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 10px 20px;
-}
-
-/* Buy Bag Icon on Top Right */
-.bag-button img {
-  width: 30px;
-  cursor: pointer;
-}
-
-/* Full Width Banners */
 .full-width-banner {
   width: 100%;
   display: block;
+  position: relative;
 }
 
-/* Info Strip */
 .info-strip {
   background: #f4f4f4;
   display: flex;
   justify-content: space-around;
-  padding: 12px 10px;
+  padding: 10px 0;
   font-weight: bold;
-  font-size: 14px;
-  text-align: center;
 }
 
-/* Sale Section */
-.sale-section img {
-  width: 100%;
-  display: block;
-  margin: 20px 0;
-}
-
-/* Tech Carousel */
 .tech-carousel {
   overflow-x: auto;
   white-space: nowrap;
   background: #000;
 }
 
-.carousel-track {
-  display: flex;
-}
-
 .carousel-track img {
   width: 100vw;
-  height: auto;
   display: inline-block;
 }
 
-/* Floating Icons */
+/* Floating Icons for Amazon, WhatsApp, Shopping Cart */
 .floating-icon {
   position: fixed;
   width: 45px;
@@ -80,35 +39,248 @@ header {
   cursor: pointer;
 }
 
-/* Specific Positions */
 #amazon-icon {
   bottom: 120px;
   right: 20px;
 }
 
 #whatsapp-icon {
-  bottom: 70px;
+  bottom: 60px;
   right: 20px;
 }
 
 #bag-icon {
-  bottom: 20px;
+  bottom: 180px;
   right: 20px;
 }
 
-/* Responsive */
-@media (max-width: 600px) {
-  .info-strip {
+/* Header Styles */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 10px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.header-logo img {
+  height: 40px;
+}
+
+.nav-icons {
+  display: flex;
+  gap: 20px;
+}
+
+.nav-icons img {
+  width: 25px;
+  cursor: pointer;
+}
+
+.header .nav-icons a {
+  text-decoration: none;
+  color: white;
+  font-weight: bold;
+}
+
+.header .nav-icons a:hover {
+  color: #f4f4f4;
+}
+
+/* Hero Banner */
+.hero-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 50px;
+}
+
+.hero-banner img {
+  max-width: 100%;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+}
+
+.hero-banner img:hover {
+  transform: scale(1.05);
+}
+
+.hero-banner h2 {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-top: 20px;
+}
+
+.hero-banner p {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+/* Tech Carousel Section */
+.tech-carousel .carousel-track {
+  display: flex;
+  gap: 10px;
+  overflow: hidden;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.tech-carousel .carousel-track img {
+  width: 100%;
+  height: auto;
+  scroll-snap-align: start;
+}
+
+.tech-carousel .carousel-track img:hover {
+  transform: scale(1.05);
+  transition: all 0.3s ease;
+}
+
+/* FAQ Section */
+.faq-section {
+  padding: 60px 0;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+.faq-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.faq-section .faq-item {
+  margin-bottom: 20px;
+}
+
+.faq-section .faq-item button {
+  background: #000;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.faq-section .faq-item button:hover {
+  background: #444;
+}
+
+.faq-section .faq-item div {
+  display: none;
+  margin-top: 10px;
+  font-size: 1rem;
+  color: #333;
+}
+
+.faq-section .faq-item.active div {
+  display: block;
+}
+
+/* Testimonial Section */
+.testimonial-section {
+  padding: 60px 30px;
+  background-color: #e6e6e6;
+  text-align: center;
+}
+
+.testimonial-section h2 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: #333;
+}
+
+.testimonial-item {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.testimonial-item img {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  margin-right: 15px;
+}
+
+.testimonial-item p {
+  font-size: 1.1rem;
+  color: #555;
+}
+
+.testimonial-item h3 {
+  font-size: 1.2rem;
+  margin-top: 10px;
+  color: #000;
+}
+
+.testimonial-item h4 {
+  font-size: 1rem;
+  color: #888;
+}
+
+/* Footer Section */
+.footer {
+  background-color: #000;
+  color: #fff;
+  padding: 40px 30px;
+  text-align: center;
+}
+
+.footer .footer-logo img {
+  width: 150px;
+  margin-bottom: 20px;
+}
+
+.footer p {
+  font-size: 1rem;
+}
+
+.footer .social-icons {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.footer .social-icons img {
+  width: 30px;
+  height: 30px;
+  cursor: pointer;
+}
+
+.footer .social-icons img:hover {
+  transform: scale(1.1);
+  transition: all 0.3s ease;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+  .hero-banner {
     flex-direction: column;
-    gap: 8px;
-    font-size: 13px;
+    text-align: center;
+    padding: 30px 10px;
   }
 
-  .logo {
-    width: 140px;
+  .hero-banner h2 {
+    font-size: 2rem;
   }
 
-  .bag-button img {
-    width: 28px;
+  .faq-section .faq-item button {
+    font-size: 1rem;
+  }
+
+  .testimonials-section .testimonial-item {
+    flex-direction: column;
+  }
+
+  .footer .social-icons {
+    gap: 10px;
   }
 }
