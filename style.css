@@ -1,175 +1,114 @@
-/* Global Reset */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Segoe UI', sans-serif;
-}
-
-/* Body Base */
+/* Reset & Base */
 body {
+  margin: 0;
+  font-family: Arial, sans-serif;
   background-color: #fff;
-  color: #111;
 }
 
-/* HEADER */
+img {
+  max-width: 100%;
+  display: block;
+}
+
+/* Logo + Header */
+.logo {
+  width: 160px;
+  margin: 10px auto;
+  display: block;
+}
+
 header {
-  position: sticky;
-  top: 0;
-  z-index: 999;
-  background-color: #000;
-  padding: 10px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 10px 20px;
 }
 
-header img.logo {
-  height: 36px;
-}
-
-header .icons img {
-  width: 24px;
-  margin-left: 20px;
+/* Buy Bag Icon on Top Right */
+.bag-button img {
+  width: 30px;
   cursor: pointer;
 }
 
-/* BANNER CAROUSEL */
-.carousel {
-  position: relative;
-  overflow: hidden;
-}
-
-.carousel-images {
-  display: flex;
-  transition: transform 0.4s ease-in-out;
-}
-
-.carousel-images img {
-  width: 100%;
-  flex-shrink: 0;
-}
-
-.dots {
-  text-align: center;
-  position: absolute;
-  bottom: 12px;
-  width: 100%;
-}
-
-.dot {
-  display: inline-block;
-  width: 8px;
-  height: 8px;
-  margin: 4px;
-  border-radius: 50%;
-  background-color: #bbb;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #000;
-}
-
-/* INFO STRIP */
-.info-strip {
-  display: flex;
-  justify-content: space-around;
-  background-color: #f4f4f4;
-  padding: 20px 10px;
-  flex-wrap: wrap;
-}
-
-.info-item {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100px;
-  margin: 10px;
-}
-
-.info-item img {
-  background-color: #000;
-  padding: 10px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  margin-bottom: 8px;
-}
-
-/* SALE BANNER */
-.sale-banner img {
+/* Full Width Banners */
+.full-width-banner {
   width: 100%;
   display: block;
-  margin: 0 auto;
 }
 
-/* AUDIA+ TECHNOLOGY SECTION */
-.tech-section {
-  background-color: #fff;
-  padding: 40px 20px;
-}
-
-.tech-section h2 {
+/* Info Strip */
+.info-strip {
+  background: #f4f4f4;
+  display: flex;
+  justify-content: space-around;
+  padding: 12px 10px;
+  font-weight: bold;
+  font-size: 14px;
   text-align: center;
-  font-size: 22px;
-  margin-bottom: 20px;
-  color: #000;
 }
 
+/* Sale Section */
+.sale-section img {
+  width: 100%;
+  display: block;
+  margin: 20px 0;
+}
+
+/* Tech Carousel */
 .tech-carousel {
   overflow-x: auto;
+  white-space: nowrap;
+  background: #000;
+}
+
+.carousel-track {
   display: flex;
-  scroll-snap-type: x mandatory;
-  -webkit-overflow-scrolling: touch;
-  gap: 10px;
 }
 
-.tech-carousel img {
-  scroll-snap-align: center;
-  width: 90%;
-  max-width: 500px;
-  border-radius: 12px;
-  flex-shrink: 0;
-  margin: 0 auto;
+.carousel-track img {
+  width: 100vw;
+  height: auto;
+  display: inline-block;
 }
 
-/* WHATSAPP + AMAZON FLOAT ICONS */
-.float-icon {
+/* Floating Icons */
+.floating-icon {
   position: fixed;
-  width: 48px;
-  height: 48px;
-  bottom: 20px;
-  border-radius: 50%;
+  width: 45px;
+  height: 45px;
   z-index: 999;
   cursor: pointer;
 }
 
-#whatsapp-icon {
+/* Specific Positions */
+#amazon-icon {
+  bottom: 120px;
   right: 20px;
 }
 
-#amazon-icon {
-  right: 80px;
+#whatsapp-icon {
+  bottom: 70px;
+  right: 20px;
 }
 
-/* RESPONSIVE */
-@media (max-width: 768px) {
+#bag-icon {
+  bottom: 20px;
+  right: 20px;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
   .info-strip {
-    justify-content: center;
+    flex-direction: column;
+    gap: 8px;
+    font-size: 13px;
   }
 
-  .info-item {
-    width: 33%;
+  .logo {
+    width: 140px;
   }
 
-  header img.logo {
-    height: 28px;
-  }
-
-  header .icons img {
-    width: 20px;
-    margin-left: 12px;
+  .bag-button img {
+    width: 28px;
   }
 }
