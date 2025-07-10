@@ -1,36 +1,33 @@
-// Hero Banner Carousel
-let currentIndex = 0;
-const carouselImages = document.querySelector('.carousel-images');
-const dots = document.querySelectorAll('.dot');
-const totalSlides = dots.length;
+// === FAQ Accordion Toggle ===
+document.addEventListener("DOMContentLoaded", function () {
+  const faqItems = document.querySelectorAll(".faq-item");
 
-function updateCarousel() {
-  carouselImages.style.transform = `translateX(-${currentIndex * 100}%)`;
-  dots.forEach((dot, index) => {
-    dot.classList.toggle('active', index === currentIndex);
-  });
-}
+  faqItems.forEach(item => {
+    const button = item.querySelector("button");
 
-function nextSlide() {
-  currentIndex = (currentIndex + 1) % totalSlides;
-  updateCarousel();
-}
+    button.addEventListener("click", () => {
+      // Collapse all other items
+      faqItems.forEach(i => {
+        if (i !== item) {
+          i.classList.remove("active");
+        }
+      });
 
-dots.forEach((dot, index) => {
-  dot.addEventListener('click', () => {
-    currentIndex = index;
-    updateCarousel();
+      // Toggle current item
+      item.classList.toggle("active");
+    });
   });
 });
 
-// Auto slide every 5 seconds
-setInterval(nextSlide, 5000);
-
-// Floating icon actions
-document.getElementById("whatsapp-icon").addEventListener("click", () => {
-  window.open("https://wa.me/919999999999", "_blank");
-});
-
-document.getElementById("amazon-icon").addEventListener("click", () => {
-  window.open("https://www.amazon.in/dp/YOUR_PRODUCT_ID", "_blank");
+// === Optional Smooth Scroll for Floating Icons (if internal anchors used) ===
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      target.scrollIntoView({
+        behavior: "smooth"
+      });
+    }
+  });
 });
