@@ -39,23 +39,6 @@
             padding: 0 20px;
         }
 
-        /* Promo Bar */
-        .promo-bar {
-            background-color: var(--promo);
-            text-align: center;
-            padding: 8px 0;
-            font-weight: 600;
-            font-size: 14px;
-        }
-
-        .promo-bar span {
-            font-weight: 700;
-            background: rgba(0,0,0,0.2);
-            padding: 3px 8px;
-            border-radius: 4px;
-            margin: 0 5px;
-        }
-
         /* Header Styles */
         header {
             background-color: rgba(10, 10, 20, 0.95);
@@ -64,19 +47,34 @@
             z-index: 1000;
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
             backdrop-filter: blur(10px);
+            padding: 15px 0;
         }
 
         .header-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 0;
         }
 
         .logo {
             display: flex;
             align-items: center;
             text-decoration: none;
+        }
+
+        .logo-img {
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+        }
+
+        .logo-img span {
+            font-family: 'Orbitron', sans-serif;
+            font-weight: 700;
+            font-size: 36px;
+            color: var(--highlight);
         }
 
         .logo-text {
@@ -148,13 +146,14 @@
         .hero-section {
             padding-top: 30px;
             position: relative;
-            height: 600px;
+            height: 80vh;
+            min-height: 600px;
             overflow: hidden;
+            display: flex;
+            align-items: center;
             background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1505740420928-5e560c06d30e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');
             background-size: cover;
             background-position: center;
-            display: flex;
-            align-items: center;
         }
 
         .hero-content {
@@ -176,6 +175,8 @@
         .hero-content p {
             font-size: 18px;
             margin-bottom: 30px;
+            color: var(--light);
+            line-height: 1.8;
         }
 
         .btn {
@@ -531,31 +532,6 @@
             color: var(--light);
         }
 
-        .social-icons {
-            display: flex;
-            justify-content: center;
-            gap: 15px;
-        }
-
-        .social-icons a {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 50px;
-            height: 50px;
-            background: var(--accent);
-            border-radius: 50%;
-            color: var(--light);
-            text-decoration: none;
-            font-size: 20px;
-            transition: transform 0.3s, background 0.3s;
-        }
-
-        .social-icons a:hover {
-            background: var(--highlight);
-            transform: translateY(-5px);
-        }
-
         .copyright {
             text-align: center;
             padding-top: 30px;
@@ -618,15 +594,11 @@
     </style>
 </head>
 <body>
-    <!-- Promo Bar -->
-    <div class="promo-bar">
-        Get additional 5% off on Prepaid orders! Code: <span>AUDIA5</span> | Shop Now
-    </div>
-
     <!-- Header with Logo -->
     <header>
         <div class="container header-container">
             <a href="#" class="logo">
+                <img src="images/audia-logo.png" alt="Audia Pulse Logo" class="logo-img">
                 <div class="logo-text">AUDIA <span>PULSE</span></div>
             </a>
             <nav>
@@ -702,4 +674,17 @@
                         </div>
                         <div class="product-actions">
                             <a href="#" class="btn">Add to Cart</a>
-                            <a href="#" class="btn" style="background: var(--accent);">View
+                            <a href="#" class="btn" style="background: var(--accent);">View Details</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Product 3 -->
+                <div class="product-card">
+                    <div class="product-img">
+                        <img src="https://images.unsplash.com/photo-1618366712010-f4ae9c647dcb?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80" alt="Nebula Soundbar">
+                    </div>
+                    <div class="product-info">
+                        <h3>Nebula Soundbar</h3>
+                        <p>Immersive home theater experience with Dolby Atmos</p>
+ 
