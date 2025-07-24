@@ -44,7 +44,18 @@ body {
 .nav-links a:hover {
   color: #f44336;
 }
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
 
+.nav-links a:hover {
+  color: #FFD700;
+}
 /* Right icons section */
 .header-icons {
   display: flex;
