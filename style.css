@@ -56,6 +56,22 @@ body {
 .nav-links a:hover {
   color: #FFD700;
 }
+.navbar a {
+  color: white;
+  margin: 0 15px;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navbar a:hover {
+  color: #FFD700;
+}
+
+.navbar a.active {
+  color: #FFD700;
+}
 /* Right icons section */
 .header-icons {
   display: flex;
