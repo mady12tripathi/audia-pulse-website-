@@ -1,4 +1,3 @@
-/* Reset default margin/padding */
 * {
   margin: 0;
   padding: 0;
@@ -18,7 +17,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 15px 25px;
+  padding: 15px 20px;
   border-bottom: 1px solid #222;
 }
 
@@ -27,11 +26,17 @@ body {
   height: 32px;
 }
 
-/* Navigation Links */
+/* Center navigation */
+.nav-links {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 24px;
+}
+
 .nav-links a {
   color: #fff;
   text-decoration: none;
-  margin: 0 14px;
   font-size: 16px;
   transition: color 0.3s;
 }
@@ -40,43 +45,97 @@ body {
   color: #f44336;
 }
 
-/* Icons Section */
+/* Right icons section */
 .header-icons {
   display: flex;
   align-items: center;
+  gap: 18px;
 }
 
-.header-icons .icon {
-  font-size: 18px;
-  color: #fff;
-  margin-left: 18px;
+/* Circle background icons */
+.icon-circle {
+  width: 32px;
+  height: 32px;
+  background: #111;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.icon-circle:hover {
+  background: #333;
   cursor: pointer;
 }
 
-.cart-icon {
-  height: 20px;
-  margin-left: 18px;
-  cursor: pointer;
+/* Search Icon (Magnifying Glass) */
+.search-icon {
+  width: 12px;
+  height: 12px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  position: relative;
 }
 
-/* Responsive: stack on small screens */
-@media (max-width: 768px) {
-  .header {
-    flex-direction: column;
-    align-items: flex-start;
-    padding: 12px;
-  }
+.search-icon::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  height: 2px;
+  background: #fff;
+  bottom: -4px;
+  right: -4px;
+  transform: rotate(45deg);
+  transform-origin: center;
+}
 
-  .nav-links {
-    margin-top: 10px;
-  }
+/* User Icon (Head + Body) */
+.user-icon {
+  position: relative;
+  width: 14px;
+  height: 14px;
+}
 
-  .nav-links a {
-    margin: 6px 12px 6px 0;
-    display: inline-block;
-  }
+.user-icon::before {
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #fff;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 2px;
+}
 
-  .header-icons {
-    margin-top: 10px;
-  }
+.user-icon::after {
+  content: "";
+  width: 14px;
+  height: 8px;
+  background: #fff;
+  border-radius: 50% 50% 0 0;
+  position: absolute;
+  top: 10px;
+  left: 0;
+}
+
+/* Bag Icon (Shopping Bag) */
+.bag-icon {
+  position: relative;
+  width: 14px;
+  height: 16px;
+  border: 2px solid #fff;
+  border-radius: 2px;
+}
+
+.bag-icon::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: 2px;
+  width: 10px;
+  height: 4px;
+  border: 2px solid #fff;
+  border-top: none;
+  border-radius: 2px 2px 0 0;
 }
