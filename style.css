@@ -150,3 +150,13 @@ body {
   border-top: none;
   border-radius: 2px 2px 0 0;
 }
+.icon-links a {
+  color: white;
+  margin: 0 10px;
+  font-size: 20px;
+  transition: color 0.3s ease;
+}
+
+.icon-links a:hover {
+  color: #FFD700;
+}
