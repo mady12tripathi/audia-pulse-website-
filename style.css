@@ -15,15 +15,14 @@ body {
   justify-content: space-between;
   align-items: center;
   background-color: #000;
-  padding: 12px 24px;
+  padding: 12px 20px;
   position: sticky;
   top: 0;
   z-index: 1000;
-  border-bottom: 1px solid #222;
 }
 
 .header-left .logo {
-  height: 34px;
+  height: 36px;
 }
 
 .nav-links {
@@ -35,108 +34,92 @@ body {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  transition: 0.3s;
+  font-weight: 500;
+  transition: color 0.3s;
 }
 
 .nav-links a:hover {
-  color: #f0f0f0;
+  color: #ffae00;
 }
 
 .header-icons {
   display: flex;
   gap: 20px;
+  align-items: center;
 }
 
-/* Icon Base Style */
-.icon {
-  width: 22px;
-  height: 22px;
-  position: relative;
-  display: inline-block;
-}
+/* ICON STYLES - PURE CSS */
 
 /* Search Icon */
-.search-icon::before {
-  content: "";
-  width: 14px;
-  height: 14px;
-  border: 2px solid #fff;
+.search-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
   border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 0;
+  position: relative;
 }
+
 .search-icon::after {
   content: "";
-  width: 6px;
-  height: 2px;
-  background: #fff;
   position: absolute;
-  bottom: 0;
-  right: 0;
+  width: 10px;
+  height: 2px;
+  background: white;
+  top: 14px;
+  left: 14px;
   transform: rotate(45deg);
 }
 
 /* Profile Icon */
-.profile-icon::before {
-  content: "";
-  width: 16px;
-  height: 16px;
-  border: 2px solid white;
-  border-radius: 50%;
-  position: absolute;
-  top: 0;
-  left: 3px;
-}
-.profile-icon::after {
-  content: "";
-  width: 20px;
-  height: 6px;
-  background: white;
-  border-radius: 10px 10px 0 0;
-  position: absolute;
-  bottom: 0;
-  left: 1px;
-}
-
-/* Flash Icon */
-.flash-icon::before {
-  content: "";
-  width: 0;
-  height: 0;
-  border-left: 8px solid transparent;
-  border-right: 4px solid transparent;
-  border-bottom: 16px solid orange;
-  position: absolute;
-  left: 6px;
-  top: 0;
-  transform: rotate(10deg);
-}
-
-/* Bag Icon */
-.bag-icon::before {
-  content: "";
+.profile-icon {
   width: 20px;
   height: 20px;
   border: 2px solid white;
-  border-radius: 4px;
-  position: absolute;
-  top: 2px;
-  left: 2px;
-}
-.bag-icon::after {
-  content: "";
-  width: 12px;
-  height: 2px;
-  background: white;
-  position: absolute;
-  top: 0;
-  left: 6px;
+  border-radius: 50%;
+  position: relative;
 }
 
-/* Responsive nav – hide center nav on small screen */
-@media screen and (max-width: 768px) {
-  .nav-links {
-    display: none;
-  }
+.profile-icon::after {
+  content: "";
+  position: absolute;
+  width: 20px;
+  height: 10px;
+  border: 2px solid white;
+  border-top: none;
+  border-radius: 0 0 20px 20px;
+  top: 18px;
+  left: -2px;
+}
+
+/* Flash Icon */
+.flash-icon {
+  position: relative;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 12px solid orange;
+  transform: rotate(25deg);
+}
+
+/* Bag Icon */
+.bag-icon {
+  width: 16px;
+  height: 18px;
+  border: 2px solid white;
+  border-radius: 3px;
+  position: relative;
+}
+
+.bag-icon::before {
+  content: "";
+  position: absolute;
+  top: -6px;
+  left: 2px;
+  width: 12px;
+  height: 6px;
+  border-top: 2px solid white;
+  border-left: 2px solid white;
+  border-right: 2px solid white;
+  border-radius: 6px 6px 0 0;
 }
