@@ -7,65 +7,52 @@
 body {
   background-color: #000;
   color: #fff;
-  font-family: Arial, sans-serif;
+  font-family: "Segoe UI", sans-serif;
 }
 
 .main-header {
-  background-color: #000;
-  color: white;
-  padding: 10px 20px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
+  background-color: #000;
+  padding: 12px 24px;
   position: sticky;
   top: 0;
   z-index: 1000;
   border-bottom: 1px solid #222;
 }
 
-.logo-container .logo {
-  height: 32px;
+.header-left .logo {
+  height: 34px;
 }
 
 .nav-links {
   display: flex;
-  gap: 20px;
+  gap: 24px;
 }
 
 .nav-links a {
   color: white;
   text-decoration: none;
   font-size: 16px;
-  position: relative;
+  transition: 0.3s;
 }
 
-.nav-links a::after {
-  content: '';
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 0;
-  height: 2px;
-  background: white;
-  transition: 0.3s ease;
-}
-
-.nav-links a:hover::after {
-  width: 100%;
+.nav-links a:hover {
+  color: #f0f0f0;
 }
 
 .header-icons {
   display: flex;
   gap: 20px;
-  align-items: center;
 }
 
+/* Icon Base Style */
 .icon {
-  width: 24px;
-  height: 24px;
-  display: inline-block;
+  width: 22px;
+  height: 22px;
   position: relative;
-  cursor: pointer;
+  display: inline-block;
 }
 
 /* Search Icon */
@@ -73,17 +60,17 @@ body {
   content: "";
   width: 14px;
   height: 14px;
-  border: 2px solid white;
+  border: 2px solid #fff;
   border-radius: 50%;
   position: absolute;
-  top: 2px;
-  left: 2px;
+  top: 0;
+  left: 0;
 }
 .search-icon::after {
   content: "";
-  width: 8px;
+  width: 6px;
   height: 2px;
-  background: white;
+  background: #fff;
   position: absolute;
   bottom: 0;
   right: 0;
@@ -99,17 +86,17 @@ body {
   border-radius: 50%;
   position: absolute;
   top: 0;
-  left: 4px;
+  left: 3px;
 }
 .profile-icon::after {
   content: "";
   width: 20px;
-  height: 8px;
+  height: 6px;
   background: white;
   border-radius: 10px 10px 0 0;
   position: absolute;
   bottom: 0;
-  left: 2px;
+  left: 1px;
 }
 
 /* Flash Icon */
@@ -117,11 +104,11 @@ body {
   content: "";
   width: 0;
   height: 0;
-  border-left: 10px solid transparent;
-  border-right: 5px solid transparent;
-  border-bottom: 20px solid orange;
+  border-left: 8px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 16px solid orange;
   position: absolute;
-  left: 7px;
+  left: 6px;
   top: 0;
   transform: rotate(10deg);
 }
@@ -147,7 +134,7 @@ body {
   left: 6px;
 }
 
-/* Responsive Design */
+/* Responsive nav – hide center nav on small screen */
 @media screen and (max-width: 768px) {
   .nav-links {
     display: none;
