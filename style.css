@@ -1,62 +1,155 @@
-/* Header Section Styling */
-body {
+* {
   margin: 0;
   padding: 0;
-  font-family: 'Segoe UI', sans-serif;
+  box-sizing: border-box;
+}
+
+body {
   background-color: #000;
   color: #fff;
+  font-family: Arial, sans-serif;
 }
 
 .main-header {
-  position: sticky;
-  top: 0;
-  width: 100%;
   background-color: #000;
   color: white;
+  padding: 10px 20px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 12px 24px;
+  position: sticky;
+  top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.4);
+  border-bottom: 1px solid #222;
 }
 
-.logo img {
-  height: 34px;
-  width: auto;
+.logo-container .logo {
+  height: 32px;
 }
 
-.navbar ul {
-  list-style: none;
+.nav-links {
   display: flex;
-  gap: 24px;
-  margin: 0;
-  padding: 0;
+  gap: 20px;
 }
 
-.navbar a {
-  text-decoration: none;
+.nav-links a {
   color: white;
+  text-decoration: none;
   font-size: 16px;
-  font-weight: 500;
-  transition: color 0.3s ease;
+  position: relative;
 }
 
-.navbar a:hover {
-  color: #ccc;
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: 0.3s ease;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
 }
 
 .header-icons {
   display: flex;
-  gap: 18px;
-  font-size: 20px;
+  gap: 20px;
+  align-items: center;
 }
 
 .icon {
+  width: 24px;
+  height: 24px;
+  display: inline-block;
+  position: relative;
   cursor: pointer;
-  transition: transform 0.2s ease;
 }
 
-.icon:hover {
-  transform: scale(1.2);
+/* Search Icon */
+.search-icon::before {
+  content: "";
+  width: 14px;
+  height: 14px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.search-icon::after {
+  content: "";
+  width: 8px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: rotate(45deg);
+}
+
+/* Profile Icon */
+.profile-icon::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 4px;
+}
+.profile-icon::after {
+  content: "";
+  width: 20px;
+  height: 8px;
+  background: white;
+  border-radius: 10px 10px 0 0;
+  position: absolute;
+  bottom: 0;
+  left: 2px;
+}
+
+/* Flash Icon */
+.flash-icon::before {
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 5px solid transparent;
+  border-bottom: 20px solid orange;
+  position: absolute;
+  left: 7px;
+  top: 0;
+  transform: rotate(10deg);
+}
+
+/* Bag Icon */
+.bag-icon::before {
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: 2px solid white;
+  border-radius: 4px;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+}
+.bag-icon::after {
+  content: "";
+  width: 12px;
+  height: 2px;
+  background: white;
+  position: absolute;
+  top: 0;
+  left: 6px;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
 }
