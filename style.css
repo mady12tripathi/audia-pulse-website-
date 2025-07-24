@@ -1,3 +1,4 @@
+/* Reset default margin and padding */
 * {
   margin: 0;
   padding: 0;
@@ -5,174 +6,144 @@
 }
 
 body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
   background-color: #000;
-  font-family: 'Segoe UI', sans-serif;
   color: #fff;
 }
 
-/* Header container */
-.header {
+header {
   width: 100%;
   background-color: #000;
   display: flex;
-  align-items: center;
   justify-content: space-between;
-  padding: 15px 20px;
-  border-bottom: 1px solid #222;
+  align-items: center;
+  padding: 12px 30px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
 }
 
-/* Logo */
-.logo img {
-  height: 32px;
+.logo {
+  height: 40px;
 }
 
-/* Center navigation */
-.nav-links {
+.navbar {
   display: flex;
+  gap: 30px;
   justify-content: center;
   flex: 1;
-  gap: 24px;
 }
 
-.nav-links a {
-  color: #fff;
-  text-decoration: none;
-  font-size: 16px;
-  transition: color 0.3s;
-}
-
-.nav-links a:hover {
-  color: #f44336;
-}
-.nav-links a {
-  color: white;
-  text-decoration: none;
-  margin: 0 15px;
-  font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-  color: #FFD700;
-}
 .navbar a {
   color: white;
-  margin: 0 15px;
   text-decoration: none;
   font-weight: 500;
-  position: relative;
-  transition: color 0.3s ease;
+  padding: 8px 16px;
+  border-radius: 5px;
+  transition: all 0.3s ease;
 }
 
 .navbar a:hover {
-  color: #FFD700;
+  background-color: #FFD700;
+  color: black;
 }
 
 .navbar a.active {
-  color: #FFD700;
-}
-/* Right icons section */
-.header-icons {
-  display: flex;
-  align-items: center;
-  gap: 18px;
+  background-color: #FFD700;
+  color: black;
 }
 
-/* Circle background icons */
-.icon-circle {
-  width: 32px;
-  height: 32px;
-  background: #111;
-  border-radius: 50%;
+.icons {
   display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: background 0.3s ease;
+  gap: 20px;
 }
 
-.icon-circle:hover {
-  background: #333;
+.icon {
+  width: 20px;
+  height: 20px;
+  position: relative;
   cursor: pointer;
 }
 
-/* Search Icon (Magnifying Glass) */
-.search-icon {
+.icon.search::before {
+  content: '';
   width: 12px;
   height: 12px;
-  border: 2px solid #fff;
+  border: 2px solid white;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
+  top: 2px;
+  left: 2px;
 }
 
-.search-icon::after {
-  content: "";
-  position: absolute;
-  width: 6px;
+.icon.search::after {
+  content: '';
+  width: 8px;
   height: 2px;
-  background: #fff;
-  bottom: -4px;
+  background-color: white;
+  position: absolute;
+  bottom: -2px;
   right: -4px;
   transform: rotate(45deg);
-  transform-origin: center;
 }
 
-/* User Icon (Head + Body) */
-.user-icon {
-  position: relative;
+.icon.profile::before {
+  content: '';
   width: 14px;
   height: 14px;
+  border: 2px solid white;
+  border-radius: 50%;
+  display: block;
+  margin: auto;
 }
 
-.user-icon::before {
-  content: "";
-  width: 10px;
-  height: 10px;
-  background: #fff;
-  border-radius: 50%;
+.icon.profile::after {
+  content: '';
+  width: 14px;
+  height: 6px;
+  background-color: white;
+  border-radius: 0 0 8px 8px;
+  position: absolute;
+  bottom: 0;
+  left: 3px;
+}
+
+.icon.cart::before {
+  content: '';
+  width: 18px;
+  height: 14px;
+  border: 2px solid white;
+  border-bottom: none;
   position: absolute;
   top: 0;
-  left: 2px;
+  left: 1px;
 }
 
-.user-icon::after {
-  content: "";
-  width: 14px;
-  height: 8px;
-  background: #fff;
-  border-radius: 50% 50% 0 0;
+.icon.cart::after {
+  content: '';
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
   position: absolute;
-  top: 10px;
-  left: 0;
+  bottom: 0;
+  left: 3px;
 }
 
-/* Bag Icon (Shopping Bag) */
-.bag-icon {
-  position: relative;
-  width: 14px;
-  height: 16px;
-  border: 2px solid #fff;
-  border-radius: 2px;
-}
+@media (max-width: 768px) {
+  header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 
-.bag-icon::before {
-  content: "";
-  position: absolute;
-  top: -4px;
-  left: 2px;
-  width: 10px;
-  height: 4px;
-  border: 2px solid #fff;
-  border-top: none;
-  border-radius: 2px 2px 0 0;
-}
-.icon-links a {
-  color: white;
-  margin: 0 10px;
-  font-size: 20px;
-  transition: color 0.3s ease;
-}
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 15px;
+    padding: 10px 0;
+  }
 
-.icon-links a:hover {
-  color: #FFD700;
+  .icons {
+    margin-top: 10px;
+  }
 }
