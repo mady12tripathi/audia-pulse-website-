@@ -45,16 +45,14 @@
   </main>
 
   <script>
-    // Highlight nav tab automatically based on URL (no need to edit)
-    const currentPage = location.pathname.split("/").pop();
-    const links = document.querySelectorAll(".nav-link, .icon");
+  const currentPage = location.pathname.split("/").pop();
+  const links = document.querySelectorAll(".nav-link");
 
-    links.forEach(link => {
-      if(link.getAttribute("href") === currentPage){
-        link.classList.add("active");
-      }
-    });
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage || (link.getAttribute("href") === "index.html" && currentPage === "")) {
+      link.classList.add("active");
+    }
+  });
   </script>
-
 </body>
 </html>
