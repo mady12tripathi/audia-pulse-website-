@@ -1,16 +1,13 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>About – Audia+</title>
+  <title>About | Audia+</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="header">
-    <div class="header-left">
-      <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
-    </div>
+  <header>
+    <img src="audia-logo.png" alt="Audia+ Logo" class="logo" />
     <nav class="nav-links">
       <a href="index.html" class="nav-link" id="home">Home</a>
       <a href="shop.html" class="nav-link" id="shop">Shop</a>
@@ -22,33 +19,29 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27..."/></svg>
       </a>
       <a href="profile.html" class="icon" title="Profile">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.7 0 4.88-2.18 4.88-4.88..."/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4..."/></svg>
       </a>
       <a href="cart.html" class="icon" title="Cart">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 18c-1.1 0-1.99-.9-1.99-2s..."/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2..."/></svg>
       </a>
     </div>
-  </header>
-
-  <main class="main-content">
+  </header>  <main class="main-content">
     <h1>About Audia+</h1>
     <p>This is the about page. Learn more about our mission and technology here.</p>
-  </main>
-
-  <script>
+  </main>  <script>
     const currentPath = location.pathname.split("/").pop() || "index.html";
     const links = document.querySelectorAll(".nav-link");
 
     links.forEach(link => {
       const href = link.getAttribute("href");
+
       if (
-        href === currentPath ||
-        (href === "index.html" && currentPath === "") ||
-        location.pathname.includes(href.replace(".html", ""))
+        currentPath === href ||
+        (href === "index.html" && (currentPath === "" || currentPath === "/")) ||
+        location.pathname.endsWith(href.replace(".html", ""))
       ) {
         link.classList.add("active");
       }
     });
-  </script>
-</body>
+  </script></body>
 </html>
