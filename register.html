@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Register | Audia+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Register – Audia+</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,19 +19,13 @@
     </nav>
     <div class="icons">
       <a href="search.html" class="icon" title="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M15.5 14h-.79l-.28-.27..."/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27..."/></svg>
       </a>
       <a href="profile.html" class="icon" title="Profile">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4..." />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.7 0 4.88-2.18 4.88-4.88..."/></svg>
       </a>
       <a href="cart.html" class="icon" title="Cart">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2..." />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 18c-1.1 0-1.99-.9-1.99-2s..."/></svg>
       </a>
     </div>
   </header>
@@ -40,16 +34,21 @@
     <h1>Create an Account</h1>
     <p>This is a placeholder registration page. Feature coming soon!</p>
   </main>
-<script>
-  const currentPage = location.pathname.split("/").pop();
-  const links = document.querySelectorAll(".nav-link");
 
-  links.forEach(link => {
-    if (link.getAttribute("href") === currentPage || (link.getAttribute("href") === "index.html" && currentPage === "")) {
-      link.classList.add("active");
-    }
-  });
-</script>
-  
+  <script>
+    const currentPath = location.pathname.split("/").pop() || "index.html";
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (
+        href === currentPath ||
+        (href === "index.html" && currentPath === "") ||
+        location.pathname.includes(href.replace(".html", ""))
+      ) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 </body>
 </html>
