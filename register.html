@@ -40,15 +40,16 @@
     <h1>Create an Account</h1>
     <p>This is a placeholder registration page. Feature coming soon!</p>
   </main>
+<script>
+  const currentPage = location.pathname.split("/").pop();
+  const links = document.querySelectorAll(".nav-link");
 
-  <script>
-    const currentPage = location.pathname.split("/").pop();
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach(link => {
-      if(link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-      }
-    });
-  </script>
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage || (link.getAttribute("href") === "index.html" && currentPage === "")) {
+      link.classList.add("active");
+    }
+  });
+</script>
+  
 </body>
 </html>
