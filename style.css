@@ -106,3 +106,17 @@
   font-weight: 400;
   margin-top: 10px;
 }
+/* HERO SECTION FIX */
+.hero {
+  margin: 0;
+  padding: 0;
+  display: block;
+}
+
+.hero-banner {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
