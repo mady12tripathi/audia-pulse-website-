@@ -1,1 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Register | Audia+</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header class="header">
+    <div class="header-left">
+      <img src="images/audia-logo.png" alt="Audia+ Logo" class="logo" />
+    </div>
+    <nav class="nav-links">
+      <a href="index.html" class="nav-link" id="home">Home</a>
+      <a href="shop.html" class="nav-link" id="shop">Shop</a>
+      <a href="about.html" class="nav-link" id="about">About</a>
+      <a href="register.html" class="nav-link" id="register">Register</a>
+    </nav>
+    <div class="icons">
+      <a href="search.html" class="icon" title="Search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+          <path d="M15.5 14h-.79l-.28-.27..."/>
+        </svg>
+      </a>
+      <a href="profile.html" class="icon" title="Profile">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4..." />
+        </svg>
+      </a>
+      <a href="cart.html" class="icon" title="Cart">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
+          <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2..." />
+        </svg>
+      </a>
+    </div>
+  </header>
 
+  <main class="main-content">
+    <h1>Create an Account</h1>
+    <p>This is a placeholder registration page. Feature coming soon!</p>
+  </main>
+
+  <script>
+    const currentPage = location.pathname.split("/").pop();
+    const links = document.querySelectorAll(".nav-link");
+    links.forEach(link => {
+      if(link.getAttribute("href") === currentPage) {
+        link.classList.add("active");
+      }
+    });
+  </script>
+</body>
+</html>
