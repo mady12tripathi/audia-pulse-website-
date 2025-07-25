@@ -120,22 +120,20 @@
   margin: 0;
   padding: 0;
 }
-/* HERO SECTION FULL IMAGE + TEXT OVERLAY */
+/* HERO SECTION */
 .hero {
-  margin: 0;
-  padding: 0;
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-}
-
-.hero-image {
   position: relative;
   width: 100%;
   height: auto;
 }
 
-.hero-banner {
+.hero-image {
+  width: 100%;
+  height: auto;
+  position: relative;
+}
+
+.hero-image img {
   width: 100%;
   height: auto;
   display: block;
@@ -144,21 +142,20 @@
 .hero-text {
   position: absolute;
   top: 50%;
-  left: 55%;
-  transform: translate(-50%, -50%);
+  right: 5%;
+  transform: translateY(-50%);
+  text-align: right;
   color: #000;
-  text-align: center;
+  max-width: 40%;
 }
 
 .hero-title {
-  font-size: 2rem;
+  font-size: 2.5rem;
   font-weight: bold;
-  margin: 0;
-  line-height: 1.2;
+  margin-bottom: 10px;
 }
 
 .hero-subtitle {
-  font-size: 1rem;
-  margin-top: 10px;
-  font-weight: 400;
+  font-size: 1.2rem;
+  color: #444;
 }
