@@ -27,12 +27,8 @@ body {
 }
 
 /* Nav links */
-.nav-links {
-  display: flex;
-  gap: 25px;
-}
-
 .nav-link {
+  position: relative;
   color: white;
   text-decoration: none;
   padding: 8px 14px;
@@ -40,11 +36,21 @@ body {
   transition: background 0.3s ease, color 0.3s ease;
 }
 
-.nav-link:hover {
-  background-color: yellow;
-  color: black;
+.nav-link::after {
+  content: "";
+  position: absolute;
+  left: 25%;
+  bottom: 0px;
+  width: 50%;
+  height: 2px;
+  background-color: transparent;
+  transition: background-color 0.3s ease;
 }
 
+.nav-link:hover::after,
+.nav-link.active::after {
+  background-color: yellow;
+}
 /* Active link */
 .nav-link.active {
   background-color: yellow;
