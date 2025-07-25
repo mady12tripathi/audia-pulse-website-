@@ -41,15 +41,16 @@
     <p>Audia+ is redefining the wireless audio experience with AI-powered personalization. Our mission is to build sound that adapts to *you*. This brand is built by creators, for creators — audiophiles, athletes, and tech lovers alike.</p>
     <p>We believe no two ears are alike. That’s why we created OmniWave™ AdaptIQ – a smart sound system that maps your hearing and environment for ultra-personal audio.</p>
   </main>
+<script>
+  const currentPage = location.pathname.split("/").pop();
+  const links = document.querySelectorAll(".nav-link");
 
-  <script>
-    const currentPage = location.pathname.split("/").pop();
-    const links = document.querySelectorAll(".nav-link");
-    links.forEach(link => {
-      if(link.getAttribute("href") === currentPage) {
-        link.classList.add("active");
-      }
-    });
-  </script>
+  links.forEach(link => {
+    if (link.getAttribute("href") === currentPage || (link.getAttribute("href") === "index.html" && currentPage === "")) {
+      link.classList.add("active");
+    }
+  });
+</script>
+  
 </body>
 </html>
