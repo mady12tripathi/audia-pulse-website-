@@ -2,8 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About | Audia+</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – Audia+</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
@@ -19,37 +19,36 @@
     </nav>
     <div class="icons">
       <a href="search.html" class="icon" title="Search">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M15.5 14h-.79l-.28-.27..."/>
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M15.5 14h-.79l-.28-.27..."/></svg>
       </a>
       <a href="profile.html" class="icon" title="Profile">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4..." />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M12 12c2.7 0 4.88-2.18 4.88-4.88..."/></svg>
       </a>
       <a href="cart.html" class="icon" title="Cart">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white">
-          <path d="M7 18c-1.1 0-2 .9-2 2s.9 2 2 2..." />
-        </svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white"><path d="M7 18c-1.1 0-1.99-.9-1.99-2s..."/></svg>
       </a>
     </div>
   </header>
 
   <main class="main-content">
     <h1>About Audia+</h1>
-    <p>Audia+ is redefining the wireless audio experience with AI-powered personalization. Our mission is to build sound that adapts to *you*. This brand is built by creators, for creators — audiophiles, athletes, and tech lovers alike.</p>
-    <p>We believe no two ears are alike. That’s why we created OmniWave™ AdaptIQ – a smart sound system that maps your hearing and environment for ultra-personal audio.</p>
+    <p>This is the about page. Learn more about our mission and technology here.</p>
   </main>
-<script>
-  const currentPage = location.pathname.split("/").pop();
-  const links = document.querySelectorAll(".nav-link");
 
-  links.forEach(link => {
-    if (link.getAttribute("href") === currentPage || (link.getAttribute("href") === "index.html" && currentPage === "")) {
-      link.classList.add("active");
-    }
-  });
-</script>
+  <script>
+    const currentPath = location.pathname.split("/").pop() || "index.html";
+    const links = document.querySelectorAll(".nav-link");
+
+    links.forEach(link => {
+      const href = link.getAttribute("href");
+      if (
+        href === currentPath ||
+        (href === "index.html" && currentPath === "") ||
+        location.pathname.includes(href.replace(".html", ""))
+      ) {
+        link.classList.add("active");
+      }
+    });
+  </script>
 </body>
 </html>
