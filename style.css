@@ -242,30 +242,39 @@ body {
 /* FEATURE STRIP */
 .feature-strip {
   display: flex;
-  justify-content: space-around;
+  justify-content: center;
   align-items: center;
-  padding: 15px 30px;
-  margin-top: 0;
-  background-color: #f8f8f8;
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #ddd;
+  flex-wrap: wrap;
+  gap: 40px;
+  padding: 30px 20px;
+  background-color: #f9f9f9;
 }
 
 .feature-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 120px;
   text-align: center;
-  max-width: 120px;
-  padding: 10px;
 }
 
 .circle-icon {
-  width: 50px;
-  height: 50px;
+  width: 60px;
+  height: 60px;
   background-color: #000;
   color: #fff;
   border-radius: 50%;
   display: flex;
-  align-items: center;
   justify-content: center;
-  margin: 0 auto 8px auto;
-  font-size: 22px;
+  align-items: center;
+  font-size: 26px;
+  margin-bottom: 10px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.3);
+}
+
+.feature-item p {
+  font-size: 14px;
+  font-weight: 600;
+  color: #000;
+  margin: 0;
 }
